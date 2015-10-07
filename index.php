@@ -8,7 +8,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Projekt</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -82,20 +82,21 @@ session_start();
   <?php } ?>
       
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+   <?php
+    if(!isset($_SESSION['autoriziran'])){ ?>
+    <form action="#" id="registracija">
+    <fieldset>
+      <label for="email">Email</label> <input type="email" id="emailReg" /> <br />
+      <label for="ime">Ime</label> <input type="text" id="ime" /> <br />
+      <label for="prezime">Prezime</label> <input type="text" id="prezime" /> <br />
+      <label for="lozinkaReg">Lozinka</label> <input type="password" id="lozinkaReg" /> <br />
+      <label for="lozinkaReg2">Ponovite lozinku</label> <input type="password" id="lozinkaReg2" />  <br />
+      <label for="ziroracun">Žiro račun</label> <input type="text" id="ziroracun" /> <br />
+      <a id="registriraj" href="#" class="button" style="width: 100%" type="submit">Registracija</a>
+    </fieldset>
+  </form>
+  <p id="registracijaPoruka"></p>
+  <?php } ?>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -143,6 +144,33 @@ session_start();
         return false;
       });
         });
+
+    $(function(){
+    $("#registriraj").click(function(){
+      $("#registracijaPoruka").html("");
+      if ($("#lozinkaReg").val() !== $("#lozinkaReg2").val()) {
+        $("#registracijaPoruka").html("Unesene lozinke nisu identične!");
+      }
+      else 
+     $.ajax({
+        type: "POST",
+        url: "registracija.php",
+        data: "emailReg=" + $("#emailReg").val() + "&lozinkaReg=" + $("#lozinkaReg").val() + "&ime=" + $("#ime").val() + "&prezime=" + $("#prezime").val() + "&ziroracun=" + $("#ziroracun").val(),
+        success: function(msg){
+            if(msg=="true"){
+              $("#registracijaPoruka").html("Uspješno ste se registrirali!");
+              $("#registriraj").html("");
+            }
+            else{
+              $("#registracijaPoruka").html("Registracija nije uspjela.");
+            }
+        }
+      });
+        
+
+        return false;
+      });
+        }); 
   </script> 
   </body>
 </html>
