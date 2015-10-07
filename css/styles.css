@@ -20,3 +20,25 @@ nav ul li{
 .navbar-right{
     right: 0px;
 }
+
+body {
+
+background-color: white;
+}
+
+.naslov {
+text-align: center;
+}
+
+.tekst{
+text-align: center;
+font-family: Century Gothic;
+
+font-size: 17px;
+}
+
+h1{
+
+	font-family: Century Gothic;
+	font-size: 60px;
+}
