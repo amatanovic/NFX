@@ -22,27 +22,38 @@ session_start();
   </head>
   <body>
 
-      <nav>
-        <ul class="nav">
-            <li>HOME</li>
-            <li>O NAMA</li>
-            <li>PROJEKTI</li>
-         </ul>
-        <ul class="nav">
-        <?php
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">HOME</a></li>
+            <li><a href="#onama">O NAMA</a></li>
+            <li><a href="#projekti">PROJEKTI</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+                     <?php
     if(isset($_SESSION['autoriziran'])){
       ?>
     <a href="logout.php"><li>LOGOUT</li></a>
    <?php } else {?>
-            <li>LOGIN</li>
-            <li>REGISTRACIJA</li>
-            <?php }?>
+            <li><a href="../navbar/">LOGIN</a></li>
+            <li><a href="../navbar-static-top/">REGISTRACIJA</a></li>
+              <?php }?>
             <li class="glyphicon glyphicon-search"></li>
-         </ul>
-      </nav>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
       
-      
-      
+
       
       
       <img src="slike/gornjajezera.jpg" alt="početna slika" class="pocetnaslika">
