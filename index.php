@@ -34,7 +34,7 @@ session_start();
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">HOME</a></li>
+            <li><a href="#">HOME</a></li>
             <li><a href="#onama">O NAMA</a></li>
             <li><a href="#projekti">PROJEKTI</a></li>
           </ul>
@@ -42,12 +42,12 @@ session_start();
                      <?php
     if(isset($_SESSION['autoriziran'])){
       ?>
-    <a href="logout.php"><li>LOGOUT</li></a>
+   <li><a href="logout.php"><li>ODJAVA</li></a>
    <?php } else {?>
-            <li><a href="../navbar/">LOGIN</a></li>
+            <li><a href="../navbar/">PRIJAVA</a></li>
             <li><a href="../navbar-static-top/">REGISTRACIJA</a></li>
               <?php }?>
-            <li class="glyphicon glyphicon-search"></li>
+            <li><span class="glyphicon glyphicon-search"></span></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -56,7 +56,7 @@ session_start();
 
       
       
-      <img src="slike/gornjajezera.jpg" alt="početna slika" class="pocetnaslika">
+      <img src="slike/milino-jezero.jpg" alt="početna slika" class="pocetnaslika">
 
 
       <div class="naslov">
