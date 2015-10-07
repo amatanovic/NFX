@@ -1,7 +1,7 @@
 
 	   <?php
     if(!isset($_SESSION['autoriziran'])){ ?>	
-<div id="prijava" class="modal fade in" style="display: block; padding-left: 17px;" aria-hidden="false">
+<div class="modal fade in" style="display: block; padding-left: 17px;" aria-hidden="false">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
