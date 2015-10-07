@@ -1,13 +1,7 @@
-
-<<<<<<< HEAD
 <div id="prijava" class="modal fade" style="display: block; padding-left: 17px;" aria-hidden="false">
-    				              	   <?php
-    if(!isset($_SESSION['autoriziran'])){ ?>
-=======
 	   <?php
     if(!isset($_SESSION['autoriziran'])){ ?>	
 <div class="modal fade in" style="display: block; padding-left: 17px;" aria-hidden="false">
->>>>>>> origin/master
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
