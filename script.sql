@@ -49,3 +49,6 @@ insert into kategorija (naziv) values ('Poljoprivreda');
 insert into kategorija (naziv) values ('Sport');
 insert into kategorija (naziv) values ('Obrazovanje');
 insert into projekt (naziv, kratakopis, detaljanopis, kategorija, enddate, korisnik) values ('Naziv projekta', 'Kratak opis projekta', 'Detaljan opis ovog projekta koji je super', 1, '2015-12-12 23:59:00', 1);
+insert into slike (projekt, avatar, putanja) values (1, 1, 'slike/avatar.jpg');
+insert into slike (projekt, avatar, putanja) values (1, 0, 'slike/galerija1.jpg');
+insert into slike (projekt, avatar, putanja) values (1, 0, 'slike/galerija2.jpg');
