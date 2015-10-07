@@ -62,6 +62,12 @@ foreach ($projekti as $projekt) {
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script>
+    $('#autorizacija').modal('hide');
+
+    $('#autorizacijaModal').click(function () {
+        $('#autorizacija').modal('show');
+    });
+
     $("#lozinka").keypress(function(e) {
     if(e.which == 13) {
       $("#poruka").html("");
