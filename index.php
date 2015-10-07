@@ -58,7 +58,6 @@ include 'head.php';
 
 
       <div class="naslovi" id="onama">
->>>>>>> origin/master
 
 <h1>O nama</h1>
 <p class="tekst">Local Boost je stranica na kojoj možete financijski poduprijeti tuđe projekte, kao i drugi Vaše.</p>
