@@ -34,7 +34,7 @@ session_start();
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#home">HOME</a></li>
+            <li><a href="#">HOME</a></li>
             <li><a href="#onama">O NAMA</a></li>
             <li><a href="#projekti">PROJEKTI</a></li>
           </ul>
