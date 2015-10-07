@@ -34,7 +34,7 @@ session_start();
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#">HOME</a></li>
+            <li><a href="#home">HOME</a></li>
             <li><a href="#onama">O NAMA</a></li>
             <li><a href="#projekti">PROJEKTI</a></li>
           </ul>
@@ -58,7 +58,7 @@ session_start();
       
       <img src="slike/milino-jezero.jpg" alt="početna slika" class="pocetnaslika">
 
-    </div>
+</div>
       <div class="naslov" id="onama">
 <h1>O nama</h1>
 <p class="tekst">Local Boost je stranica na kojoj možete financijski poduprijeti tuđe projekte, kao i drugi Vaše.</p>
