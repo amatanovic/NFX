@@ -37,6 +37,10 @@ session_start();
             <li><a href="#home">HOME</a></li>
             <li><a href="#onama">O NAMA</a></li>
             <li><a href="#projekti">PROJEKTI</a></li>
+            <?php if(isset($_SESSION['autoriziran'])){
+      ?>
+      <li><a href="mojiprojekti.php"><li>MOJI PROJEKTI</li></a>
+   <?php } ?>
           </ul>
           <ul class="nav navbar-nav navbar-right">
                      <?php
