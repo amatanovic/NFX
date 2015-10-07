@@ -15,7 +15,7 @@ nav{
 }
 
 .navbar-default {
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255,255,255,1);
     border-color: rgba(255,255,255,1);
 }
 
@@ -25,6 +25,11 @@ nav ul li{
 
 .navbar-right{
     right: 0px;
+}
+
+.glyphicon-search{
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 body {

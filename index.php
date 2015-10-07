@@ -74,8 +74,7 @@ $izraz=$veza->prepare("select * from projekt");
 $izraz->execute();
 $projekti=$izraz->fetchAll(PDO::FETCH_OBJ);
 foreach ($projekti as $projekt) {
-  echo $projekt->naziv . $projekt->kratakopis;
-
+  echo "<p>" . $projekt->naziv . "</p><p>" . $projekt->kratakopis . "</p>"; 
   $izraz=$veza->prepare("select * from slike");
   $izraz->execute();
   $slike=$izraz->fetchAll(PDO::FETCH_OBJ);
