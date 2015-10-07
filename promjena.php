@@ -29,6 +29,19 @@ if(isset($_POST['promjeni'])){
     echo $slika_datoteka;
     move_uploaded_file($_FILES["avatar"]["tmp_name"], $slika_datoteka);
   }
+  if ($_FILES['slike']['name']) {
+    $slike_dir = "slike/";
+    $izraz1 = $veza->prepare("delete from slike where projekt=$idProjekta and avatar != 1");
+    $izraz1->execute();
+    for($index=0; $index<count($_FILES['slike']['name']); $index++) {
+    $ext = pathinfo($_FILES['slike']['name'][$index], PATHINFO_EXTENSION);
+    $slika_datoteka = $slike_dir . "slike_" . $index . $idProjekta . "." . $ext;
+    $izraz1 = $veza->prepare("insert into slike (projekt, avatar, putanja) values ($idProjekta, 0, '$slika_datoteka')");
+    $izraz1->execute();
+    echo $slika_datoteka;
+    move_uploaded_file($_FILES["slike"]["tmp_name"][$index], $slika_datoteka);
+  }
+  }
  header("location: mojiprojekti.php");
 }
 ?>
@@ -101,7 +114,7 @@ echo "</select><br />";
         }
         }
 ?>
-        <input type="file" name="avatar" id="avatar" accept="image/*" />
+        <input type="file" name="slike[]" multiple="multiple" id="slike" accept="image/*" />
         <p>
         <a href="mojiprojekti.php" class="alert button">Natrag</a>
         <input type="submit" class="button" value="Promjeni" name="promjeni" />
