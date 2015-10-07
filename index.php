@@ -48,7 +48,7 @@ session_start();
       ?>
    <li><a href="logout.php"><li>ODJAVA</li></a>
    <?php } else {?>
-            <li><a href="#prijava">PRIJAVA</a></li>
+            <li><a href="#prijava" data-toggle="modal">PRIJAVA</a></li>
             <li><a href="#registracija">REGISTRACIJA</a></li>
               <?php }?>
             <li><span class="glyphicon glyphicon-search"></span></li>
@@ -74,7 +74,7 @@ session_start();
 <p class="tekst">Local Boost Vam pomaže u realizaciji raznovrsnih projekata i potiče Vaše ideje i napredak.</p>
       </div>
       
-<hr class="odlomci" />      
+  
         
 <div class="container" id="projekti">
     <h1 class="naslovi">Projekti</h1>
@@ -97,20 +97,8 @@ foreach ($projekti as $projekt) {
 }
 ?>
 </div>
-  <hr class="odlomci" />    
-    <div id="prijava">  
-    <?php
-    if(!isset($_SESSION['autoriziran'])){ ?>
-    <form action="#" id="login">
-    <fieldset>
-      <label for="email">Email</label> <input type="email" id="email" /> 
-      <label for="lozinka">Lozinka</label> <input type="password" id="lozinka" /> 
-      <a id="prijava" href="#" class="button" style="width: 100%" type="submit">Prijava</a>
-    </fieldset>
-  </form>
-  <p id="poruka"></p>
-  <?php } ?>
-</div>      
+        
+<?php include 'modal-prijava.php'; ?>   
       
   <div id="registracija">
    <?php

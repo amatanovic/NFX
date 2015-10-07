@@ -22,6 +22,9 @@ nav{
 nav ul li{
     float:left;
 }
+nav ul li:hover{
+    text-decoration: overline;
+}
 
 .navbar-right{
     right: 0px;
@@ -54,9 +57,3 @@ h1{
 	font-size: 60px;
 }
 
-
-hr.odlomci{
-	height: 5px;
-	border: 0;
-	box-shadow: 0 10px 10px -10px #8c8b8b inset;
-}
