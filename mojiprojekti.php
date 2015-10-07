@@ -37,12 +37,12 @@ if(!isset($_SESSION['autoriziran'])){
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#onama">O NAMA</a></li>
-            <li><a href="#projekti">PROJEKTI</a></li>
+            <li><a href="index.php#home">HOME</a></li>
+            <li><a href="index.php#onama">O NAMA</a></li>
+            <li><a href="index.php#projekti">PROJEKTI</a></li>
             <?php if(isset($_SESSION['autoriziran'])){
       ?>
-      <li><a href="#"><li>MOJI PROJEKTI</li></a>
+      <li><a href="mojiprojekti.php#mojiprojekti"><li>MOJI PROJEKTI</li></a>
    <?php } ?>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -51,8 +51,8 @@ if(!isset($_SESSION['autoriziran'])){
       ?>
    <li><a href="logout.php"><li>ODJAVA</li></a>
    <?php } else {?>
-            <li><a href="#prijava">PRIJAVA</a></li>
-            <li><a href="#registracija">REGISTRACIJA</a></li>
+            <li><a href="index.php#prijava">PRIJAVA</a></li>
+            <li><a href="index.php#registracija">REGISTRACIJA</a></li>
               <?php }?>
             <li><span class="glyphicon glyphicon-search"></span></li>
           </ul>
@@ -67,7 +67,7 @@ if(!isset($_SESSION['autoriziran'])){
 
 </div>
 
-<div class="container">
+<div class="container" id="mojiprojekti">
 
 
 </div>
