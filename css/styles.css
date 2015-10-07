@@ -14,5 +14,9 @@ nav{
 }
 
 nav ul li{
-    display: inline-block;
+    float:left;
+}
+
+.navbar-right{
+    right: 0px;
 }

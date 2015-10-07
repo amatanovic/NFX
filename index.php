@@ -23,12 +23,12 @@ session_start();
   <body>
 
       <nav>
-        <ul class="nav navbar-left">
+        <ul class="nav">
             <li>HOME</li>
             <li>O NAMA</li>
             <li>PROJEKTI</li>
          </ul>
-        <ul class="nav navbar-right">
+        <ul class="nav">
         <?php
     if(isset($_SESSION['autoriziran'])){
       ?>
