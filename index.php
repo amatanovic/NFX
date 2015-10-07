@@ -20,6 +20,22 @@
   </head>
   <body>
 
+      <nav>
+        <ul class="nav navbar-left">
+            <li>HOME</li>
+            <li>O NAMA</li>
+            <li>PROJEKTI</li>
+         </ul>
+        <ul class="nav navbar-right">
+            <li>LOGIN</li>
+            <li>REGISTRACIJA</li>
+            <li class="glyphicon glyphicon-search"></li>
+         </ul>
+      </nav>
+      
+      
+      
+      
       
       <img src="slike/gornjajezera.jpg" alt="početna slika" class="pocetnaslika">
       

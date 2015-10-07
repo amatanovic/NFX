@@ -7,3 +7,12 @@ body{
     width: 100%;
     
 }
+
+nav{
+    position: fixed;
+    top: 0;
+}
+
+nav ul li{
+    display: inline-block;
+}
