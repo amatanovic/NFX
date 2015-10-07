@@ -68,6 +68,27 @@ session_start();
 <p class="tekst">Svaki prijavljeni korisnik ima mogućnost objaviti vlastiti projekt koji omogućuje drugima da ga financiraju.</p>
 <p class="tekst">Local Boost Vam pomaže u realizaciji raznovrsnih projekata i potiče Vaše ideje i napredak.</p>
       </div>
+<div class="container">
+<?php
+$izraz=$veza->prepare("select * from projekt");
+$izraz->execute();
+$projekti=$izraz->fetchAll(PDO::FETCH_OBJ);
+foreach ($projekti as $projekt) {
+  echo $projekt->naziv . $projekt->kratakopis;
+
+  $izraz=$veza->prepare("select * from slike");
+  $izraz->execute();
+  $slike=$izraz->fetchAll(PDO::FETCH_OBJ);
+  foreach ($slike as $slika) {
+    if ($projekt->sifra == $slika->projekt) {
+        if ($slika->avatar == 1) {
+      echo "<img src='" . $slika->putanja . "' />";
+      }
+    }
+  }
+}
+?>
+</div>
       
     <?php
     if(!isset($_SESSION['autoriziran'])){ ?>
