@@ -27,8 +27,14 @@
             <li>PROJEKTI</li>
          </ul>
         <ul class="nav navbar-right">
+        <?php
+    if(isset($_SESSION['autoriziran'])){
+      ?>
+    <a href="logout.php"><li>LOGOUT</li></a>
+   <?php } else {?>
             <li>LOGIN</li>
             <li>REGISTRACIJA</li>
+            <?php }?>
             <li class="glyphicon glyphicon-search"></li>
          </ul>
       </nav>
@@ -39,8 +45,17 @@
       
       <img src="slike/gornjajezera.jpg" alt="početna slika" class="pocetnaslika">
       
-      
-      
+    <?php
+    if(!isset($_SESSION['autoriziran'])){ ?>
+    <form action="#" id="login">
+    <fieldset>
+      <label for="email">Email</label> <input type="email" id="email" /> 
+      <label for="lozinka">Lozinka</label> <input type="password" id="lozinka" /> 
+      <a id="prijava" href="#" class="button" style="width: 100%" type="submit">Prijava</a>
+    </fieldset>
+  </form>
+  <p id="poruka"></p>
+  <?php } ?>
       
       
       
@@ -62,5 +77,48 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+    $("#lozinka").keypress(function(e) {
+    if(e.which == 13) {
+      $("#poruka").html("");
+      $.ajax({
+        type: "POST",
+        url: "login.php",
+        data: "email=" + $("#email").val() + "&lozinka=" + $("#lozinka").val(),
+        success: function(msg){
+            if(msg=="true"){
+              window.location="index.php";
+            }
+            else{
+              $("#poruka").html("Neispravno uneseno korisničko ime i lozinka.<br /> Molimo unesite ponovno.");
+            }
+
+          
+        }
+      });
+    }
+});
+    $(function(){
+    $("#prijava").click(function(){
+      $("#poruka").html("");
+      $.ajax({
+        type: "POST",
+        url: "login.php",
+        data: "email=" + $("#email").val() + "&lozinka=" + $("#lozinka").val(),
+        success: function(msg){
+            if(msg=="true"){
+              window.location="index.php";
+            }
+            else{
+              $("#poruka").html("Neispravno uneseno korisničko ime i lozinka.<br /> Molimo unesite ponovno.");
+            }
+        }
+      });
+        
+
+        return false;
+      });
+        });
+  </script> 
   </body>
 </html>
