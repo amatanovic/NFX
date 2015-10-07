@@ -2,11 +2,10 @@
 session_start();
 include 'konfiguracija.php'; 
 if(isset($_POST['obrisi'])){
-  $izraz = $veza->prepare("delete from projekt where sifra=1");
-  //$izraz->bindValue(":sifra",$_POST['sifra']);
+  $izraz = $veza->prepare("delete from projekt where sifra=:sifra");
+  $izraz->bindValue(":sifra",$_POST['sifra']);
   $izraz->execute();
-  echo "here";
-  //header("location: mojiprojekti.php");
+  header("location: mojiprojekti.php");
 }
 ?>
 
@@ -22,7 +21,7 @@ include "head.php";
     $entitet=$izraz->fetch(PDO::FETCH_OBJ);
     
     ?>
-    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
       <fieldset>
         <h4>Podaci u bazi</h4>
         <input name="sifra" value="<?php echo $_GET['sifra']?>">

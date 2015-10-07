@@ -7,16 +7,16 @@ navigation history that also transitions its views in and out.
 
   <!-- Dashboard Tab -->
   
-  <ion-tab ng-hide="loggedin" icon-off="ion-log-in" icon-on="ion-log-in" href="#/tab/login" >
+  <ion-tab ng-if="loggedin" icon-off="ion-log-in" icon-on="ion-log-in" href="#/tab/login" >
     <ion-nav-view name="tab-login"></ion-nav-view>
   </ion-tab>
 
-  <ion-tab ng-show="loggedin" icon-off="ion-ios-list-outline" icon-on="ion-ios-list-outline" href="#/tab/projekti">
+  <ion-tab ng-if="logout" icon-off="ion-ios-list-outline" icon-on="ion-ios-list-outline" href="#/tab/projekti">
     <ion-nav-view name="tab-projekti"></ion-nav-view>
   </ion-tab>
 
 
-  <ion-tab ng-show="loggedin" icon-off="ion-log-out" icon-on="ion-log-out">
+  <ion-tab ng-if="logout" icon-off="ion-log-out" icon-on="ion-log-out">
   </ion-tab>
 
   

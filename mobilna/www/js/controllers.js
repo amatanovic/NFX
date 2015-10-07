@@ -1,7 +1,8 @@
 angular.module('starter.controllers', [])
 
 .controller('LogoutCtrl', function($scope,$rootScope) {
-$rootScope.loggedin = false;
+$scope.loggedin = true;
+$scope.logout = false;
 
 
 })
