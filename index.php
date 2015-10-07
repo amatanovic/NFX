@@ -1,4 +1,6 @@
-<?php include 'konfiguracija.php' ?>    
+<?php include 'konfiguracija.php'; 
+session_start();    
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
