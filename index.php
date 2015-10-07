@@ -62,13 +62,9 @@ session_start();
       
       <img src="slike/milino-jezero.jpg" alt="početna slika" class="pocetnaslika">
 
-<<<<<<< HEAD
-    </div>
+
       <div class="naslovi" id="onama">
-=======
-</div>
-      <div class="naslov" id="onama">
->>>>>>> origin/master
+
 <h1>O nama</h1>
 <p class="tekst">Local Boost je stranica na kojoj možete financijski poduprijeti tuđe projekte, kao i drugi Vaše.</p>
 <p class="tekst">Kako biste postavili vlastiti projekt, potrebno je obaviti registraciju.</p>
@@ -78,7 +74,8 @@ session_start();
 <p class="tekst">Local Boost Vam pomaže u realizaciji raznovrsnih projekata i potiče Vaše ideje i napredak.</p>
       </div>
       
-      
+<hr class="odlomci" />      
+        
 <div class="container" id="projekti">
     <h1 class="naslovi">Projekti</h1>
 <?php
@@ -100,7 +97,7 @@ foreach ($projekti as $projekt) {
 }
 ?>
 </div>
-    
+  <hr class="odlomci" />    
     <div id="prijava">  
     <?php
     if(!isset($_SESSION['autoriziran'])){ ?>
