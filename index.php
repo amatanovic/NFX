@@ -59,7 +59,7 @@ session_start();
       <img src="slike/milino-jezero.jpg" alt="početna slika" class="pocetnaslika">
 
     </div>
-      <div class="naslov" id="onama">
+      <div class="naslovi" id="onama">
 <h1>O nama</h1>
 <p class="tekst">Local Boost je stranica na kojoj možete financijski poduprijeti tuđe projekte, kao i drugi Vaše.</p>
 <p class="tekst">Kako biste postavili vlastiti projekt, potrebno je obaviti registraciju.</p>
@@ -68,7 +68,10 @@ session_start();
 <p class="tekst">Svaki prijavljeni korisnik ima mogućnost objaviti vlastiti projekt koji omogućuje drugima da ga financiraju.</p>
 <p class="tekst">Local Boost Vam pomaže u realizaciji raznovrsnih projekata i potiče Vaše ideje i napredak.</p>
       </div>
+      
+      
 <div class="container" id="projekti">
+    <h1 class="naslovi">Projekti</h1>
 <?php
 $izraz=$veza->prepare("select * from projekt");
 $izraz->execute();
