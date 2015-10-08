@@ -9,7 +9,8 @@ include 'head.php';
 
 <div class="container" id="mojiprojekti">
 <?php
-$izraz=$veza->prepare("select * from projekt");
+$korisnik = $_SESSION['autoriziran']->sifra;
+$izraz=$veza->prepare("select * from projekt where korisnik=$korisnik");
 $izraz->execute();
 $projekti=$izraz->fetchAll(PDO::FETCH_OBJ);
 if ($projekti==null) {
