@@ -28,7 +28,8 @@ foreach ($projekti as $projekt) {
 <div class="container">
 <a class='button' href="noviprojekt.php" style='width: 100%'>Dodaj novi projekt</a>
 </div>
-
+<br />
+<br />
 <?php include_once 'podnozje.php'; ?>   
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

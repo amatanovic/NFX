@@ -136,3 +136,32 @@ label{width:17%; font-weight: 300;}
 .bijelo{
     color:white;
 }
+
+#mojiprojekti{
+
+    color:red;
+    text-align: center;
+    font-size: 25px;
+    font-family: Century Gothic;
+}
+
+
+ 
+#promjena fieldset{font-size:1.3em;margin-left: 25%;font-weight: 200;}
+
+#promjena input{width:38%; -moz-border-radius:6px; /* Firefox */
+                    -webkit-border-radius: 6px; /* Safari, Chrome */
+                    -khtml-border-radius: 6px; /* KHTML */
+                    border-radius: 6px; /* CSS3 */}
+
+.podaci{
+
+    color:black;
+    font-size: 30px;
+}
+
+.crno{
+    color:black;
+    font-family: Century Gothic;
+    
+}

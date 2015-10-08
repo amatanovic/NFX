@@ -60,15 +60,16 @@ include "head.php";
     ?>
     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
       <fieldset>
-        <h4>Podaci u bazi</h4>
+        <h1 style="text-align:center" class="podaci">Podaci u bazi</h1>
+        <form action="#" id="promjena">
         <input type="hidden" name="sifra" value="<?php echo $_GET['sifra']?>"> <br />
-        <label for="naziv">Naziv</label><br />
+        <label for="naziv" class="crno">Naziv</label><br />
         <input type="text" id="naziv" name="naziv" value="<?php echo $entitet->naziv;?>" /><br />
-        <label for="naziv">Kratak Opis</label><br />
+        <label for="naziv" class="crno">Kratak Opis</label><br />
         <input type="text" id="kratakopis" name="kratakopis" value="<?php echo $entitet->kratakopis;?>" /><br />
-        <label for="naziv">Detaljan opis</label><br />
+        <label for="naziv" class="crno">Detaljan opis</label><br />
         <input type="text" id="detaljanopis" name="detaljanopis" value="<?php echo $entitet->detaljanopis;?>" /><br />
-        <label for="kategorije">Kategorija</label><br />
+        <label for="kategorije" class="crno">Kategorija</label><br />
         <select id='kategorija' name='kategorija'><br />
       <?php
           $izraz = $veza->prepare("select * from kategorija");
@@ -83,11 +84,11 @@ include "head.php";
         }
 echo "</select><br />";
 ?>
-        <label for="enddate">End date</label><br />
+        <label for="enddate" class="crno">End date</label><br />
         <input type="text" id="enddate" name="enddate" value="<?php echo $entitet->enddate;?>" /><br />
-        <label for="tag">Tag</label><br />
+        <label for="tag" class="crno">Tag</label><br />
         <input type="text" id="tag" name="tag" value="<?php echo $entitet->tag;?>" /><br />
-        <label for="avatar">Avatar</label><br />
+        <label for="avatar" class="crno">Avatar</label><br />
          <?php
           $izraz = $veza->prepare("select * from slike where avatar=1");
           $izraz->execute();
@@ -103,7 +104,7 @@ echo "</select><br />";
         }
 ?>
         <input type="file" name="slike" id="slike" accept="image/*" />
-        <label for="slike">Slike</label><br />
+        <label for="slike" class="crno">Slike</label><br />
          <?php
           $izraz = $veza->prepare("select * from slike where avatar != 1");
           $izraz->execute();
