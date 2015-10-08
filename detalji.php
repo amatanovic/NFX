@@ -1,6 +1,16 @@
 <?php 
-include 'konfiguracija.php'; 
 session_start();
+include 'konfiguracija.php'; 
+if(isset($_POST['komentiraj'])){
+$projekt = $_POST['sifra'];
+$komentar = $_POST['komentar'];
+$izraz = $veza->prepare("insert into komentari (vrijeme, korisnik, komentar, projekt) values (now(), :korisnik, '$komentar', $projekt)");
+$izraz->bindValue(':korisnik', $_POST['korisnik']);
+$izraz->execute();
+header("location: detalji.php?sifra=" . $projekt);
+}
+?>
+<?php
 include 'head.php';
 ?>
 
@@ -118,12 +128,12 @@ if(!isset($_SESSION['autoriziran'])){ ?>
 if(isset($_SESSION['autoriziran'])){
 $korisnik = $_SESSION['autoriziran']->sifra; ?>
 <div class="container">
-<form>
+<form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     <fieldset>
       <input type="hidden" name="sifra" value="<?php echo $_GET['sifra']?>" id="sifra"> <br />
       <input type="hidden" name="korisnik" value="<?php echo $korisnik?>" id="korisnik"> <br />
-      <label for="komentar">Komentar</label> <input type="komentar" id="komentar" /> <br />
-      <a id="komentiraj" href="#" class="button" style="width: 100%" type="submit">Komentiraj</a>
+      <label for="komentar">Komentar</label> <input type="komentar" id="komentar" name="komentar" /> <br />
+      <input type="submit" value="Komentiraj" name="komentiraj" />
     </fieldset>
   </form>
 </div> 
@@ -149,37 +159,7 @@ $izraz->bindValue(":sifra",$_GET['sifra']);
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script>
-    $('#autorizacija').modal('hide');
 
-    $('#autorizacijaModal').click(function () {
-        $('#autorizacija').modal('show');
-    });
-    $('#donacija').click(function(){
-      $('#porukaDonacija').html('Da biste mogli donirati, molimo Vas da se prijavite!');
-    });
-
-    $(function(){
-    $("#komentiraj").click(function(){
-      console.log("here");
-     $.ajax({
-        type: "POST",
-        url: "komentari.php",
-        data: "sifra=" + $("#sifra").val() + "&komentar=" + $("#komentar").val() + "&korisnik=" + $("#korisnik").val(),
-        success: function(msg){
-             podaci = $.parseJSON(msg);
-              $("#komentari").html("");
-              $.each(podaci,function(i,item){
-             // $("#komentari").append($("<p>" + item.vrijeme + " Korisnik " + item.ime + " " + item.prezime "</p><p>" + item.komentar + "</p>"));
-                console.log("here");
-        });
-      }
-    });
-    return false;
-    });
-  
-  
-    
-  });
   </script> 
   </body>
 </html>

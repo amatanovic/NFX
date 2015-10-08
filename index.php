@@ -9,8 +9,6 @@ include 'head.php';
     </div>
 
       <div class="naslovi" id="onama">
-<br />
-<br />
 <h1>O nama</h1>
           <br />
 <p class="tekst">Local Boost je stranica na kojoj možete financijski poduprijeti tuđe projekte, kao i drugi Vaše.</p>
@@ -25,9 +23,11 @@ include 'head.php';
   
         
 <div class="container" id="projekti">
-<br />
-<br />
     <h1 class="naslovi">Projekti</h1>
+    
+    <div class="row">
+
+<div class="col-lg-4 col-md-6 col-xs-12">
 <?php
 $izraz=$veza->prepare("select * from projekt");
 $izraz->execute();
@@ -40,18 +40,26 @@ foreach ($projekti as $projekt) {
   foreach ($slike as $slika) {
     if ($projekt->sifra == $slika->projekt) {
         if ($slika->avatar == 1) {
+          if (isset($_SESSION['autoriziran'])) {
       echo "<a href='detalji.php?sifra=" . $projekt->sifra . "'><img src='" . $slika->putanja . "' /></a>";
+      }
+      else {
+          echo "<img src='" . $slika->putanja . "' />";
+      }
       }
     }
   }
 }
 ?>
 </div>
-              
+
+        
+</div>
+    </div>    
+
   <div id="registracija">
-      <br />
-      <br />
-      <br />
+<br />
+      <h1 style="text-align:center">Registracija</h1>
       
    <?php
     if(!isset($_SESSION['autoriziran'])){ ?>
@@ -63,7 +71,7 @@ foreach ($projekti as $projekt) {
       <label for="lozinkaReg">Lozinka</label> <input type="password" id="lozinkaReg" /> <br />
       <label for="lozinkaReg2">Ponovite lozinku</label> <input type="password" id="lozinkaReg2" />  <br />
       <label for="ziroracun">Žiro račun</label> <input type="text" id="ziroracun" /> <br />
-      <a id="registriraj" href="#" class="button" style="width: 100%" type="submit">Registracija</a>
+      <a style="width:107px;text-align:center;right:0;" id="registriraj" href="#" class="btn btn-prvi center-block" style="width: 100%" type="submit">Registracija</a>
     </fieldset>
   </form>
   <p id="registracijaPoruka"></p>
@@ -136,7 +144,6 @@ foreach ($projekti as $projekt) {
         success: function(msg){
             if(msg=="true"){
               $("#registracijaPoruka").html("Uspješno ste se registrirali!");
-              $("#registriraj").html("");
             }
             else{
               $("#registracijaPoruka").html("Registracija nije uspjela.");

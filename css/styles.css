@@ -5,6 +5,7 @@ height: 100%;
 body{
     margin-top: 4%;
     margin-bottom: 10%;
+    font-family: Century Gothic;
 }
 
 .pocetnaslika{
@@ -16,6 +17,7 @@ nav{
     position: fixed;
     top: 0;
     background-color: grey;
+    font-weight: 300;
 }
 
 .navbar-default {
@@ -38,13 +40,14 @@ nav ul li:hover{
 
 .naslovi{
     text-align: center;
+    padding-top:8%;
 }
 
 #home,#onama,#projekti,#registracija {
-    height:100%
+    height:100%;
 }
 
-
+#registracija{padding-top:5%;}
 
 .tekst{
 text-align: center;
@@ -59,7 +62,31 @@ h1{
 	font-size: 60px;
 }
 
+<<<<<<< HEAD
 #myCarousel img{
     margin-left: auto;
     margin-right: auto;
 }
+=======
+#registracija fieldset{font-size:1.3em;margin-left: 25%;font-weight: 200;}
+
+#registracija input{width:38%; -moz-border-radius:6px; /* Firefox */
+                    -webkit-border-radius: 6px; /* Safari, Chrome */
+                    -khtml-border-radius: 6px; /* KHTML */
+                    border-radius: 6px; /* CSS3 */}
+
+label{width:17%; font-weight: 300;}
+
+
+.btn-prvi{
+    background-color: #4CAF50;
+    color: #fff;
+    border-color: #388E3C;
+}
+
+.btn-prvi:hover{
+    background-color: #388E3C;
+    border-color: #388E3C;
+    color: white;
+}
+>>>>>>> origin/master
