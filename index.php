@@ -40,10 +40,10 @@ foreach ($projekti as $projekt) {
     if ($projekt->sifra == $slika->projekt) {
         if ($slika->avatar == 1) {
           if (isset($_SESSION['autoriziran'])) {
-      echo "<div class='col-lg-4 col-md-6 col-xs-12 col-centered'><a href='detalji.php?sifra=" . $projekt->sifra . "'><img src='" . $slika->putanja . "' style='width:100%;height:350px;padding-bottom:15px' class='avatar-projekt' /></a><p class='naziv-projekt'>" . $projekt->naziv . "</p><p class='opis-projekt'>" . $projekt->kratakopis . "</p></div>";
+      echo "<div class='col-lg-4 col-md-6 col-xs-12 col-centered'><a href='detalji.php?sifra=" . $projekt->sifra . "'><img src='" . $slika->putanja . "' style='width:100%;height:350px;padding-bottom:15px' class='avatar-projekt' /></a><p class='naziv-projekt naziv-opis'>" . $projekt->naziv . "</p><p class='opis-projekt naziv-opis'>" . $projekt->kratakopis . "</p></div>";
       }
       else {
-          echo "<div class='col-lg-4 col-md-6 col-xs-12 col-centered'><img src='" . $slika->putanja . "' style='width:100%;height:350px;padding-bottom:15px' class='avatar-projekt' /><p class='naziv-projekt'>" . $projekt->naziv . "</p><p class='opis-projekt'>" . $projekt->kratakopis . "</p></div>";
+          echo "<div class='col-lg-4 col-md-6 col-xs-12 col-centered'><img src='" . $slika->putanja . "' style='width:100%;height:350px;padding-bottom:15px' class='avatar-projekt' /><p class='naziv-projekt naziv-opis'>" . $projekt->naziv . "</p><p class='opis-projekt naziv-opis'>" . $projekt->kratakopis . "</p></div>";
       }
       }
     }
@@ -55,7 +55,7 @@ foreach ($projekti as $projekt) {
         
 </div>
    
-<div class="containter">
+
     <div class="row">
     <div class="col-lg-12 col-md-12 col-xs-12">
   <div id="registracija">
@@ -81,7 +81,7 @@ foreach ($projekti as $projekt) {
 </div>
         </div>
         </div>
-    </div>
+
 
 
 

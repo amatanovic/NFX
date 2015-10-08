@@ -10,7 +10,6 @@ body{
 
 .pocetnaslika{
     width: 100%;
-    
 }
 
 nav{
@@ -37,20 +36,32 @@ nav ul li:hover{
 }
 
 
+#onama.naslovi{
+    padding-top:10%;
+}
 
 .naslovi{
     text-align: center;
-    padding-top:8%;
+    padding-top:5%;
 }
 
-#home,#onama,#projekti,#registracija {
+#home{margin-bottom:30px;}
+
+#home,#onama,#projekti {
+    height:48em;
+}
+
+
+#registracija {
     height:100%;
+    padding-bottom:2%;
 }
 
 #onama,#registracija{
     background-color: #848484;
     color: white;
 }
+
 
 
 #registracija{padding-top:5%;
@@ -77,10 +88,12 @@ h1{
 
 #registracija fieldset{font-size:1.3em;margin-left: 25%;font-weight: 200;}
 
-#registracija input{width:38%; -moz-border-radius:6px; /* Firefox */
+#registracija input, input#amount{width:38%; -moz-border-radius:6px; /* Firefox */
                     -webkit-border-radius: 6px; /* Safari, Chrome */
                     -khtml-border-radius: 6px; /* KHTML */
                     border-radius: 6px; /* CSS3 */}
+
+input#amount{margin-bottom: 15px;}
 
 label{width:17%; font-weight: 300;}
 
@@ -100,10 +113,14 @@ label{width:17%; font-weight: 300;}
 
 
 .naziv-projekt{
-    display:none;
+    display: none;
     height:100%;
     position:absolute;
     top: 0;
+    padding-left: 6px;
+    font-size: 1.5em;
+    padding-top:5px;
+    font-weight: bold;
 }
 
 .opis-projekt{
@@ -111,12 +128,20 @@ label{width:17%; font-weight: 300;}
     height: 100%;
     position:absolute;
     top: 2em;
+    padding-top:2px;
+    padding-left: 6px;
+    font-weight: bold;
+    padding-right: 6px;
 }
 
-.avatar-projekt:hover + .naziv-projekt{
-   display:block;
-    
+
+
+
+.avatar-projekt:hover + .naziv-opis{
+   display: block;
 }
+
+
 
 .podnozje{
 
@@ -165,3 +190,67 @@ label{width:17%; font-weight: 300;}
     font-family: Century Gothic;
     
 }
+
+.avatar-projekt:hover {opacity: 0.6;}
+
+h1.bijelo{margin-top:-25px;}
+
+#registracijaPoruka{
+    text-align:center;
+    color: white;
+    font-weight: 300;
+    text-shadow: 1px 1px 1px #000;
+}
+
+
+
+hr.fancy-line { 
+    border: 0; 
+    height: 1px;
+    position: relative;
+    margin: 0.5em 0; /* Keep other elements away from pseudo elements*/
+}
+hr.fancy-line:before {
+    bottom: -0.5em;
+    height: 1em;
+}
+hr.fancy-line:after {
+    content:'';
+    height: 0.5em;   /* half the height of :before */
+    bottom: 1px;        /* height of hr*/
+}
+
+hr.fancy-line:before, hr.fancy-line:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+}
+
+hr.fancy-line, hr.fancy-line:before {
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 75%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 75%, color-stop(0%,rgba(0,0,0,0.1)), color-stop(75%,rgba(0,0,0,0)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+}
+
+
+body, hr.fancy-line:after {
+    background: #f4f4f4;
+}
+
+
+.detalji-naziv, .detalji-kratakopis{text-align: center;}
+
+.detalji-naziv{font-weight: bold; font-size:3em;}
+
+.detalji-kratakopis{text-decoration: underline;}
+
+.jumbotron{
+    margin-left:auto;
+    margin-right: auto;
+    background-color: #848484;
+    text-align: center;
+}
+

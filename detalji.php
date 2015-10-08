@@ -14,12 +14,15 @@ header("location: detalji.php?sifra=" . $projekt);
 include 'head.php';
 ?>
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="height:400px">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
+    <li data-target="#myCarousel" data-slide-to="6"></li>
   </ol>
 
   <!-- Wrapper for slides -->
@@ -35,10 +38,10 @@ foreach ($projekt as $p) {
   $slike=$izraz->fetchALL(PDO::FETCH_OBJ);
   foreach($slike as $slika) {
     if ($p->sifra == $slika->projekt && $slika->avatar == 1) {
-        echo "<div class='item active'><img src='" . $slika->putanja . "' style='width:50%' /></div>";
+        echo "<div class='item active'><img src='" . $slika->putanja . "' style='width:50%;height:400px' /></div>";
     }
     if ($p->sifra == $slika->projekt && $slika->avatar != 1) {
-      echo "<div class='item'><img src='" . $slika->putanja . "' style='width:50%' /></div>";
+      echo "<div class='item'><img src='" . $slika->putanja . "' style='width:50%;height:400px' /></div>";
   }
 }
 }
@@ -66,16 +69,16 @@ $izraz->bindValue(":sifra",$_GET['sifra']);
 $izraz->execute();
 $projekt=$izraz->fetchALL(PDO::FETCH_OBJ);
 foreach ($projekt as $p) {
-  echo "<p>" . $p->naziv . "</p>
-  <p>" . $p->kratakopis . "</p>
-  <p>" . $p->detaljanopis . "</p>
-  <p>" . $p->tag ."</p>";
+  echo "<h2 class='detalji-naziv'>" . $p->naziv . "</h2>
+  <h3 class='detalji-kratakopis'>" . $p->kratakopis . "</h3>
+  <p class='detalji-detaljanopis'>" . $p->detaljanopis . "</p>
+  <p class='detalji-tag'>" . "<span style='font-weight:bold'>" . 'Ključne riječi:' . "</span>" . ' ' . $p->tag ."</p>";
   $izraz=$veza->prepare("select * from kategorija");
   $izraz->execute();
   $kategorije=$izraz->fetchALL(PDO::FETCH_OBJ);
   foreach($kategorije as $kategorija) {
     if ($p->kategorija == $kategorija->sifra) {
-        echo "<p>" . $kategorija->naziv . "</p>";
+        echo "<p  class='detalji-kategorija'>" . "<span style='font-weight:bold'>" . 'Kategorija:' . "</span>" . ' ' . $kategorija->naziv . "</p>";
     }
   }
   $izraz=$veza->prepare("select * from korisnik");
@@ -96,7 +99,8 @@ foreach ($projekt as $p) {
 </div>
 </div>
 <div class="container">
-<h4>Doniraj</h4>
+    <div class="jumbotron">
+<h2 style="font-size:3em;border-bottom: 2px solid grey;box-shadow: 2px 2px 0px #888888;">Doniraj</h2>
 <?php
 $paypal_url='https://www.sandbox.paypal.com/cgi-bin/webscr';
 ?>
@@ -107,7 +111,7 @@ $paypal_url='https://www.sandbox.paypal.com/cgi-bin/webscr';
     <input type="hidden" name="item_name" value="Local Boost">
     <input type="hidden" name="item_number" value="1">
     <input type="hidden" name="credits" value="510">
-    <input type="text" name="amount" placeholder="Unesite iznos željene uplate" onfocusout="plati()" id="amount">
+    <input style="width:300px;text-align:center;" type="text" name="amount" placeholder="Unesite iznos željene uplate" onfocusout="plati()" id="amount">
     <input type="hidden" name="userid" value="<?php echo $userId;?>">
     <input type="hidden" name="no_shipping" value="1">
     <input type="hidden" name="currency_code" value="USD">
@@ -120,6 +124,7 @@ $paypal_url='https://www.sandbox.paypal.com/cgi-bin/webscr';
     </form> 
     </div>
 </div>
+    </div>
 </div>
 <?php
 if(isset($_SESSION['autoriziran'])){
