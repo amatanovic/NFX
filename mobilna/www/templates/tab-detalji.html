@@ -1,25 +1,23 @@
 <ion-view view-title="Projekti">
-  <ion-content class="padding">
+<ion-content class="padding">
 
 <div class="card">
+<div class="item item-text-wrap">
+    <h2>{{zbroj}}</h2>
+  </div>
+</div>
+
+<div class="card" ng-repeat="item in transakcije">
   <div class="item item-divider">
-    <h2>Naziv projekta</h2>
+    <p>{{item.vrijeme}}</p>
   </div>
 
   <div class="item item-text-wrap">
-    Datum uplate
-  </div>
-
-   <div class="item item-text-wrap">
-    Iznos uplate
-  </div>
-
-  <div class="item item-divider">
-   Ukupan iznos uplata
+   <p> {{item.iznos}} $</p>
   </div>
 
 </div>
 
 
-  </ion-content>
+</ion-content>
 </ion-view>
