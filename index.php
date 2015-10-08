@@ -4,7 +4,7 @@ include 'head.php';
 ?>
 <div id="home">  
       
-      <img src="slike/milino-jezero.jpg" alt="početna slika" class="pocetnaslika">
+      <img src="slike/slikaslika.jpg" alt="početna slika" class="pocetnaslika">
 
     </div>
 
