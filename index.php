@@ -64,15 +64,15 @@ foreach ($projekti as $projekt) {
       
    <?php
     if(!isset($_SESSION['autoriziran'])){ ?>
-      <h1 style="text-align:center">Registracija</h1>
+      <h1 style="text-align:center" class="bijelo">Registracija</h1>
     <form action="#" id="registracija">
     <fieldset>
-      <label for="email">Email</label> <input type="email" id="emailReg" /> <br />
-      <label for="ime">Ime</label> <input type="text" id="ime" /> <br />
-      <label for="prezime">Prezime</label> <input type="text" id="prezime" /> <br />
-      <label for="lozinkaReg">Lozinka</label> <input type="password" id="lozinkaReg" /> <br />
-      <label for="lozinkaReg2">Ponovite lozinku</label> <input type="password" id="lozinkaReg2" />  <br />
-      <label for="ziroracun">Žiro račun</label> <input type="text" id="ziroracun" /> <br />
+      <label for="email" class="bijelo">Email</label> <input type="email" id="emailReg" /> <br />
+      <label for="ime" class="bijelo">Ime</label> <input type="text" id="ime" /> <br />
+      <label for="prezime" class="bijelo">Prezime</label> <input type="text" id="prezime" /> <br />
+      <label for="lozinkaReg" class="bijelo">Lozinka</label> <input type="password" id="lozinkaReg" /> <br />
+      <label for="lozinkaReg2" class="bijelo">Ponovite lozinku</label> <input type="password" id="lozinkaReg2" />  <br />
+      <label for="ziroracun" class="bijelo">Žiro račun</label> <input type="text" id="ziroracun" /> <br />
       <a style="width:107px;text-align:center;right:0;" id="registriraj" href="#" class="btn btn-prvi center-block" style="width: 100%" type="submit">Registracija</a>
     </fieldset>
   </form>
@@ -83,11 +83,9 @@ foreach ($projekti as $projekt) {
         </div>
     </div>
 
-<br />
-<p class="podnozje"><span class="glyphicon glyphicon-envelope"></span> localboost@gmail.com</p>
-<p class="podnozje"><span class="glyphicon glyphicon-earphone"></span> 031/785-632</p>
-<hr />
-<p class="kopi">&copy; NOT FOUND X </p>
+
+
+<?php include_once 'podnozje.php'; ?>
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
