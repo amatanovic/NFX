@@ -1,6 +1,6 @@
 /* Empty. Add your own CSS if you like */
 .bar-balanced{
-background-color: silver !important;	
+background-color: #848484 !important;	
 }
 
 .zuta{
@@ -15,9 +15,6 @@ background-color: #f2dede;
 color: #a94442;
 }
 
-.zelena{border-color: #d6e9c6;
-background-color: #dff0d8;
-color: #3c763d;;}
 
 .card{
 border-radius: 10px;
