@@ -27,13 +27,12 @@ include 'head.php';
     
     <div class="row">
 
-<div class="col-lg-4 col-md-6 col-xs-12">
+
 <?php
 $izraz=$veza->prepare("select * from projekt");
 $izraz->execute();
 $projekti=$izraz->fetchAll(PDO::FETCH_OBJ);
 foreach ($projekti as $projekt) {
-  echo "<p>" . $projekt->naziv . "</p><p>" . $projekt->kratakopis . "</p>"; 
   $izraz=$veza->prepare("select * from slike");
   $izraz->execute();
   $slike=$izraz->fetchAll(PDO::FETCH_OBJ);
@@ -41,7 +40,7 @@ foreach ($projekti as $projekt) {
     if ($projekt->sifra == $slika->projekt) {
         if ($slika->avatar == 1) {
           if (isset($_SESSION['autoriziran'])) {
-      echo "<a href='detalji.php?sifra=" . $projekt->sifra . "'><img src='" . $slika->putanja . "' /></a>";
+      echo "<div class='col-lg-4 col-md-6 col-xs-12 col-centered'><a href='detalji.php?sifra=" . $projekt->sifra . "'><img src='" . $slika->putanja . "' style='width:100%' /></a><p>" . $projekt->naziv . "</p><p>" . $projekt->kratakopis . "</p></div>";
       }
       else {
           echo "<img src='" . $slika->putanja . "' />";
@@ -55,14 +54,17 @@ foreach ($projekti as $projekt) {
 
         
 </div>
-    </div>    
-
+   
+<div class="containter">
+    <div class="row">
+    <div class="col-lg-12 col-md-12 col-xs-12">
   <div id="registracija">
 <br />
-      <h1 style="text-align:center">Registracija</h1>
+      
       
    <?php
     if(!isset($_SESSION['autoriziran'])){ ?>
+      <h1 style="text-align:center">Registracija</h1>
     <form action="#" id="registracija">
     <fieldset>
       <label for="email">Email</label> <input type="email" id="emailReg" /> <br />
@@ -77,6 +79,9 @@ foreach ($projekti as $projekt) {
   <p id="registracijaPoruka"></p>
   <?php } ?>
 </div>
+        </div>
+        </div>
+    </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
