@@ -95,3 +95,30 @@ label{width:17%; font-weight: 300;}
 
 >>>>>>> origin/master
 
+.naziv-projekt{
+    visibility: hidden;
+    height:100%;
+    position:absolute;
+    top: 0;
+}
+
+.opis-projekt{
+    display: none;
+    height: 100%;
+    position:absolute;
+    top: 2em;
+}
+
+.naziv-projekt:hover + .avatar-projekt{
+   display:block;
+    
+}
+
+
+.opis-projekt:hover + .avatar-projekt{
+    display:block;
+}
+
+
+
+
