@@ -45,7 +45,35 @@ if(!isset($_SESSION['autoriziran'])){ ?>
 }
 ?>
 <p id="porukaDonacija"></p>
-</div>   
+</div>
+<?php
+if(!isset($_SESSION['autoriziran'])){ ?>
+<div class="container">
+<form action="#">
+    <fieldset>
+      <input type="hidden" name="sifra" value="<?php echo $_GET['sifra']?>"> <br />
+      <label for="komentar">Komentar</label> <input type="komentar" id="komentar" /> <br />
+      <a id="komentiraj" href="#" class="button" style="width: 100%" type="submit">Komentiraj</a>
+    </fieldset>
+  </form>
+</div> 
+<div class="container" id="komentari">
+<?php 
+$izraz=$veza->prepare("select a.ime, a.prezime, b.* from korisnik a inner join komentari b on a.sifra=b.korisnik where projekt=:sifra group by vrijeme DESC;");
+$izraz->bindValue(":sifra",$_GET['sifra']);
+  $izraz->execute();
+  $komentari=$izraz->fetchALL(PDO::FETCH_OBJ);
+  if($komentari!=null){
+  foreach($komentari as $komentar) {
+        echo "<p>" . $komentar->vrijeme . " Korisnik " . $komentar->ime ." " . $komentar->prezime . "</p>
+        <p>" . $komentar->komentar . "</p>";
+  }
+}
+?>
+</div>
+<?php
+}
+?>  
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -59,6 +87,29 @@ if(!isset($_SESSION['autoriziran'])){ ?>
     $('#donacija').click(function(){
       $('#porukaDonacija').html('Da biste mogli donirati, molimo Vas da se prijavite!');
     });
+
+    $(function(){
+    $("#komentiraj").click(function(){
+     $.ajax({
+        type: "POST",
+        url: "komentari.php",
+        data: "sifra=" + $("#sifra").val() + "&komentar=" + $("#komentar").val(),
+        success: function(msg){
+              podaci = $.parseJSON(msg);
+              $("#komentari").html("");
+              $.each(podaci,function(i,item){
+               $("#komentari").append($("<tr><td>" + 
+              item.naziv +"</td>" + 
+              "<td><a href=\"detalji.php?sifra=" + item.sifra + "\">Detalji</a></td></tr>"));
+        });
+          
+        }
+      });
+        
+
+        return false;
+      });
+        });
   </script> 
   </body>
 </html>

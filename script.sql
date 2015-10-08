@@ -34,9 +34,19 @@ avatar boolean,
 putanja text
 )engine=innodb;
 
+create table komentari (
+sifra int not null primary key auto_increment,
+vrijeme datetime,
+korisnik int,
+komentar text,
+projekt int
+)engine=innodb;
+
 alter table projekt add foreign key (kategorija) references kategorija(sifra);
 alter table projekt add foreign key (korisnik) references korisnik(sifra);
 alter table slike add foreign key (projekt) references projekt(sifra);
+alter table komentari add foreign key (korisnik) references korisnik(sifra);
+alter table komentari add foreign key (projekt) references projekt(sifra);
 
 insert into korisnik (email, ime, prezime, lozinka, ziroracun) values ('antun.matanovic@gmail.com', 'Antun', 'Matanović', md5('lozinka'), 'HR541287512151');
 insert into kategorija (naziv) values ('Poljoprivreda');
@@ -46,3 +56,5 @@ insert into projekt (naziv, kratakopis, detaljanopis, kategorija, enddate, tag, 
 insert into slike (projekt, avatar, putanja) values (1, 1, 'slike/avatar.jpg');
 insert into slike (projekt, avatar, putanja) values (1, 0, 'slike/galerija1.jpg');
 insert into slike (projekt, avatar, putanja) values (1, 0, 'slike/galerija2.jpg');
+insert into komentari (vrijeme, korisnik, komentar, projekt) values ('2015-08-10 10:00:00', 1, 'Ovo je jedan predobar projekt', 1);
+insert into komentari (vrijeme, korisnik, komentar, projekt) values ('2015-08-10 10:05:00', 1, 'Donirat ću', 1);
