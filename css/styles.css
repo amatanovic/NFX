@@ -47,6 +47,12 @@ nav ul li:hover{
     height:100%;
 }
 
+#onama,#registracija{
+    background-color: #848484;
+    color: white;
+}
+
+
 #registracija{padding-top:5%;}
 
 .tekst{
@@ -62,12 +68,12 @@ h1{
 	font-size: 60px;
 }
 
-<<<<<<< HEAD
+
 #myCarousel img{
     margin-left: auto;
     margin-right: auto;
 }
-=======
+
 #registracija fieldset{font-size:1.3em;margin-left: 25%;font-weight: 200;}
 
 #registracija input{width:38%; -moz-border-radius:6px; /* Firefox */

@@ -34,17 +34,19 @@
             <li><a href="index.php#home">HOME</a></li>
             <li><a href="index.php#onama">O NAMA</a></li>
             <li><a href="index.php#projekti">PROJEKTI</a></li>
-            <?php if(isset($_SESSION['autoriziran'])){
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+                          <?php if(isset($_SESSION['autoriziran'])){
       ?>
       <li><a href="mojiprojekti.php"><li>MOJI PROJEKTI</li></a>
    <?php } ?>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
                      <?php
     if(isset($_SESSION['autoriziran'])){
       ?>
    <li><a href="logout.php"><li>ODJAVA</li></a>
    <?php } else {?>
+       
             <li><a href="index.php#registracija">REGISTRACIJA</a></li>
             <li><a href="#prijava" id="autorizacijaModal">PRIJAVA</a></li>
               <?php }?>
