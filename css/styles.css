@@ -201,7 +201,9 @@ label{width:17%; font-weight: 300;}
 
 .modal-title{
 
-    color:red;
+    font-family: Century Gothic;
+    font-size: 35px;
+    text-align: center;
 }
 .avatar-projekt:hover {opacity: 0.6;}
 
@@ -266,3 +268,13 @@ body, hr.fancy-line:after {
     text-align: center;
 }
 
+.pretrazi{
+    font-family: Century Gothic;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.kljucne{
+    text-align: center;
+}
