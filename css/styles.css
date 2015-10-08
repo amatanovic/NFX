@@ -199,6 +199,10 @@ label{width:17%; font-weight: 300;}
     
 }
 
+.modal-title{
+
+    color:red;
+}
 .avatar-projekt:hover {opacity: 0.6;}
 
 h1.bijelo{margin-top:-25px;}
