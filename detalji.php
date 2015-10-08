@@ -20,16 +20,30 @@ include 'head.php';
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="slike/avatar.jpg" alt="Chania">
-    </div>
-  </div>
-
+<?php
+$izraz=$veza->prepare("select * from projekt where sifra=:sifra");
+$izraz->bindValue(":sifra",$_GET['sifra']);
+$izraz->execute();
+$projekt=$izraz->fetchALL(PDO::FETCH_OBJ);
+foreach ($projekt as $p) {
+  $izraz=$veza->prepare("select * from slike");
+  $izraz->execute();
+  $slike=$izraz->fetchALL(PDO::FETCH_OBJ);
+  foreach($slike as $slika) {
+    if ($p->sifra == $slika->projekt && $slika->avatar == 1) {
+        echo "<div class='item active'><img src='" . $slika->putanja . "' style='width:50%' /></div>";
+    }
+    if ($p->sifra == $slika->projekt && $slika->avatar != 1) {
+      echo "<div class='item'><img src='" . $slika->putanja . "' style='width:50%' /></div>";
+  }
+}
+}
+  ?>
+ </div>
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -62,14 +76,6 @@ foreach ($projekt as $p) {
   foreach($kategorije as $kategorija) {
     if ($p->kategorija == $kategorija->sifra) {
         echo "<p>" . $kategorija->naziv . "</p>";
-    }
-  }
-  $izraz=$veza->prepare("select * from slike where avatar != 1");
-  $izraz->execute();
-  $slike=$izraz->fetchALL(PDO::FETCH_OBJ);
-  foreach($slike as $slika) {
-    if ($p->sifra == $slika->projekt) {
-        echo "<p><img src='" . $slika->putanja . "'/></p>";
     }
   }
   $izraz=$veza->prepare("select * from korisnik");
