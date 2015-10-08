@@ -62,18 +62,18 @@ insert into slike (projekt, avatar, putanja) values (1, 1, 'slike/avatar.jpg');
 insert into slike (projekt, avatar, putanja) values (1, 0, 'slike/galerija1.jpg');
 insert into slike (projekt, avatar, putanja) values (1, 0, 'slike/galerija2.jpg');
 
-insert into slike (projekt, avatar, putanja) values (1, 1, 'slike/avatarstaklenik.jpg');
-insert into slike (projekt, avatar, putanja) values (1, 0, 'slike/slikakisa.jpg');
-insert into slike (projekt, avatar, putanja) values (1, 0, 'slike/obiteljslika.jpg');
+insert into slike (projekt, avatar, putanja) values (2, 1, 'slike/avatarstaklenik.jpg');
+insert into slike (projekt, avatar, putanja) values (2, 0, 'slike/slikakisa.jpg');
+insert into slike (projekt, avatar, putanja) values (2, 0, 'slike/obiteljslika.jpg');
 
-insert into slike (projekt, avatar, putanja) values (2, 1, 'slike/avatarskola.jpg');
-insert into slike (projekt, avatar, putanja) values (2, 0, 'slike/skoladjeca.jpg');
-insert into slike (projekt, avatar, putanja) values (2, 0, 'slike/seloskola.jpg');
+insert into slike (projekt, avatar, putanja) values (3, 1, 'slike/avatarskola.jpg');
+insert into slike (projekt, avatar, putanja) values (3, 0, 'slike/skoladjeca.jpg');
+insert into slike (projekt, avatar, putanja) values (3, 0, 'slike/seloskola.jpg');
 
-insert into slike (projekt, avatar, putanja) values (3, 1, 'slike/strelicarstvo.jpg');
-insert into slike (projekt, avatar, putanja) values (3, 0, 'slike/dvoranaslika.jpg');
-insert into slike (projekt, avatar, putanja) values (3, 0, 'slike/strelicarka.jpg');
-insert into slike (projekt, avatar, putanja) values (3, 0, 'slike/strel.jpg');
+insert into slike (projekt, avatar, putanja) values (4, 1, 'slike/strelicarstvo.jpg');
+insert into slike (projekt, avatar, putanja) values (4, 0, 'slike/dvoranaslika.jpg');
+insert into slike (projekt, avatar, putanja) values (4, 0, 'slike/strelicarka.jpg');
+insert into slike (projekt, avatar, putanja) values (4, 0, 'slike/strel.jpg');
 
 insert into komentari (vrijeme, korisnik, komentar, projekt) values ('2015-08-10 10:00:00', 1, 'Ovo je jedan predobar projekt', 1);
 insert into komentari (vrijeme, korisnik, komentar, projekt) values ('2015-08-10 10:05:00', 1, 'Donirat ću', 1);

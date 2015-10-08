@@ -53,7 +53,8 @@ nav ul li:hover{
 }
 
 
-#registracija{padding-top:5%;}
+#registracija{padding-top:5%;
+color: black;}
 
 .tekst{
 text-align: center;
@@ -116,7 +117,18 @@ label{width:17%; font-weight: 300;}
     
 }
 
+.podnozje{
 
+   font-family: Century Gothic;
+   font-size: 15px;
+   text-align: center;
+
+}
+
+.kopi{
+    font-family: 'Abel', sans-serif;
+    text-align: center;
+}
 
 
 
