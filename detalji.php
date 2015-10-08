@@ -72,6 +72,16 @@ foreach ($projekt as $p) {
         echo "<p><img src='" . $slika->putanja . "'/></p>";
     }
   }
+  $izraz=$veza->prepare("select * from korisnik");
+  $izraz->execute();
+  $korisnici=$izraz->fetchALL(PDO::FETCH_OBJ);
+  foreach($korisnici as $korisnik) {
+    if ($p->korisnik == $korisnik->sifra) {
+        $paypal_id = $korisnik->email;
+        $userId = $korisnik->sifra;
+        $sifraProjekta = $p->sifra;
+    }
+  }
 }
 ?>
 
@@ -80,15 +90,30 @@ foreach ($projekt as $p) {
 </div>
 </div>
 <div class="container">
+<h4>Doniraj</h4>
 <?php
-if(!isset($_SESSION['autoriziran'])){ ?>
-  <a class='button' style='width: 100%' id="donacija">Doniraj</a>
-<?php } else { ?>
-  <a class='button' href="doniraj.php" style='width: 100%'>Doniraj</a>
-  <?php
-}
+$paypal_url='https://www.sandbox.paypal.com/cgi-bin/webscr';
 ?>
-<p id="porukaDonacija"></p>
+    <div class="btn">
+    <form action="<?php echo $paypal_url; ?>" method="post" name="frmPayPal1" id="paypalForma">
+    <input type="hidden" name="business" value="<?php echo $paypal_id; ?>">
+    <input type="hidden" name="cmd" value="_xclick">
+    <input type="hidden" name="item_name" value="Local Boost">
+    <input type="hidden" name="item_number" value="1">
+    <input type="hidden" name="credits" value="510">
+    <input type="text" name="amount" placeholder="Unesite iznos željene uplate" onfocusout="plati()" id="amount">
+    <input type="hidden" name="userid" value="<?php echo $userId;?>">
+    <input type="hidden" name="no_shipping" value="1">
+    <input type="hidden" name="currency_code" value="USD">
+    <input type="hidden" name="handling" value="0">
+    <div id="returnDiv">
+    <input type="hidden" name="return" value="http://localhost/nfx/success.php?sifra=<?php echo $sifraProjekta;?>&amount=" id="return">
+    </div>
+    <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+    <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form> 
+    </div>
+</div>
 </div>
 <?php
 if(isset($_SESSION['autoriziran'])){
@@ -127,7 +152,12 @@ $izraz->bindValue(":sifra",$_GET['sifra']);
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script>
-
-  </script> 
+    function plati() {
+      var value = $("#return").val().concat($("#amount").val());
+      $("#returnDiv").html("");
+      $("#returnDiv").append("<input type='hidden' name='return' value='" + value + "' id='return'>");
+    }
+    
+    </script> 
   </body>
 </html>

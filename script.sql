@@ -42,13 +42,21 @@ komentar text,
 projekt int
 )engine=innodb;
 
+create table transakcije (
+sifra int not null primary key auto_increment,
+projekt int,
+vrijeme datetime,
+iznos decimal(7,2)
+)engine=innodb;
+
 alter table projekt add foreign key (kategorija) references kategorija(sifra);
 alter table projekt add foreign key (korisnik) references korisnik(sifra);
 alter table slike add foreign key (projekt) references projekt(sifra);
 alter table komentari add foreign key (korisnik) references korisnik(sifra);
 alter table komentari add foreign key (projekt) references projekt(sifra);
+alter table transakcije add foreign key (projekt) references projekt(sifra);
 
-insert into korisnik (email, ime, prezime, lozinka, ziroracun) values ('antun.matanovic@gmail.com', 'Antun', 'Matanović', md5('lozinka'), 'HR541287512151');
+insert into korisnik (email, ime, prezime, lozinka, ziroracun) values ('antun.matanovic-facilitator@gmail.com', 'Antun', 'Matanović', md5('lozinka'), 'HR541287512151');
 insert into korisnik (email, ime, prezime, lozinka, ziroracun) values ('tenica@gmail.com', 'Tena', 'Milček', md5('tenatena'), 'HR541287512152');
 insert into korisnik (email, ime, prezime, lozinka, ziroracun) values ('ankica.mala@gmail.com', 'Ankica', 'Vrljić', md5('ankica'), 'HR541287512153');
 insert into kategorija (naziv) values ('Poljoprivreda');
