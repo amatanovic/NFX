@@ -66,11 +66,11 @@ insert into slike (projekt, avatar, putanja) values (1, 1, 'slike/avatarstakleni
 insert into slike (projekt, avatar, putanja) values (1, 0, 'slike/slikakisa.jpg');
 insert into slike (projekt, avatar, putanja) values (1, 0, 'slike/obiteljslika.jpg');
 
-insert into slike (projekt, avatar, putanja) values (2, 2, 'slike/avatarskola.jpg');
+insert into slike (projekt, avatar, putanja) values (2, 1, 'slike/avatarskola.jpg');
 insert into slike (projekt, avatar, putanja) values (2, 0, 'slike/skoladjeca.jpg');
 insert into slike (projekt, avatar, putanja) values (2, 0, 'slike/seloskola.jpg');
 
-insert into slike (projekt, avatar, putanja) values (3, 3, 'slike/strelicarstvo.jpg');
+insert into slike (projekt, avatar, putanja) values (3, 1, 'slike/strelicarstvo.jpg');
 insert into slike (projekt, avatar, putanja) values (3, 0, 'slike/dvoranaslika.jpg');
 insert into slike (projekt, avatar, putanja) values (3, 0, 'slike/strelicarka.jpg');
 insert into slike (projekt, avatar, putanja) values (3, 0, 'slike/strel.jpg');
