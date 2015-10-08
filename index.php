@@ -25,7 +25,7 @@ include 'head.php';
 <div class="container" id="projekti">
     <h1 class="naslovi">Projekti</h1>
     
-    <div class="row">
+    <div class="row" id="rowProjekti">
 
 
 <?php
@@ -97,6 +97,12 @@ foreach ($projekti as $projekt) {
 
     $('#autorizacijaModal').click(function () {
         $('#autorizacija').modal('show');
+    });
+
+    $('#search').modal('hide');
+
+    $('#searchNav').click(function () {
+        $('#search').modal('show');
     });
 
     $("#lozinka").keypress(function(e) {
@@ -183,7 +189,24 @@ foreach ($projekti as $projekt) {
         });
     }); 
 
-
+$('#searchStart').click(function(){
+    $('#rowProjekti').empty();
+    var uvjet = $("#tag").val();
+    var uvjet2 = $("#uvjetKategorije").val();
+    $.ajax({
+      type: "POST", 
+      url: "search.php",
+      dataType: "html",
+      data: "uvjet=" + uvjet + "&uvjet2=" + uvjet2,
+      success: function(msg){
+        podaci=$.parseJSON(msg);
+        console.log(podaci);
+        $.each(podaci, function(i, item){
+          $("#rowProjekti").append($("<div class='col-lg-4 col-md-6 col-xs-12 col-centered'><img src='" + item.putanja + "' style='width:100%;height:350px;padding-bottom:15px' class='avatar-projekt' /><p class='naziv-projekt'>" + item.naziv + "</p><p class='opis-projekt'>" + item.kratakopis + "</p></div>"));
+        });
+      }
+    });
+  });
   </script> 
   </body>
 </html>
