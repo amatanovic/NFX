@@ -47,11 +47,13 @@ if(!isset($_SESSION['autoriziran'])){ ?>
 <p id="porukaDonacija"></p>
 </div>
 <?php
-if(!isset($_SESSION['autoriziran'])){ ?>
+if(isset($_SESSION['autoriziran'])){
+$korisnik = $_SESSION['autoriziran']->sifra; ?>
 <div class="container">
-<form action="#">
+<form>
     <fieldset>
-      <input type="hidden" name="sifra" value="<?php echo $_GET['sifra']?>"> <br />
+      <input type="hidden" name="sifra" value="<?php echo $_GET['sifra']?>" id="sifra"> <br />
+      <input type="hidden" name="korisnik" value="<?php echo $korisnik?>" id="korisnik"> <br />
       <label for="komentar">Komentar</label> <input type="komentar" id="komentar" /> <br />
       <a id="komentiraj" href="#" class="button" style="width: 100%" type="submit">Komentiraj</a>
     </fieldset>
@@ -90,26 +92,26 @@ $izraz->bindValue(":sifra",$_GET['sifra']);
 
     $(function(){
     $("#komentiraj").click(function(){
+      console.log("here");
      $.ajax({
         type: "POST",
         url: "komentari.php",
-        data: "sifra=" + $("#sifra").val() + "&komentar=" + $("#komentar").val(),
+        data: "sifra=" + $("#sifra").val() + "&komentar=" + $("#komentar").val() + "&korisnik=" + $("#korisnik").val(),
         success: function(msg){
-              podaci = $.parseJSON(msg);
+             podaci = $.parseJSON(msg);
               $("#komentari").html("");
               $.each(podaci,function(i,item){
-               $("#komentari").append($("<tr><td>" + 
-              item.naziv +"</td>" + 
-              "<td><a href=\"detalji.php?sifra=" + item.sifra + "\">Detalji</a></td></tr>"));
+             // $("#komentari").append($("<p>" + item.vrijeme + " Korisnik " + item.ime + " " + item.prezime "</p><p>" + item.komentar + "</p>"));
+                console.log("here");
         });
-          
-        }
-      });
-        
-
-        return false;
-      });
-        });
+      }
+    });
+    return false;
+    });
+  
+  
+    
+  });
   </script> 
   </body>
 </html>
