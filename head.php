@@ -54,6 +54,7 @@
       </div>
     </nav>
       
+    <?php include 'modal-prijava.php'; ?>   
 
     <div id="home">  
       

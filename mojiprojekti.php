@@ -2,7 +2,7 @@
 include 'konfiguracija.php'; 
 session_start();
 if(!isset($_SESSION['autoriziran'])){
-  header("location: ../odjava.php");  
+  header("location: logout.php");  
 }
 include 'head.php';
 ?>

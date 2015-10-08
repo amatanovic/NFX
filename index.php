@@ -30,16 +30,14 @@ foreach ($projekti as $projekt) {
   foreach ($slike as $slika) {
     if ($projekt->sifra == $slika->projekt) {
         if ($slika->avatar == 1) {
-      echo "<img src='" . $slika->putanja . "' />";
+      echo "<a href='detalji.php?sifra=" . $projekt->sifra . "'><img src='" . $slika->putanja . "' /></a>";
       }
     }
   }
 }
 ?>
 </div>
-        
-<?php include 'modal-prijava.php'; ?>   
-      
+              
   <div id="registracija">
    <?php
     if(!isset($_SESSION['autoriziran'])){ ?>
