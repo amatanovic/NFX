@@ -134,7 +134,6 @@ foreach ($projekti as $projekt) {
         success: function(msg){
             if(msg=="true"){
               $("#registracijaPoruka").html("Uspješno ste se registrirali!");
-              $("#registriraj").html("");
             }
             else{
               $("#registracijaPoruka").html("Registracija nije uspjela.");
