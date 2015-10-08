@@ -11,8 +11,9 @@
 		<form action="#" id="login">
             <div class="modal-body">	
                     <fieldset>
-      <label for="email">Email</label> <input type="email" id="email" placeholder="Unesite e-mail" /> 
-      <label for="lozinka">Lozinka</label> <input type="password" id="lozinka" placeholder="Unesite lozinku" /> 
+    <div>  <label for="email">Email</label> <input type="email" id="email" placeholder="Unesite e-mail" /> </div>
+                        
+   <div>   <label for="lozinka">Lozinka</label> <input type="password" id="lozinka" placeholder="Unesite lozinku" /> </div>
                     </fieldset>   
                   <p id="poruka"></p>
 

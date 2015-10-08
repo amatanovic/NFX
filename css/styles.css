@@ -1,3 +1,7 @@
+html,body{
+height: 100%;
+}
+
 body{
     margin-top: 4%;
     margin-bottom: 10%;
@@ -35,14 +39,15 @@ nav ul li:hover{
     padding-bottom: 15px;
 }
 
-body {
-
-background-color: white;
+.naslovi{
+    text-align: center;
 }
 
-.naslovi {
-text-align: center;
+#home,#onama,#projekti,#registracija {
+    height:100%
 }
+
+
 
 .tekst{
 text-align: center;

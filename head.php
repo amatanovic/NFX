@@ -45,8 +45,8 @@
       ?>
    <li><a href="logout.php"><li>ODJAVA</li></a>
    <?php } else {?>
-            <li><a href="#prijava" id="autorizacijaModal">PRIJAVA</a></li>
             <li><a href="index.php#registracija">REGISTRACIJA</a></li>
+            <li><a href="#prijava" id="autorizacijaModal">PRIJAVA</a></li>
               <?php }?>
             <li><span class="glyphicon glyphicon-search"></span></li>
           </ul>
