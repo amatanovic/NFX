@@ -56,8 +56,4 @@
       
     <?php include 'modal-prijava.php'; ?>   
 
-    <div id="home">  
-      
-      <img src="slike/milino-jezero.jpg" alt="početna slika" class="pocetnaslika">
-
-    </div>
+    

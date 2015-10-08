@@ -2,6 +2,11 @@
 session_start();  
 include 'head.php';  
 ?>
+<div id="home">  
+      
+      <img src="slike/milino-jezero.jpg" alt="početna slika" class="pocetnaslika">
+
+    </div>
 
       <div class="naslovi" id="onama">
 <br />

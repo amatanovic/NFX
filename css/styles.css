@@ -59,3 +59,7 @@ h1{
 	font-size: 60px;
 }
 
+#myCarousel img{
+    margin-left: auto;
+    margin-right: auto;
+}
