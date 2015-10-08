@@ -91,37 +91,7 @@ $izraz->bindValue(":sifra",$_GET['sifra']);
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script>
-    $('#autorizacija').modal('hide');
 
-    $('#autorizacijaModal').click(function () {
-        $('#autorizacija').modal('show');
-    });
-    $('#donacija').click(function(){
-      $('#porukaDonacija').html('Da biste mogli donirati, molimo Vas da se prijavite!');
-    });
-
-   /* $(function(){
-    $("#komentiraj").click(function(){
-      console.log("here");
-     $.ajax({
-        type: "POST",
-        url: "komentari.php",
-        data: "sifra=" + $("#sifra").val() + "&komentar=" + $("#komentar").val() + "&korisnik=" + $("#korisnik").val(),
-        success: function(msg){
-             podaci = $.parseJSON(msg);
-              $("#komentari").html("");
-              $.each(podaci,function(i,item){
-             // $("#komentari").append($("<p>" + item.vrijeme + " Korisnik " + item.ime + " " + item.prezime "</p><p>" + item.komentar + "</p>"));
-                console.log("here");
-        });
-      }
-    });
-    return false;
-    });
-  
-  
-    
-  });*/
   </script> 
   </body>
 </html>

@@ -35,7 +35,12 @@ foreach ($projekti as $projekt) {
   foreach ($slike as $slika) {
     if ($projekt->sifra == $slika->projekt) {
         if ($slika->avatar == 1) {
+          if (isset($_SESSION['autoriziran'])) {
       echo "<a href='detalji.php?sifra=" . $projekt->sifra . "'><img src='" . $slika->putanja . "' /></a>";
+      }
+      else {
+          echo "<img src='" . $slika->putanja . "' />";
+      }
       }
     }
   }
