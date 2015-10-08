@@ -89,14 +89,10 @@ label{width:17%; font-weight: 300;}
     border-color: #388E3C;
     color: white;
 }
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
 
->>>>>>> origin/master
 
 .naziv-projekt{
-    visibility: hidden;
+    display:none;
     height:100%;
     position:absolute;
     top: 0;
@@ -109,15 +105,11 @@ label{width:17%; font-weight: 300;}
     top: 2em;
 }
 
-.naziv-projekt:hover + .avatar-projekt{
+.avatar-projekt:hover + .naziv-projekt{
    display:block;
     
 }
 
-
-.opis-projekt:hover + .avatar-projekt{
-    display:block;
-}
 
 
 
