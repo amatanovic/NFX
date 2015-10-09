@@ -1,6 +1,5 @@
 html,body{
 height: 100%;
-background-color: white;
 }
 
 body{
@@ -197,14 +196,7 @@ label{width:17%; font-weight: 300;}
 .crno{
     color:black;
     font-family: Century Gothic;
-}
-
-label.crno{
-    font-size:1.5em;
-}
-
-.forma-izmjena{
-    margin-left: 10%;
+    
 }
 
 .modal-title{

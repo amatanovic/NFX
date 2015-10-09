@@ -59,7 +59,7 @@ include "head.php";
     
     ?>
     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
-      <fieldset class="forma-izmjena">
+      <fieldset>
         <h1 style="text-align:center" class="podaci">Podaci u bazi</h1>
         <form action="#" id="promjena">
         <input type="hidden" name="sifra" value="<?php echo $_GET['sifra']?>"> <br />
@@ -95,7 +95,7 @@ echo "</select><br />";
           $entitet1=$izraz->fetchALL(PDO::FETCH_OBJ);
           foreach($entitet1 as $en){
           if ($entitet->sifra == $en->projekt) {
-            echo "<img style='width:30%;padding-top:2%;padding-bottom:2%' src='" . $en->putanja . "' />";
+            echo "<img src='" . $en->putanja . "' />";
         }
         else if ($en->putanja==null) {
           echo "Vaš projekt trenutno nema avatar";
@@ -111,19 +111,15 @@ echo "</select><br />";
           $entitet1=$izraz->fetchALL(PDO::FETCH_OBJ);
           foreach($entitet1 as $en){
           if ($entitet->sifra == $en->projekt) {
-            echo "<img style='width:30%;padding-top:2%;padding-bottom:2%' src='" . $en->putanja . "' /> <br />";
+            echo "<img src='" . $en->putanja . "' />";
         }
         }
 ?>
-            
-            
         <input type="file" name="slike[]" multiple="multiple" id="slike" accept="image/*" />
         <p>
-            <div style="text-align:right">
-        <a style="margin-bottom:0;padding:6px 12px" href="mojiprojekti.php" class="alert button btn btn-default">Natrag</a>
-        <input type="submit" class="button btn btn-default" value="Promjeni" name="promjeni" />
-        <input type="submit" value="Obriši" name="obrisi" class="btn btn-danger" />
-            </div>
+        <a href="mojiprojekti.php" class="alert button">Natrag</a>
+        <input type="submit" class="button" value="Promjeni" name="promjeni" />
+        <input type="submit" value="Obriši" name="obrisi" />
         </p>
         </div>
         </div>
