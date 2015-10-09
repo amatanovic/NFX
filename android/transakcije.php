@@ -7,11 +7,7 @@ $veza->exec("set names utf8");
 $postdata = file_get_contents("php://input");
     $request = json_decode($postdata);
     @$sifra = $request->sifra;
-$izraz=$veza->prepare("select *, SUM(iznos) as zbroj from transakcije where projekt=$sifra");
+$izraz=$veza->prepare("select * from transakcije where projekt=$sifra ORDER BY vrijeme DESC");
 $izraz->execute();
 $transakcije=$izraz->fetchALL(PDO::FETCH_OBJ);
-$transakcije->zbroj = 0;
-foreach ($transakcije as $transakcija) {
-	$transakcije->zbroj+=$transakcija->iznos;
-}
 echo json_encode($transakcije);

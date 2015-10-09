@@ -8,7 +8,8 @@ email	text not null,
 ime 	varchar(250),
 prezime varchar(250),
 lozinka varchar(250),
-ziroracun varchar(250)
+ziroracun varchar(250),
+device varchar(500) default 'nepoznato'
 )engine=innodb;
 
 create table kategorija (
