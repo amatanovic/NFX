@@ -103,7 +103,7 @@ echo "</select><br />";
         
         }
 ?>
-        <input type="file" name="slike" id="slike" accept="image/*" />
+        <input type="file" name="avatar" id="slike" accept="image/*" />
         <label for="slike" class="crno">Slike</label><br />
          <?php
           $izraz = $veza->prepare("select * from slike where avatar != 1");
