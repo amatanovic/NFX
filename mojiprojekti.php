@@ -26,7 +26,7 @@ foreach ($projekti as $projekt) {
 
 </div>
 <div class="container">
-<a class='button' href="noviprojekt.php?sifra=<?php echo $korisnik; ?>" style='width: 100%'>Dodaj novi projekt</a>
+<a class='button btn btn-default' href="noviprojekt.php?sifra=<?php echo $korisnik; ?>" style='width:20%;text-align:center;margin-top:4%;'>Dodaj novi projekt</a>
 </div>
 <br />
 <br />
