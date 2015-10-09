@@ -286,5 +286,9 @@ body, hr.fancy-line:after {
 
 .kljucne{
     text-align: center;
+}
 
-   
+#naziv, #kratakopis, #detaljanopis, #tag, #kategorija, #enddate{width:50%; -moz-border-radius:6px; /* Firefox */
+                    -webkit-border-radius: 6px; /* Safari, Chrome */
+                    -khtml-border-radius: 6px; /* KHTML */
+                    border-radius: 6px; /* CSS3 */}
