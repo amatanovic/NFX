@@ -24,31 +24,17 @@ include 'head.php';
     <div class="naslovi" id="opg">
       <div class="container">
 <h1 class="opg-naslov">OPG-ovi</h1>
-   <div class="col-lg-4 col-md-6 col-xs-12 col-centered">
+  
    <?php
-$izraz=$veza->prepare("select * from projekt");
+$izraz=$veza->prepare("select * from opg");
 $izraz->execute();
-$projekti=$izraz->fetchAll(PDO::FETCH_OBJ);
-foreach ($projekti as $projekt) {
-  $izraz=$veza->prepare("select * from slike");
-  $izraz->execute();
-  $slike=$izraz->fetchAll(PDO::FETCH_OBJ);
-  foreach ($slike as $slika) {
-    if ($projekt->sifra == $slika->projekt) {
-        if ($slika->avatar == 1) {
-          if (isset($_SESSION['autoriziran'])) {
-      echo "<div class='col-lg-4 col-md-6 col-xs-12 col-centered'><a href='detalji.php?sifra=" . $projekt->sifra . "'><img src='" . $slika->putanja . "' style='width:100%;height:350px;padding-bottom:15px' class='avatar-projekt' /></a><p class='naziv-projekt naziv-opis'>" . $projekt->naziv . "</p><p class='opis-projekt naziv-opis'>" . $projekt->kratakopis . "</p></div>";
-      }
-      else {
-          echo "<div class='col-lg-4 col-md-6 col-xs-12 col-centered'><img src='" . $slika->putanja . "' style='width:100%;height:350px;padding-bottom:15px' class='avatar-projekt' /><p class='naziv-projekt naziv-opis'>" . $projekt->naziv . "</p><p class='opis-projekt naziv-opis'>" . $projekt->kratakopis . "</p></div>";
-      }
-      }
-    }
-  }
+$opgi=$izraz->fetchAll(PDO::FETCH_OBJ);
+foreach ($opgi as $opg) {
+ echo " <div class='col-lg-4 col-md-6 col-xs-12 col-centered'><p>" . $opg->naziv . "</p><p>" . $opg->kratakopis ."</p><img src='" . $opg->slike . "' alt='avatar'
+  class='opgavatar img-circle'></div>";
 }
 ?>     
-          <img src="slike/jabuke.jpg" alt="avatar" class="opgavatar img-circle">
-      </div>
+      
           
           
           </div> 
