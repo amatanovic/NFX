@@ -66,12 +66,15 @@ if ($pracenje != null) {
   echo $cijena . " (Vaša cijena umanjena je za 5% jer pratite ovaj OPG.)";
  }
  else {
-  echo $proizvod->cijena;
+  $cijena = $proizvod->cijena;
+  echo $cijena;
  }
  ?>
 <br />
-Kategorija: 
+ 
 <?php 
+/*
+echo "Kategorija:";
 $izraz1=$veza->prepare("select * from kategorija");
 $izraz1->execute();
 $kategorije=$izraz1->fetchALL(PDO::FETCH_OBJ);
@@ -79,29 +82,31 @@ foreach ($kategorije as $kategorija) {
   if ($kategorija->sifra == $proizvod->kategorija) { 
     echo $kategorija->naziv;
  }
-}
+}*/
 ?>
 <br />
 <img src="<?php echo $proizvod->slika ?>" style="width:25%" />
 </p>
 <?php
+if ($opg->paypal != null) {
 $paypal_url='https://www.sandbox.paypal.com/cgi-bin/webscr';
 ?>
     <div class="btn">
     <form action="<?php echo $paypal_url; ?>" method="post" name="frmPayPal1" id="paypalForma">
-    <input type="hidden" name="business" value="<?php echo $paypal_id; ?>">
+    <input type="hidden" name="business" value="<?php echo $opg->paypal; ?>">
     <input type="hidden" name="cmd" value="_xclick">
-    <input type="hidden" name="item_name" value="Local Boost">
-    <input type="hidden" name="item_number" value="1">
+    <input type="hidden" name="item_name" value="<?php echo $opg->naziv; ?>">
+    <input type="hidden" name="item_number">
     <input type="hidden" name="credits" value="510">
-    <input style="width:300px;text-align:center;" type="text" name="amount" onfocusout="plati()" id="amount">
-    <input type="hidden" name="userid" value="<?php echo $userId;?>">
+    <input type="hidden" type="text" name="amount" value="<?php echo $cijena; ?>" id="amount">
+    <input type="hidden" name="userid" value="<?php echo $sifraKorisnika;?>">
     <input type="hidden" name="no_shipping" value="1">
+     <div id="itemDiv">
+    <input type="number" name="quantity" onfocusout="kolicina()" id="itemNumber">
+    </div>
     <input type="hidden" name="currency_code" value="USD">
     <input type="hidden" name="handling" value="0">
-    <div id="returnDiv">
-    <input type="hidden" name="return" value="http://localhost/nfx/success.php?sifra=<?php echo $sifraProjekta;?>&amount=" id="return">
-    </div>
+    <input type="hidden" name="return" value="http://localhost/nfx/success.php" id="return">
     <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
     <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
     </form> 
@@ -109,6 +114,7 @@ $paypal_url='https://www.sandbox.paypal.com/cgi-bin/webscr';
 
 
 <?php
+}
 }
 ?>
 
@@ -155,6 +161,11 @@ $izraz=$veza->prepare("select a.ime, a.prezime, b.* from korisnik a inner join k
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script>
+    function kolicina() {
+      var value = $("#itemNumber").val();
+      $("#itemDiv").html("");
+      $("#itemDiv").append("<input name='quantity' value='" + value + "' id='itemNumber'>");
+    }
       $('#autorizacija').modal('hide');
 
     $('#autorizacijaModal').click(function () {
