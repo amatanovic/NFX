@@ -3,7 +3,7 @@
 body{
     margin-bottom: 4em;
     font-family: 'Roboto Condensed', sans-serif;
-    color: #806d53;
+    color: #DCEDC8;
 }
 
 nav{
@@ -92,12 +92,14 @@ div.navbar-collapse{
 
 #opg{
     padding-top: 2em;
-    background-color: rgba(255, 222, 173,1);
+    background-color: #795548;
+
 }
 
 
 .naslovi{
     text-align: center;
+
 }
 
 
@@ -281,10 +283,14 @@ text-align: left;
     text-align: center;
 }
 
-.onama{
+#onama{
     font-size: 17px;
+
+
+
 }
 
 h1{
     font-size: 50px;
 }
+

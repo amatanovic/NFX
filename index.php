@@ -10,7 +10,7 @@ include 'head.php';
 
 
 
-    <div class="container">
+    
       <div class="naslovi" id="onama">
 <h1>O nama</h1>
           <br />
@@ -25,7 +25,7 @@ include 'head.php';
   <p class="onama">Putem mobilne aplikacije korsnik ima mogućnost primanja obavijesti od OPG-a kojeg prati o određenim akcijama ili novostima.</p>
   <p class="onama">Cilj nam je spojiti OPG-ove s korisnicima te potaknuti zdrav način prehrane kod ljudi, odnosno doprinjeti njihovom zdravom životu.</p>
           
-      </div>
+      
       </div>
       
 
