@@ -18,6 +18,7 @@ $izraz=$veza->prepare("select * from opg where sifra=:sifra");
 $izraz->bindValue(":sifra",$_GET['sifra']);
 $izraz->execute();
 $opg=$izraz->fetch(PDO::FETCH_OBJ);
+$opgID = $opg->sifra;
 ?>
 
 <div class="row">
@@ -26,12 +27,29 @@ $opg=$izraz->fetch(PDO::FETCH_OBJ);
     </div>
 </div>
 <h1 style="text-align:center"><?php echo $opg->naziv; ?></h1>
+ <p>Trenutno prati korisnika: 
+<?php 
+  $izraz=$veza->prepare("select count(korisnik) as follow from pracenje where opg=$opgID;");
+  $izraz->execute();
+  $follow=$izraz->fetch(PDO::FETCH_OBJ);
+  echo $follow->follow;
+   ?>
+ </p>
 <p><?php echo $opg->kratakopis; ?></p>
+<p>
+  <?php 
+  $korisnik = $opg->korisnik;
+  $izraz=$veza->prepare("select a.ulica, a.mjesto, b.* from korisnik a inner join opg b on a.sifra=b.korisnik where b.korisnik=$korisnik");
+  $izraz->execute();
+  $adresa=$izraz->fetch(PDO::FETCH_OBJ);
+  echo $adresa->ulica . ", " . $adresa->mjesto;
+   ?>
+</p>
+
 </div>
 
 <div class="container">
 <?php
-$opgID = $opg->sifra;
 $izraz=$veza->prepare("select * from proizvod where opg=$opgID");
 $izraz->execute();
 $proizvodi=$izraz->fetchALL(PDO::FETCH_OBJ);
@@ -99,7 +117,32 @@ $izraz=$veza->prepare("select a.ime, a.prezime, b.* from korisnik a inner join k
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script>
+      $('#autorizacija').modal('hide');
 
+    $('#autorizacijaModal').click(function () {
+        $('#autorizacija').modal('show');
+    });
+    $(function(){
+      $("#prijavi").click(function(){
+      $("#prijaviPoruka").html("");
+     $.ajax({
+        type: "POST",
+        url: "prijava.php",
+        data: "email=" + $("#emailPrijava").val() + "&password=" + $("#passwordPrijava").val(),
+        success: function(msg){
+            if(msg=="true"){
+              window.location="index.php";
+            }
+            else{
+              $("#poruka").html("Neispravno uneseno korisničko ime i lozinka.<br /> Molimo unesite ponovno.");
+            }
+        }
+      });
+        
+
+        return false;
+      });
+        });
     </script>
   </body>
 </html>

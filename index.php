@@ -79,7 +79,8 @@ foreach ($opgi as $opg) {
       
 
 <?php include 'prijava-modal.php'; ?>
-  
+<?php include 'search-modal.php'; ?>
+
       
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -91,6 +92,12 @@ foreach ($opgi as $opg) {
 
     $('#autorizacijaModal').click(function () {
         $('#autorizacija').modal('show');
+    });
+
+     $('#trazenje').modal('hide');
+
+    $('#trazenjeNav').click(function () {
+        $('#trazenje').modal('show');
     });
       $(function(){
       $("#registriraj").click(function(){
