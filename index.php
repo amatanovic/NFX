@@ -31,7 +31,7 @@ $izraz->execute();
 
 $opgi=$izraz->fetchAll(PDO::FETCH_OBJ);
 foreach ($opgi as $opg) {
- echo " <div class='col-lg-4 col-md-4 col-sm-6 col-xs-12 col-centered'><p class='naziv-opg'>" . $opg->naziv . "</p><img src='" . $opg->avatar . "' alt='avatar'  class='opgavatar img-circle'><p class='kratakopis-opg'>" . $opg->kratakopis ."</p></div>";
+ echo " <div class='col-lg-4 col-md-4 col-sm-6 col-xs-12 col-centered'><p class='naziv-opg'>" . $opg->naziv . "</p><a href='detalji.php?sifra=" . $opg->sifra . "'><img src='" . $opg->avatar . "' alt='avatar'  class='opgavatar img-circle'></a><p class='kratakopis-opg'>" . $opg->kratakopis ."</p></div>";
 
 }
 ?>     
