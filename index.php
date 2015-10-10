@@ -45,7 +45,7 @@ include 'head.php';
       
 <h1 class="opg-naslov">Registracija</h1>      
       
-    <fieldset>
+    <fieldset class="forma-registracija">
       <label for="ime">Ime</label> <input type="text" id="ime" /> <br />
       <label for="prezime">Prezime</label> <input type="text" id="prezime" /> <br />
       <label for="email">Email</label> <input type="email" id="emailReg" /> <br />
