@@ -57,6 +57,7 @@ foreach ($proizvodi as $proizvod) { ?>
 <p>Proizvod: <?php echo $proizvod->naziv; ?> <br /> 
 Cijena: 
 <?php 
+if (isset($_SESSION['autoriziran'])) {
 $sifraKorisnika = $_SESSION['autoriziran']->sifra;
 $izraz=$veza->prepare("select * from pracenje where opg=$opgID and korisnik=$sifraKorisnika");
 $izraz->execute();
@@ -64,6 +65,7 @@ $pracenje=$izraz->fetch(PDO::FETCH_OBJ);
 if ($pracenje != null) {
   $cijena = round($proizvod->cijena - ($proizvod->cijena * 0.05), 2);
   echo $cijena . " (Vaša cijena umanjena je za 5% jer pratite ovaj OPG.)";
+ }
  }
  else {
   $cijena = $proizvod->cijena;
@@ -88,7 +90,7 @@ foreach ($kategorije as $kategorija) {
 <img src="<?php echo $proizvod->slika ?>" style="width:25%" />
 </p>
 <?php
-if ($opg->paypal != null) {
+if ($opg->paypal != null && isset($_SESSION['autoriziran'])) {
 $paypal_url='https://www.sandbox.paypal.com/cgi-bin/webscr';
 ?>
     <div class="btn">
