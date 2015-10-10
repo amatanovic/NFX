@@ -1,6 +1,6 @@
 <?php
 $server="localhost";
-$baza="opg";
+$baza="zdravZivot";
 $korisnik="root";
 $lozinka="admin";
 $putanja="/nfx/";

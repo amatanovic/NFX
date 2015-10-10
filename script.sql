@@ -111,10 +111,10 @@ insert into komentar (komentar, korisnik, opg, vrijeme) values ('Vino mi je zais
 insert into komentar (komentar, korisnik, opg, vrijeme) values ('Buče i tikve obitelji Matanović prekrasne su. Djeca ih posebice vole, a zanimljive su i za vrijeme Noći vještica.', 3 , 1 , '2015-05-28 12:55');
 insert into komentar (komentar, korisnik, opg, vrijeme) values ('Jagode su fenomenalne.', 7 , 4 , '2015-04-09 13:55');
 
-insert into praćenje (opg, korisnik) values (3, 3);	
-insert into praćenje (opg, korisnik) values (1, 3);	
-insert into praćenje (opg, korisnik) values (2, 6);	
-insert into praćenje (opg, korisnik) values (5, 6);	
-insert into praćenje (opg, korisnik) values (4, 7);	
-insert into praćenje (opg, korisnik) values (5, 7);	
-insert into praćenje (opg, korisnik) values (4, 6);	
+insert into pracenje (opg, korisnik) values (3, 3);	
+insert into pracenje (opg, korisnik) values (1, 3);	
+insert into pracenje (opg, korisnik) values (2, 6);	
+insert into pracenje (opg, korisnik) values (5, 6);	
+insert into pracenje (opg, korisnik) values (4, 7);	
+insert into pracenje (opg, korisnik) values (5, 7);	
+insert into pracenje (opg, korisnik) values (4, 6);	
