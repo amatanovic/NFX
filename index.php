@@ -3,16 +3,6 @@ include 'konfiguracija.php';
 session_start(); 
 include 'head.php';
  ?>
-  <?php
-  if(isset($_SESSION['autoriziran'])){ 
-    echo $_SESSION['autoriziran']->sifra;
-    ?>
-  <form action="#">
-<?php include 'head.php';  ?>
-
- 
-
-
 <div id="home">  
 <img class="naslovna-slika" src="slike/field-918534_1920.jpg" alt="naslovna stranica jabuka   " />
 </div>
@@ -43,7 +33,10 @@ include 'head.php';
       </div>
 
 
-      
+   <?php
+  if(!isset($_SESSION['autoriziran'])){ 
+    ?>
+  <form action="#">   
   <form action="#" id="registracija">
     <fieldset>
       <label for="ime">Ime</label> <input type="text" id="ime" /> <br />
