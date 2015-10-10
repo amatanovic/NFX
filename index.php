@@ -41,7 +41,7 @@ $izraz->execute();
 
 $opgi=$izraz->fetchAll(PDO::FETCH_OBJ);
 foreach ($opgi as $opg) {
- echo " <div class='col-lg-4 col-md-4 col-sm-6 col-xs-12 col-centered'><p class='naziv-opg'>" . $opg->naziv . "</p><a href='detalji.php?sifra=" . $opg->sifra . "'><img src='" . $opg->avatar . "' alt='avatar'  class='opgavatar img-circle'></a><p class='kratakopis-opg'>" . $opg->kratakopis ."</p></div>";
+ echo "<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12 col-centered'><p class='naziv-opg'>" . $opg->naziv . "</p><a href='detalji.php?sifra=" . $opg->sifra . "'><img src='" . $opg->avatar . "' alt='avatar'  class='opgavatar img-circle'></a><p class='kratakopis-opg'>" . $opg->kratakopis ."</p></div>";
 
 }
 ?>     
@@ -52,15 +52,14 @@ foreach ($opgi as $opg) {
       </div>
 
 
-<div class="naslovi" id="registracija-odabir">
+
       
 
    <?php
   if(!isset($_SESSION['autoriziran'])){ 
-    ?>
-  <form action="#">   
-
-  <form action="#" id="registracija">
+    ?>  
+  <div class="naslovi" id="registracija-odabir">
+  <form action="#">
       
 <h1 class="opg-naslov registracija-naslov">Registracija</h1>      
       
@@ -77,15 +76,17 @@ foreach ($opgi as $opg) {
     </fieldset>
   </form>
   <p id="registracijaPoruka"></p>
+    </div>    
+
 <?php } ?> 
   
  
 
-  </div>    
       
 
-<?php include 'prijava-modal.php'; ?>
-<?php include 'search-modal.php'; ?>
+<?php include 'prijava-modal.php'; 
+include 'search-modal.php';
+?>
 
       
 
@@ -149,6 +150,28 @@ foreach ($opgi as $opg) {
         return false;
       });
         });
+      $(function(){
+      $("#search").click(function(){
+     $.ajax({
+        type: "POST",
+        url: "pretrazi.php",
+        data: "uvjet=" + $("#uvjet").val(),
+        success: function(msg){
+        $('#opg').html("");
+        console.log(msg);
+        podaci=$.parseJSON(msg);
+        $.each(podaci, function(i, item){
+          $("#opg").append($("<div class='col-lg-4 col-md-4 col-sm-6 col-xs-12 col-centered'><p class='naziv-opg'>" + item.nazivopg + "</p><a href='detalji.php?sifra=" + item.opgsifra + "'><img src='" + item.avatar + "' alt='avatar'  class='opgavatar img-circle'></a><p class='kratakopis-opg'>" + item.kratakopis + "</p></div>"));
+        });
+        }
+      });
+        
+
+        return false;
+      });
+        });
+
+
        $(function () {
         $('a[href*=#]:not([href=#])').click(function () {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')

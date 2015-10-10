@@ -9,14 +9,10 @@
       </div>
       <div class="modal-body">
           
-          <div class="kategorije">  
+            <div class="proizvod">  
             <label for="proizvod">Proizvod:</label> 
-            <option></option>
-          </div> 
-
-          <div class="proizvod">  
-            <label for="proizvod">Proizvod:</label> 
-            <input type="text" id="tag" name="uvjet" placeholder="Unesite željeni  proizvod" /> 
+            <input type="text" id="uvjet" name="uvjet" placeholder="Unesite željeni  proizvod" /> 
+            <a id="search" href="#" type="submit" class="btn btn-primary">Pretraži</a>
           </div> 
         
         </div>

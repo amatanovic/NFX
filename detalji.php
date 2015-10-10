@@ -83,6 +83,10 @@ if ($pracenje != null) {
   $cijena = round($proizvod->cijena - ($proizvod->cijena * 0.05), 2);
   echo $cijena . " (Vaša cijena umanjena je za 5% jer pratite ovaj OPG.)";
  }
+ else {
+  $cijena = $proizvod->cijena;
+  echo $cijena;
+ }
  }
  else {
   $cijena = $proizvod->cijena;
