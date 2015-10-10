@@ -37,10 +37,10 @@ foreach ($projekti as $projekt) {
     if ($projekt->sifra == $slika->projekt) {
         if ($slika->avatar == 1) {
           if (isset($_SESSION['autoriziran'])) {
-      echo "<div class='col-lg-4 col-md-6 col-xs-12 col-centered'><a href='detalji.php?sifra=" . $projekt->sifra . "'><img src='" . $slika->putanja . "' style='width:100%;height:350px;padding-bottom:15px' class='avatar-projekt' /></a><p class='naziv-projekt naziv-opis'>" . $projekt->naziv . "</p><p class='opis-projekt naziv-opis'>" . $projekt->kratakopis . "</p></div>";
+      echo "<div class='col-lg-4 col-md-6 col-xs-12 col-centered'><a href='detalji.php?sifra=" . $projekt->sifra . "'><img src='" . $slika->putanja . "' style='width:100%;height:350px;padding-bottom:15px' class='avatar-projekt img-circle' /></a><p class='naziv-projekt naziv-opis'>" . $projekt->naziv . "</p><p class='opis-projekt naziv-opis'>" . $projekt->kratakopis . "</p></div>";
       }
       else {
-          echo "<div class='col-lg-4 col-md-6 col-xs-12 col-centered'><img src='" . $slika->putanja . "' style='width:100%;height:350px;padding-bottom:15px' class='avatar-projekt' /><p class='naziv-projekt naziv-opis'>" . $projekt->naziv . "</p><p class='opis-projekt naziv-opis'>" . $projekt->kratakopis . "</p></div>";
+          echo "<div class='col-lg-4 col-md-6 col-xs-12 col-centered'><img src='" . $slika->putanja . "' style='width:100%;height:350px;padding-bottom:15px' class='avatar-projekt img-circle' /><p class='naziv-projekt naziv-opis'>" . $projekt->naziv . "</p><p class='opis-projekt naziv-opis'>" . $projekt->kratakopis . "</p></div>";
       }
       }
     }
@@ -55,7 +55,7 @@ foreach ($projekti as $projekt) {
       </div>
 
 
-<div class="naslovi">
+<div class="naslovi" id="registracija-odabir">
       
 
    <?php
@@ -82,18 +82,7 @@ foreach ($projekti as $projekt) {
   <p id="registracijaPoruka"></p>
 <?php } ?> 
   
-   <?php if(!isset($_SESSION['autoriziran'])){ ?>  
-  <form action="#">
-    <fieldset>
-      <label for="email">Email</label> <input type="email" id="emailPrijava" /> <br />
-      <label for="lozinka">Lozinka</label> <input type="password" id="passwordPrijava" /> <br />
-      <a id="prijavi" href="#" style="width: 100%" type="submit">Prijava</a>
-    </fieldset>
-  </form>
-  <p id="prijaviPoruka"></p>  
-  <?php } ?>    
-
-  <p id="registracijaPoruka"></p>  
+ 
 
   </div>    
       
