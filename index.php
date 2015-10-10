@@ -4,7 +4,7 @@ session_start();
 include 'head.php';
  ?>
 <div id="home">  
-<img class="naslovna-slika" src="slike/field-918534_1920.jpg" alt="naslovna stranica jabuka   " />
+<img class="naslovna-slika" src="slike/field-918534_1920.jpg" alt="naslovna stranica jabuka" />
 </div>
 
 
@@ -28,9 +28,11 @@ include 'head.php';
    <?php
 $izraz=$veza->prepare("select * from opg");
 $izraz->execute();
+
 $opgi=$izraz->fetchAll(PDO::FETCH_OBJ);
 foreach ($opgi as $opg) {
  echo " <div class='col-lg-4 col-md-6 col-xs-12 col-centered'><p>" . $opg->naziv . "</p><p>" . $opg->kratakopis ."</p><img src='" . $opg->avatar . "' alt='avatar'  class='opgavatar img-circle'></div>";
+
 }
 ?>     
       
@@ -40,7 +42,7 @@ foreach ($opgi as $opg) {
       </div>
 
 
-<div class="naslovi">
+<div class="naslovi" id="registracija-odabir">
       
 
    <?php
@@ -50,7 +52,7 @@ foreach ($opgi as $opg) {
 
   <form action="#" id="registracija">
       
-<h1 class="opg-naslov">Registracija</h1>      
+<h1 class="opg-naslov registracija-naslov">Registracija</h1>      
       
     <fieldset class="forma-registracija">
       <label for="ime">Ime</label> <input type="text" id="ime" /> <br />
@@ -61,24 +63,13 @@ foreach ($opgi as $opg) {
       <label for="kontakt">Kontakt</label> <input type="tel" id="kontakt" /> <br />
       <label for="lozinka">Lozinka</label> <input type="password" id="password" /> <br />
       <label for="lozinka2">Ponovite lozinku</label> <input type="password" id="password2" /> <br />
-      <a id="registriraj" href="#" style="width: 100%" type="submit">Registracija</a>
+      <a id="registriraj" href="#" type="submit" class="btn btn-primary">Registracija</a>
     </fieldset>
   </form>
   <p id="registracijaPoruka"></p>
 <?php } ?> 
   
-   <?php if(!isset($_SESSION['autoriziran'])){ ?>  
-  <form action="#">
-    <fieldset>
-      <label for="email">Email</label> <input type="email" id="emailPrijava" /> <br />
-      <label for="lozinka">Lozinka</label> <input type="password" id="passwordPrijava" /> <br />
-      <a id="prijavi" href="#" style="width: 100%" type="submit">Prijava</a>
-    </fieldset>
-  </form>
-  <p id="prijaviPoruka"></p>  
-  <?php } ?>    
-
-  <p id="registracijaPoruka"></p>  
+ 
 
   </div>    
       

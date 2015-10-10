@@ -74,12 +74,15 @@ div.navbar-collapse{
 }
 
 
-#home,#onama,#opg {
+#home,#onama,#opg,#registracija-odabir {
     min-height:48em;
     position:relative;
 }
 
-#onama{padding-top: 5em;}
+#onama{
+    padding-top: 5em;
+    color: #806d53
+}
 
 #opg{
     padding-top: 2em;
@@ -103,6 +106,67 @@ div.navbar-collapse{
 
 
 .forma-registracija>label{
-    width: 10em;
+    width: 12em;
+    text-align: left;
+    padding-bottom: 0.7em;
+    color: #806d53;
 }
 
+.registracija-naslov{
+    color: #806d53;
+    padding-top: 1em;
+}
+
+.forma-registracija{
+    font-size: 1.5em;
+    width: 25em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.forma-registracija>.btn-primary{
+    margin-top: 1em;
+    position: absolute;
+    right: 24.5em;
+}
+
+
+input{          
+    border-radius:5px;
+    border: 1.5px solid #8f7b5f;
+    width: 12.5em;
+}
+
+
+input:hover{
+    border-color: #4f4435;
+}
+
+
+.btn-primary{
+    border-color: #8f7b5f;
+    color: #8f7b5f;
+    background-color: rgba(255,222,173,1);
+    font-size: 0.8em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+}
+
+.btn-primary:hover{
+    border-color: rgba(255,222,173,1);
+    color: rgba(255,222,173,1);
+    background-color: #8f7b5f;
+}
+
+.btn-primary:link{
+    border-color: rgba(255,222,173,1);
+    color: rgba(255,222,173,1);
+    background-color: #8f7b5f;
+}
+
+.btn-primary:visited{
+    border-color: rgba(255,222,173,1);
+    color: rgba(255,222,173,1);
+    background-color: #8f7b5f;
+}
