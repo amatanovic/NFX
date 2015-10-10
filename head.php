@@ -1,3 +1,4 @@
+<?php include 'konfiguracija.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
