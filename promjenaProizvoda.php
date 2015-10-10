@@ -28,6 +28,12 @@ if(isset($_POST['promjeni'])){
   }
   header("location: urediprofil.php");
 }
+if(isset($_POST['obrisi'])){
+  $izraz = $veza->prepare("delete from proizvod where sifra=:sifra");
+  $izraz->bindValue(":sifra",$_POST['sifra']);
+  $izraz->execute();
+  header("location: urediprofil.php");
+}
 ?>
 <div class="container">
  <?php 
@@ -73,6 +79,7 @@ if(isset($_POST['promjeni'])){
         <div style="text-align:right">
         <a style="margin-bottom:0;padding:6px 12px" href="urediprofil.php" class="alert button btn btn-default">Natrag</a>
         <input type="submit" class="button btn btn-default" value="Promjeni" name="promjeni" />
+        <input type="submit" class="button btn btn-default" value="Obriši" name="obrisi" />
         </div>
         </p>
         </div>
