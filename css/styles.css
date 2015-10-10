@@ -103,6 +103,22 @@ div.navbar-collapse{
 
 
 .forma-registracija>label{
-    width: 10em;
+    width: 12em;
+    text-align: left;
+    padding-bottom: 0.7em;
 }
 
+.forma-registracija{
+    font-size: 1.5em;
+}
+
+input{          
+    -moz-border-radius:6px; /* Firefox */
+    -webkit-border-radius: 6px; /* Safari, Chrome */
+    -khtml-border-radius: 6px; /* KHTML */
+    border-radius: 6px; /* CSS3 */}
+}
+
+input:hover{
+    border-color: rgba(255, 222, 173,1);
+}
