@@ -81,7 +81,10 @@ div.navbar-collapse{
 
 #onama{padding-top: 5em;}
 
-#opg{padding-top: 2em;}
+#opg{
+    padding-top: 2em;
+    background-image: rgba(255, 222, 173,1);
+}
 
 
 .naslovi{
@@ -91,4 +94,5 @@ div.navbar-collapse{
 
 .opgavatar{
     width: 100%;
+    height: 25em;
 }
