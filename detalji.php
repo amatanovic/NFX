@@ -12,7 +12,12 @@ $izraz->execute();
 $opg=$izraz->fetch(PDO::FETCH_OBJ);
 ?>
 
-<p><?php echo $opg->naziv; ?></p>
+<div class="row">
+    <div class="col-lg-12">
+        <img src="<?php echo $opg->avatar ?>" style="width:15em;height:15em;margin-top:2em;margin-left:41%;border-radius:20px;" />
+    </div>
+</div>
+<h1 style="text-align:center"><?php echo $opg->naziv; ?></h1>
 <p><?php echo $opg->kratakopis; ?></p>
 </div>
 
