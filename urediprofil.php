@@ -77,7 +77,7 @@ if(isset($_POST['unosOPG'])){
         <div style="text-align:right">
         <a style="margin-bottom:0;padding:6px 12px" href="index.php" class="alert button btn btn-default">Natrag</a>
         <input type="submit" class="button btn btn-default" value="Promjeni" name="promjeni" />
-        <a style="margin-bottom:0;padding:6px 12px" href="proizvodi?sifra=<?php echo $entitet->sifra; ?>" class="alert button btn btn-default">Unos proizvoda</a>
+        <a style="margin-bottom:0;padding:6px 12px" href="proizvodi.php?sifra=<?php echo $entitet->sifra; ?>" class="alert button btn btn-default">Proizvodi</a>
         </div>
         </p>
         </div>
