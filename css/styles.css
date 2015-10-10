@@ -4,7 +4,9 @@ nav{
     border-top: 2px ridge rgba(255, 222, 173,1) !important;
 }
 
-
+ul.nav{
+    margin-top: 1em;
+}
 
 nav ul li{
     padding: 0em;
@@ -22,7 +24,11 @@ ul.nav>li>a{
     color: navajowhite;    
 }
 
-
+ul.nav>li>a:hover{
+    background-color: rgba(25,25,20,1);
+    color: #8f7b5f; 
+    font-weight: bold;
+}
 
 div.navbar-collapse{
         width: 72em;
@@ -32,4 +38,8 @@ div.navbar-collapse{
 
 .searchikona{
     border-right: none;
+}
+
+.searchikona>a{
+    padding-top: 0.5em !important;
 }
