@@ -1,6 +1,6 @@
-drop database if exists nfx;
-create database nfx character set utf8 collate utf8_general_ci;
-use nfx;
+drop database if exists opg;
+create database opg character set utf8 collate utf8_general_ci;
+use opg;
 create table korisnik (
 sifra int not null primary key auto_increment,
 ime varchar(250),
@@ -18,6 +18,7 @@ sifra int not null primary key auto_increment,
 naziv text,
 paypal varchar(250),
 kratakopis text,
+avatar varchar(250),
 korisnik int
 )engine=innodb;
 
@@ -67,3 +68,4 @@ alter table pracenje add foreign key(opg) references opg(sifra);
 alter table pracenje add foreign key(korisnik) references korisnik(sifra);
  
 insert into korisnik (ime, prezime, email, lozinka, ulica, mjesto, kontakt) values ('Antun', 'Matanović', 'antun.matanovic@gmail.com', md5('lozinka'), 'Lj. Posavskog 66', 'Osijek', '031/555444');
+insert into opg (naziv, paypal, kratakopis, avatar, korisnik) values ('OPG o jabukama', 'antun.matanovic-facilitator@gmail.com', 'Ovo je kratak opis o ovom OPG-u', 'slike/jabuke.jpg', 1);
