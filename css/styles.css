@@ -66,4 +66,23 @@ div.navbar-collapse{
 /*CSS ZA INDEX*/
 .naslovna-slika{
     width:100%;
+    height:48em;
 }
+
+
+#home,#onama,#opg {
+    height:48em;
+    position:relative;
+}
+
+#onama{padding-top: 5em;}
+
+#opg{padding-top: 2em;}
+
+
+.naslovi{
+    text-align: center;
+}
+
+
+
