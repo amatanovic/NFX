@@ -51,7 +51,7 @@
             <li><a href="index.php#registracija">REGISTRACIJA</a></li>
             <li><a href="#prijava" id="autorizacijaModal">PRIJAVA</a></li>
               <?php }?>
-            <li><a href="#search" id="searchNav"><span class="glyphicon glyphicon-search"></span></a></li>  
+            <li class="searchikona"><a href="#search" id="searchNav"><span class="glyphicon glyphicon-search"></span></a></li>  
           </ul>
         </div><!--/.nav-collapse -->
       </div>

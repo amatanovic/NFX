@@ -1,13 +1,35 @@
 nav{
     height: 4em;
     background-color: rgba(25,25,20,1);
+    border-top: 2px ridge rgba(255, 222, 173,1) !important;
 }
+
+
 
 nav ul li{
-    padding-top: 0.2em;
+    padding: 0em;
+    width: 12em;
+    text-align: center;
+    border-right: 1px ridge rgba(255, 222, 173,1);
+
 }
 
-#navbar{
-    margin-left: auto;
-    margin-right: auto;
+.navbar-nav>li>a {
+    line-height: 0.1em;
+}
+
+ul.nav>li>a{
+    color: navajowhite;    
+}
+
+
+
+div.navbar-collapse{
+        width: 72em;
+        margin-left: auto !important;
+        margin-right: auto !important;
+}
+
+.searchikona{
+    border-right: none;
 }
