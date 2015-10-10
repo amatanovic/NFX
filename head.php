@@ -35,12 +35,10 @@
           <ul class="nav navbar-nav">
             <li><a href="index.php#home">HOME</a></li>
             <li><a href="index.php#onama">O NAMA</a></li>
-            <li><a href="index.php#opg">OPG-OVI</a></li>
-
-                        
-      <li><a href="#"><li>UREDI PROFIL</li></a>
+            <li><a href="index.php#opg">OPG-OVI</a></li>               
+            <li><a href="#">UREDI PROFIL</a></li>
    
-   <li><a href="logout.php"><li>ODJAVA</li></a>
+    <li><a href="logout.php">ODJAVA</a></li>
 
        
             <li><a href="index.php#registracija">REGISTRACIJA</a></li>
