@@ -1,1 +1,35 @@
-/* Empty. Add your own CSS if you like */
+.bar-balanced{
+background-color: #848484 !important;}
+
+.zuta{
+border-color: #faebcc !important;
+background-color: #fcf8e3 !important;
+color: #8a6d3b !important;}
+
+.crvena{
+border-color: #ebccd1;
+background-color: #f2dede;
+color: #a94442;}
+
+.card{
+border-radius: 10px;
+height: 50px;
+text-align: center;
+padding: 15px;}
+
+.prva{border: none;}
+
+.ikonica{position: absolute;
+right: 2em;}
+
+.item-avatar-left > img:first-child{   
+	position: absolute;
+    top: 16px;
+    left: 16px;
+    max-width: 80px;
+    max-height: 80px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;}
+
+.opg{padding: 10%;}
