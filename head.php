@@ -37,7 +37,7 @@
             <li><a href="index.php#onama">O NAMA</a></li>
             <li><a href="index.php#opg">OPG-OVI</a></li>
             <?php if(isset($_SESSION['autoriziran'])){ ?>                
-            <li><a href="#">UREDI PROFIL</a></li>
+            <li><a href="urediprofil.php">UREDI PROFIL</a></li>
             <li><a href="odjava.php">ODJAVA</a></li>
             <?php } else {?>
             <li><a href="index.php#registracija">REGISTRACIJA</a></li>

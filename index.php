@@ -30,8 +30,7 @@ $izraz=$veza->prepare("select * from opg");
 $izraz->execute();
 $opgi=$izraz->fetchAll(PDO::FETCH_OBJ);
 foreach ($opgi as $opg) {
- echo " <div class='col-lg-4 col-md-6 col-xs-12 col-centered'><p>" . $opg->naziv . "</p><p>" . $opg->kratakopis ."</p><img src='" . $opg->slike . "' alt='avatar'
-  class='opgavatar img-circle'></div>";
+ echo " <div class='col-lg-4 col-md-6 col-xs-12 col-centered'><p>" . $opg->naziv . "</p><p>" . $opg->kratakopis ."</p><img src='" . $opg->avatar . "' alt='avatar'  class='opgavatar img-circle'></div>";
 }
 ?>     
       
