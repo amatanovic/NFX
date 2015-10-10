@@ -11,7 +11,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen and (max-width: 1119px)" href="css/styles-medium.css" />
-    <link rel="stylesheet" type="text/css" media="screen and (min-width: 0px) and (max-width: 991px)" href="css/styles-small.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (max-width: 991px)" href="css/styles-small.css" />
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
       <link rel="icon" href="slike/logo.ico" type="image/x-icon">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
