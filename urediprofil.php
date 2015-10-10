@@ -28,6 +28,25 @@ if(isset($_POST['promjeni'])){
   }
   header("location: urediprofil.php");
 }
+if(isset($_POST['unosOPG'])){
+  $izraz = $veza->prepare("insert into opg(naziv, paypal, kratakopis, korisnik) values (:naziv, :paypal, :kratakopis, :sifra)");
+  $izraz->bindValue(":sifra",$_POST['sifra']);
+  $izraz->bindValue(":naziv",$_POST['naziv']); 
+  $izraz->bindValue(":paypal",$_POST['paypal']);
+  $izraz->bindValue(":kratakopis",$_POST['kratakopis']);
+  $izraz->execute();
+  $korisnikID = $_POST['sifra'];
+  if ($_FILES['avatar']) {
+    $slike_dir = "slike/";
+    $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
+    $slika_datoteka = $slike_dir . "avatar_" . $korisnikID . "." . $ext;
+    $izraz1 = $veza->prepare("update opg set avatar='$slika_datoteka' where korisnik=$korisnikID");
+    $izraz1->execute();
+    echo $slika_datoteka;
+    move_uploaded_file($_FILES["avatar"]["tmp_name"], $slika_datoteka);
+  }
+  header("location: urediprofil.php");
+}
 ?>
 <div class="container">
  <?php 
@@ -58,12 +77,35 @@ if(isset($_POST['promjeni'])){
         <div style="text-align:right">
         <a style="margin-bottom:0;padding:6px 12px" href="index.php" class="alert button btn btn-default">Natrag</a>
         <input type="submit" class="button btn btn-default" value="Promjeni" name="promjeni" />
+        <a style="margin-bottom:0;padding:6px 12px" href="proizvodi?sifra=<?php echo $entitet->sifra; ?>" class="alert button btn btn-default">Unos proizvoda</a>
         </div>
         </p>
         </div>
       </fieldset>
     </form>
-     <?php }?>
+     <?php } else {?>
+     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
+      <fieldset>
+        <form action="#">
+        <input type="hidden" name="sifra" value="<?php echo $korisnik; ?>"> <br />
+        <label for="naziv">Naziv</label><br />
+        <input type="text" id="naziv" name="naziv" /><br />
+        <label for="paypal">PayPal račun</label><br />
+        <input type="text" id="paypal" name="paypal" /><br />
+        <label for="paypal">Kratak opis</label><br />
+        <input type="text" id="kratakopis" name="kratakopis" /><br />
+        <label for="paypal">Avatar</label><br />
+        <input type="file" name="avatar" accept="image/*" />
+        <p>
+        <div style="text-align:right">
+        <a style="margin-bottom:0;padding:6px 12px" href="index.php" class="alert button btn btn-default">Natrag</a>
+        <input type="submit" class="button btn btn-default" value="Registrirajte svoj OPG" name="unosOPG" />
+        </div>
+        </p>
+        </div>
+      </fieldset>
+    </form>
+     <?php } ?>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
