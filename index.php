@@ -33,10 +33,11 @@ include 'head.php';
     <div class="naslovi" id="opg">
       <div class="container">
 <h1 class="opg-naslov">OPG-ovi</h1>
-  
+
    <?php
 $izraz=$veza->prepare("select * from opg");
 $izraz->execute();
+
 
 $opgi=$izraz->fetchAll(PDO::FETCH_OBJ);
 foreach ($opgi as $opg) {
@@ -46,7 +47,7 @@ foreach ($opgi as $opg) {
 ?>     
       
           
-          
+         
           </div> 
       </div>
 
