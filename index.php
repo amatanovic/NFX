@@ -65,7 +65,7 @@ foreach ($projekti as $projekt) {
 
   <form action="#" id="registracija">
       
-<h1 class="opg-naslov">Registracija</h1>      
+<h1 class="opg-naslov registracija-naslov">Registracija</h1>      
       
     <fieldset class="forma-registracija">
       <label for="ime">Ime</label> <input type="text" id="ime" /> <br />
@@ -76,7 +76,7 @@ foreach ($projekti as $projekt) {
       <label for="kontakt">Kontakt</label> <input type="tel" id="kontakt" /> <br />
       <label for="lozinka">Lozinka</label> <input type="password" id="password" /> <br />
       <label for="lozinka2">Ponovite lozinku</label> <input type="password" id="password2" /> <br />
-      <a id="registriraj" href="#" style="width: 100%" type="submit">Registracija</a>
+      <a id="registriraj" href="#" type="submit" class="btn btn-primary">Registracija</a>
     </fieldset>
   </form>
   <p id="registracijaPoruka"></p>
