@@ -105,8 +105,10 @@ div.navbar-collapse{
 }
 
 .opgavatar{
-    width: 100%;
+    width: 25em;
     height: 25em;
+    border-radius: 50%;
+    border: 2px solid #806d53;
 }
 
 
@@ -175,3 +177,39 @@ input:hover{
     color: rgba(255,222,173,1);
     background-color: #8f7b5f;
 }
+
+
+.kratakopis-opg{
+    height: 22em;
+    padding-top: 1em;
+    font-size: 1.3em;
+}
+
+.naziv-opg{
+    font-size: 1.8em;
+}
+
+
+/* Navigacija tamo gdje puca */
+    @media (max-width : 1119px) {
+
+        
+nav ul li {
+    width: 8em;
+}
+
+
+div.navbar-collapse {
+    width: 48em;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+        
+        
+        .navbar>.container{
+            margin-left:0;
+        }      
+      
+        
+        
+    }

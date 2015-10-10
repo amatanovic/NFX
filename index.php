@@ -31,7 +31,7 @@ $izraz->execute();
 
 $opgi=$izraz->fetchAll(PDO::FETCH_OBJ);
 foreach ($opgi as $opg) {
- echo " <div class='col-lg-4 col-md-6 col-xs-12 col-centered'><p>" . $opg->naziv . "</p><p>" . $opg->kratakopis ."</p><img src='" . $opg->avatar . "' alt='avatar'  class='opgavatar img-circle'></div>";
+ echo " <div class='col-lg-4 col-md-4 col-sm-6 col-xs-12 col-centered'><p class='naziv-opg'>" . $opg->naziv . "</p><img src='" . $opg->avatar . "' alt='avatar'  class='opgavatar img-circle'><p class='kratakopis-opg'>" . $opg->kratakopis ."</p></div>";
 
 }
 ?>     
@@ -58,7 +58,7 @@ foreach ($opgi as $opg) {
       <label for="ime">Ime</label> <input type="text" id="ime" /> <br />
       <label for="prezime">Prezime</label> <input type="text" id="prezime" /> <br />
       <label for="email">Email</label> <input type="email" id="emailReg" /> <br />
-      <label for="ulica">Ulica</label> <input type="text" id="ulica" /> <br />
+      <label for="ulica">Ulica i broj</label> <input type="text" id="ulica" /> <br />
       <label for="mjesto">Mjesto</label> <input type="text" id="mjesto" /> <br />
       <label for="kontakt">Kontakt</label> <input type="tel" id="kontakt" /> <br />
       <label for="lozinka">Lozinka</label> <input type="password" id="password" /> <br />
