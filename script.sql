@@ -104,17 +104,17 @@ insert into proizvod (naziv, cijena, slika, opg, kategorija) values ('Rakija od 
 insert into proizvod (naziv, cijena, slika, opg, kategorija) values ('Rakija od kruške', 50.00 , 'slike/rakija1.jpg', 8 , 3);
 
 
-insert into komentar (komentar, korisnik, opg, vrijeme) values ('Proizvodi obitelji Leh su me oduševili. Točno se osjeti razlika proizvoda obiteljske proizvodnje i običnog proizvoda iz trgovine.', 3 , 4, '2015-10-09 13:55');
+insert into komentar (komentar, korisnik, opg, vrijeme) values ('Proizvodi obitelji Leh su me oduševili. Točno se osjeti razlika proizvoda obiteljske proizvodnje i običnog proizvoda iz trgovine.', 3 , 3, '2015-10-09 13:55');
 insert into komentar (komentar, korisnik, opg, vrijeme) values ('Sok OPG-a Vilček je savršen. Od kad ga pijem nemam problema sa tlakom. Iako ne zvuči kao nešto ukusno, zaista je.', 6 , 2 , '2015-10-10 10:50');
-insert into komentar (komentar, korisnik, opg, vrijeme) values ('Slažem se s gospodinom Buljanom u vezi rakije. Vaše rakije su iznimno dobre kvalitete. Imala sam slučaj u obitelji gdje je član uganuo gležanj, i pomoću obloga od rakije noga je prošla za 2 dana.', 6 , 8 , '2015-08-02 13:05');
-insert into komentar (komentar, korisnik, opg, vrijeme) values ('Vino mi je zaista poboljšalo krvnu sliku. Imao sam problema sa željezom. Rakije su također od velike pomoći kao oblog.', 7 , 8 , '2015-07-07 09:05');
+insert into komentar (komentar, korisnik, opg, vrijeme) values ('Slažem se s gospodinom Buljanom u vezi rakije. Vaše rakije su iznimno dobre kvalitete. Imala sam slučaj u obitelji gdje je član uganuo gležanj, i pomoću obloga od rakije noga je prošla za 2 dana.', 6 , 5 , '2015-08-02 13:05');
+insert into komentar (komentar, korisnik, opg, vrijeme) values ('Vino mi je zaista poboljšalo krvnu sliku. Imao sam problema sa željezom. Rakije su također od velike pomoći kao oblog.', 7 , 5 , '2015-07-07 09:05');
 insert into komentar (komentar, korisnik, opg, vrijeme) values ('Buče i tikve obitelji Matanović prekrasne su. Djeca ih posebice vole, a zanimljive su i za vrijeme Noći vještica.', 3 , 1 , '2015-05-28 12:55');
-insert into komentar (komentar, korisnik, opg, vrijeme) values ('Jagode su fenomenalne.', 7 , 5 , '2015-04-09 13:55');
+insert into komentar (komentar, korisnik, opg, vrijeme) values ('Jagode su fenomenalne.', 7 , 4 , '2015-04-09 13:55');
 
-insert into praćenje (opg, korisnik) values (4, 3);	
+insert into praćenje (opg, korisnik) values (3, 3);	
 insert into praćenje (opg, korisnik) values (1, 3);	
 insert into praćenje (opg, korisnik) values (2, 6);	
-insert into praćenje (opg, korisnik) values (4, 6);	
+insert into praćenje (opg, korisnik) values (5, 6);	
+insert into praćenje (opg, korisnik) values (4, 7);	
 insert into praćenje (opg, korisnik) values (5, 7);	
-insert into praćenje (opg, korisnik) values (8, 7);	
-insert into praćenje (opg, korisnik) values (8, 6);	
+insert into praćenje (opg, korisnik) values (4, 6);	
