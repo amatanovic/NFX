@@ -91,7 +91,8 @@ div.navbar-collapse{
 
 #onama{
     padding-top: 5em;
-    color: #806d53;
+    background-color: #5d4037;
+    color: white;
 }
 
 #opg{
@@ -321,3 +322,33 @@ h1{
 
 }
 
+
+
+.moj-proizvod{
+    text-align:center;
+    
+}
+
+
+.btn-proizvod{
+    text-align: center;
+    font-size:1.3em;
+    margin-left: 44.5%;
+    margin-top: 0.5em;
+    margin-bottom: 1.5em;
+}
+
+
+.novi-button{
+    font-size:1.5em;
+    position: absolute;
+    left: 36%;
+}
+
+
+.natrag-button{
+    font-size:1.5em;
+    position: absolute;
+    right:36%;
+    width: 139px
+}

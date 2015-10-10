@@ -19,14 +19,14 @@ include "head.php";
     }
     else {
       foreach($entitet as $e) {
-        echo "<p>" . $e->naziv . "</p><a style='margin-bottom:0;padding:6px 12px' href='promjenaProizvoda.php?sifra=" . $e->sifra . "' class='alert button btn btn-default'>Uredi proizvod</a>";
+        echo "<br /><br /><h2 class='moj-proizvod'>" . $e->naziv . "</h2><a style='padding:6px 12px' href='promjenaProizvoda.php?sifra=" . $e->sifra . "' class='alert button btn btn-default btn-proizvod'>Uredi proizvod</a>";
       }
     }
 
     ?>
     <p>
-    <a style="margin-bottom:0;padding:6px 12px" href="noviProizvod.php?sifra=<?php echo $_GET['sifra']; ?>" class="alert button btn btn-default">Novi proizvod</a>
-     <a style="margin-bottom:0;padding:6px 12px" href="urediprofil.php" class="alert button btn btn-default">Natrag</a>
+    <a style="margin-bottom:0;padding:6px 12px" href="noviProizvod.php?sifra=<?php echo $_GET['sifra']; ?>" class="alert button btn btn-default novi-button">Novi proizvod</a>
+     <a style="margin-bottom:0;padding:6px 12px" href="urediprofil.php" class="alert button btn btn-default natrag-button">Natrag</a>
     </p>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
