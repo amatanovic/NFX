@@ -1,5 +1,5 @@
 <?php include 'head.php';  ?>
-<<<<<<< HEAD
+
  
 
 
@@ -21,7 +21,7 @@
       </div>
       
       
-=======
+
       
   <form action="#" id="registracija">
     <fieldset>
@@ -37,7 +37,7 @@
     </fieldset>
   </form>
   <p id="registracijaPoruka"></p>  
->>>>>>> origin/master
+
       
       
       
