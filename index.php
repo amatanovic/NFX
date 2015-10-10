@@ -30,7 +30,7 @@ include 'head.php';
       
 
 
-    <div class="naslovi" id="opg">
+    <div class="naslovi" id="opg" style="margin-top: -10px;">
       <div class="container">
 <h1 class="opg-naslov">OPG-ovi</h1>
 

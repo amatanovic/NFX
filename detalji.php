@@ -81,7 +81,7 @@ $izraz->execute();
 $pracenje=$izraz->fetch(PDO::FETCH_OBJ);
 if ($pracenje != null) {
   $cijena = round($proizvod->cijena - ($proizvod->cijena * 0.05), 2);
-  echo $cijena . " (Vaša cijena umanjena je za 5% jer pratite ovaj OPG.)";
+  echo $cijena . " (VaĹˇa cijena umanjena je za 5% jer pratite ovaj OPG.)";
  }
  else {
   $cijena = $proizvod->cijena;
@@ -155,7 +155,7 @@ $korisnik = $_SESSION['autoriziran']->sifra;
     <fieldset>
       <input type="hidden" name="sifra" value="<?php echo $_GET['sifra']?>" id="sifra"> <br />
       <input type="hidden" name="korisnik" value="<?php echo $korisnik?>" id="korisnik"> <br />
-     <textarea rows="6" cols="50" type="komentar" id="komentar" name="komentar" placeholder="Unesite željeni komentar"></textarea> <br />
+     <textarea rows="6" cols="50" type="komentar" id="komentar" name="komentar" placeholder="Unesite Ĺľeljeni komentar"></textarea> <br />
       <input type="submit" value="Komentiraj" name="komentiraj" />
     </fieldset>
   </form>
@@ -209,7 +209,7 @@ $izraz=$veza->prepare("select a.ime, a.prezime, b.* from korisnik a inner join k
               window.location="index.php";
             }
             else{
-              $("#poruka").html("Neispravno uneseno korisničko ime i lozinka.<br /> Molimo unesite ponovno.");
+              $("#poruka").html("Neispravno uneseno korisniÄŤko ime i lozinka.<br /> Molimo unesite ponovno.");
             }
         }
       });
