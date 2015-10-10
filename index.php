@@ -24,10 +24,11 @@ include 'head.php';
     <div class="naslovi" id="opg">
       <div class="container">
 <h1 class="opg-naslov">OPG-ovi</h1>
-   <div class="col-lg-4 col-md-6 col-xs-12 col-centered">
+  
    <?php
-$izraz=$veza->prepare("select * from projekt");
+$izraz=$veza->prepare("select * from opg");
 $izraz->execute();
+<<<<<<< HEAD
 $projekti=$izraz->fetchAll(PDO::FETCH_OBJ);
 foreach ($projekti as $projekt) {
   $izraz=$veza->prepare("select * from slike");
@@ -45,10 +46,15 @@ foreach ($projekti as $projekt) {
       }
     }
   }
+=======
+$opgi=$izraz->fetchAll(PDO::FETCH_OBJ);
+foreach ($opgi as $opg) {
+ echo " <div class='col-lg-4 col-md-6 col-xs-12 col-centered'><p>" . $opg->naziv . "</p><p>" . $opg->kratakopis ."</p><img src='" . $opg->slike . "' alt='avatar'
+  class='opgavatar img-circle'></div>";
+>>>>>>> origin/master
 }
 ?>     
-          <img src="slike/jabuke.jpg" alt="avatar" class="opgavatar img-circle">
-      </div>
+      
           
           
           </div> 
