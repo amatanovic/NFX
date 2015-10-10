@@ -1,5 +1,9 @@
 /* CSS ZA NAVIGACIJU */
 
+body{
+    margin-bottom: 4em;
+}
+
 nav{
     height: 4em;
     background-color: rgba(25,25,20,1);
@@ -85,4 +89,6 @@ div.navbar-collapse{
 }
 
 
-
+.opgavatar{
+    width: 100%;
+}

@@ -34,17 +34,21 @@ include 'head.php';
 
       <div class="container">
       <div class="naslovi" id="opg">
-
-   <div class="col-lg-4 col-md-6 col-xs-12 col-centered">     
+<h1>OPG-ovi</h1>
+   <div class="col-lg-4 col-md-6 col-xs-12 col-centered">      
+          <img src="slike/jabuke.jpg" alt="avatar" class="opgavatar">
+      </div>
           
           
           
       </div>
-      </div>
 
-
+<div class="naslovi">
       
   <form action="#" id="registracija">
+      
+<h1>Registracija</h1>      
+      
     <fieldset>
       <label for="ime">Ime</label> <input type="text" id="ime" /> <br />
       <label for="prezime">Prezime</label> <input type="text" id="prezime" /> <br />
@@ -73,7 +77,7 @@ include 'head.php';
 
   <p id="registracijaPoruka"></p>  
 
-      
+  </div>    
       
 
       
