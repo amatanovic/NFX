@@ -14,11 +14,16 @@ include 'head.php';
       <div class="naslovi" id="onama">
 <h1>O nama</h1>
           <br />
-  <p>Eko Riznica je stranica koja na jednom mjestu okuplje sve OPG firme na području Osječko Baranjske županije. </p>
-  <p>Svaki posjetitelj ima mogućnost pregleda OPG firmi, kao i proizvoda koje te firme nude.</p>
-  <p>Nakon registracije, krajnji korisnik ima mogućnost dodavanja vlastitog OPG-a, komentiranje tuđih i mogućnost narudžbe određenog proizvoda.</p>
-  <p>Narudžbu je moguće izvršiti putem PayPal korisničkog računa.</p>
-  <p>Cilj nam je spojiti OPG-ove s korisnicima te potaknuti zdrav način prehrane kod ljudi, odnosno doprinjeti zdravom životu.</p>
+  
+<p class="onama">Eko Riznica je platforma koja na jednom mjestu okuplja sve OPG-ove na području Osječko-baranjske županije. </p>
+  <p class="onama">Svaki neregistrirani posjetitelj ima mogućnost pregleda OPG-ova, kao i proizvoda koje ti OPG-ovi nude.</p>
+  <p class="onama">Nakon registracije, krajnji korisnik ima mogućnost dodavanja vlastitog OPG-a.</p> 
+    <p class="onama">Također, omogućeno je komentiranje svih OPG-ova i njihovih proizvoda. </p>
+  <p class="onama">Svaki korisnik ima mogućnost online narudžbe, ako OPG od kojeg želi naručiti ima PayPal račun.</p> 
+   <p class="onama"> Ako nema tu mogućnost, tada postoje kontakt podaci OPG-a. </p>
+  <p class="onama">Instalacijom mobilne aplikacije, korisniku je omogućeno praćenje OPG-ova, čime se ostvaruje određeni popust (5%) prilikom kupnje.</p>
+  <p class="onama">Putem mobilne aplikacije korsnik ima mogućnost primanja obavijesti od OPG-a kojeg prati o određenim akcijama ili novostima.</p>
+  <p class="onama">Cilj nam je spojiti OPG-ove s korisnicima te potaknuti zdrav način prehrane kod ljudi, odnosno doprinjeti njihovom zdravom životu.</p>
           
       </div>
       </div>
