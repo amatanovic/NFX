@@ -213,3 +213,21 @@ div.navbar-collapse {
         
         
     }
+
+.modal-title{
+    text-align: center;
+}
+
+.modal-body{
+    text-align: center;
+    height: 80px;
+}
+
+.modal-dialog{
+
+    width: 320px;
+}
+.modal-body label{
+width:4em;
+text-align: left;
+}
