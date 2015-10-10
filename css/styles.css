@@ -212,4 +212,26 @@ div.navbar-collapse {
       
         
         
+<<<<<<< HEAD
 .hamburger{display: none;}
+=======
+    }
+
+.modal-title{
+    text-align: center;
+}
+
+.modal-body{
+    text-align: center;
+    height: 80px;
+}
+
+.modal-dialog{
+
+    width: 320px;
+}
+.modal-body label{
+width:4em;
+text-align: left;
+}
+>>>>>>> origin/master
