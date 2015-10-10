@@ -23,5 +23,3 @@
         </div>
   <p id="prijaviPoruka"></p>  
   <?php } ?>    
-
-  <p id="registracijaPoruka"></p> 

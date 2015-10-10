@@ -74,7 +74,8 @@ foreach ($opgi as $opg) {
   </div>    
       
 
-      
+<?php include 'prijava-modal.php'; ?>
+  
       
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -82,6 +83,11 @@ foreach ($opgi as $opg) {
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script>
+    $('#autorizacija').modal('hide');
+
+    $('#autorizacijaModal').click(function () {
+        $('#autorizacija').modal('show');
+    });
       $(function(){
       $("#registriraj").click(function(){
       $("#registracijaPoruka").html("");
