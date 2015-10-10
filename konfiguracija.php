@@ -1,6 +1,6 @@
 <?php
 $server="localhost";
-$baza="nfx";
+$baza="opg";
 $korisnik="root";
 $lozinka="admin";
 $putanja="/nfx/";

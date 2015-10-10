@@ -21,16 +21,15 @@ include 'head.php';
       
 
 
-
+    <div class="naslovi" id="opg">
       <div class="container">
-      <div class="naslovi" id="opg">
-<h1>OPG-ovi</h1>
+<h1 class="opg-naslov">OPG-ovi</h1>
    <div class="col-lg-4 col-md-6 col-xs-12 col-centered">      
           <img src="slike/jabuke.jpg" alt="avatar" class="opgavatar img-circle">
       </div>
           
           
-          
+          </div> 
       </div>
 
 
@@ -44,9 +43,9 @@ include 'head.php';
 
   <form action="#" id="registracija">
       
-<h1>Registracija</h1>      
+<h1 class="opg-naslov">Registracija</h1>      
       
-    <fieldset>
+    <fieldset class="forma-registracija">
       <label for="ime">Ime</label> <input type="text" id="ime" /> <br />
       <label for="prezime">Prezime</label> <input type="text" id="prezime" /> <br />
       <label for="email">Email</label> <input type="email" id="emailReg" /> <br />
