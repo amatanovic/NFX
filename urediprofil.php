@@ -57,10 +57,10 @@ if(isset($_POST['unosOPG'])){
     if ($entitet!=null) {
     ?>
      <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
-      <fieldset>
+      <fieldset class="forma-uredi">
         <form action="#" id="promjena">
         <input type="hidden" name="sifra" value="<?php echo $korisnik; ?>"> <br />
-        <label for="naziv">Naziv</label><br />
+        <label for="naziv" id="naziv">Naziv</label><br />
         <input type="text" id="naziv" name="naziv" value="<?php echo $entitet->naziv;?>" /><br />
         <label for="paypal">PayPal račun</label><br />
         <input type="text" id="paypal" name="paypal" value="<?php echo $entitet->paypal;?>" /><br />
