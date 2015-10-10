@@ -1,4 +1,3 @@
-<?php include 'konfiguracija.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,19 +37,15 @@
             <li><a href="index.php#onama">O NAMA</a></li>
             <li><a href="index.php#opg">OPG-OVI</a></li>
 
-                          <?php if(isset($_SESSION['autoriziran'])){
-      ?>
-      <li><a href="mojiprojekti.php"><li>UREDI PROFIL</li></a>
-   <?php } ?>
-                     <?php
-    if(isset($_SESSION['autoriziran'])){
-      ?>
+                        
+      <li><a href="#"><li>UREDI PROFIL</li></a>
+   
    <li><a href="logout.php"><li>ODJAVA</li></a>
-   <?php } else {?>
+
        
             <li><a href="index.php#registracija">REGISTRACIJA</a></li>
             <li><a href="#prijava" id="autorizacijaModal">PRIJAVA</a></li>
-              <?php }?>
+            
             <li class="searchikona"><a href="#search" id="searchNav"><span class="glyphicon glyphicon-search"></span></a></li>  
           </ul>
         </div><!--/.nav-collapse -->
