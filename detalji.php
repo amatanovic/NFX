@@ -55,7 +55,21 @@ $izraz->execute();
 $proizvodi=$izraz->fetchALL(PDO::FETCH_OBJ);
 foreach ($proizvodi as $proizvod) { ?>
 <p>Proizvod: <?php echo $proizvod->naziv; ?> <br /> 
-Cijena: <?php echo $proizvod->cijena; ?> <br />
+Cijena: 
+<?php 
+$sifraKorisnika = $_SESSION['autoriziran']->sifra;
+$izraz=$veza->prepare("select * from pracenje where opg=$opgID and korisnik=$sifraKorisnika");
+$izraz->execute();
+$pracenje=$izraz->fetch(PDO::FETCH_OBJ);
+if ($pracenje != null) {
+  $cijena = round($proizvod->cijena - ($proizvod->cijena * 0.05), 2);
+  echo $cijena . " (Vaša cijena umanjena je za 5% jer pratite ovaj OPG.)";
+ }
+ else {
+  echo $proizvod->cijena;
+ }
+ ?>
+<br />
 Kategorija: 
 <?php 
 $izraz1=$veza->prepare("select * from kategorija");
@@ -70,6 +84,30 @@ foreach ($kategorije as $kategorija) {
 <br />
 <img src="<?php echo $proizvod->slika ?>" style="width:25%" />
 </p>
+<?php
+$paypal_url='https://www.sandbox.paypal.com/cgi-bin/webscr';
+?>
+    <div class="btn">
+    <form action="<?php echo $paypal_url; ?>" method="post" name="frmPayPal1" id="paypalForma">
+    <input type="hidden" name="business" value="<?php echo $paypal_id; ?>">
+    <input type="hidden" name="cmd" value="_xclick">
+    <input type="hidden" name="item_name" value="Local Boost">
+    <input type="hidden" name="item_number" value="1">
+    <input type="hidden" name="credits" value="510">
+    <input style="width:300px;text-align:center;" type="text" name="amount" onfocusout="plati()" id="amount">
+    <input type="hidden" name="userid" value="<?php echo $userId;?>">
+    <input type="hidden" name="no_shipping" value="1">
+    <input type="hidden" name="currency_code" value="USD">
+    <input type="hidden" name="handling" value="0">
+    <div id="returnDiv">
+    <input type="hidden" name="return" value="http://localhost/nfx/success.php?sifra=<?php echo $sifraProjekta;?>&amount=" id="return">
+    </div>
+    <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+    <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form> 
+    </div>
+
+
 <?php
 }
 ?>
