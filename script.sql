@@ -84,7 +84,7 @@ insert into proizvod (naziv, cijena, slika, opg, kategorija) values ('Prirodni s
 insert into proizvod (naziv, cijena, slika, opg, kategorija) values ('Jabuka King Jonagold', 5.00 , 'slike/jabuka3.jpg', 2 , 1);
 insert into proizvod (naziv, cijena, slika, opg, kategorija) values ('Jabuka Pinova i Granny Smith', 5.50 , 'slike/jabuka1.jpg', 2 , 1);
 insert into proizvod (naziv, cijena, slika, opg, kategorija) values ('Cvjetača', 9.00 , 'slike/karfiol1.jpg', 2 , 2);
-insert into proizvod (naziv, cijena, slika, opg, kategorija) values ('Grašak', 7.00 , 'slike/bundeva1.jpg', 3 , 2);
+insert into proizvod (naziv, cijena, slika, opg, kategorija) values ('Grašak', 7.00 , 'slike/grasak2.jpg', 3 , 2);
 insert into proizvod (naziv, cijena, slika, opg, kategorija) values ('Bijeli krumpir', 2.50 , 'slike/krumpir3.jpg', 3 , 2);
 insert into proizvod (naziv, cijena, slika, opg, kategorija) values ('Špinat', 4.50 , 'slike/spinat1.jpg', 3 , 2);
 insert into proizvod (naziv, cijena, slika, opg, kategorija) values ('Mrkva', 5.00 , 'slike/mrkva3.jpg', 3 , 2);
