@@ -11,7 +11,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen and (max-width: 1119px)" href="css/styles-medium.css" />
-    <link rel="stylesheet" type="text/css" media="screen and (max-width: 950px)" href="css/styles-small.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 0px) and (max-width: 991px)" href="css/styles-small.css" />
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
       <link rel="icon" href="slike/logo.ico" type="image/x-icon">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -35,7 +35,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="index.php#home">HOME</a></li>
+            <li class="hidden-lg hidden-md"><a class="hamburger" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
+            <li class="mobile-home"><a href="index.php#home">HOME</a></li>
             <li><a href="index.php#onama">O NAMA</a></li>
             <li><a href="index.php#opg">OPG-OVI</a></li>
             <?php if(isset($_SESSION['autoriziran'])){ ?>                
@@ -45,7 +46,8 @@
             <li><a href="index.php#registracija-odabir">REGISTRACIJA</a></li>
             <li><a href="#" id="autorizacijaModal">PRIJAVA</a></li>
             <?php } ?>
-            <li class="searchikona"><a href="#search" id="searchNav"><span class="glyphicon glyphicon-search"></span></a></li>  
+            <li class="searchikona"><a href="#search" id="searchNav"><span class="glyphicon glyphicon-search"></span></a></li> 
+            <li class="hidden-lg hidden-md" style="position: absolute;bottom: 0"><a href="#"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

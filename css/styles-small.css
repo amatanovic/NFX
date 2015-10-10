@@ -1,33 +1,48 @@
-@media only screen and (max-width : 950px) {
+.navbar-nav>li {
+    float:none;
+    font-size: 1.5em;
+}
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    }
+.navbar-fixed-bottom {
+    top: 0;
+}
+
+
+nav ul{
+    margin-top:0;
+    padding-top:0.5em;
+}
+
+nav ul li{
+    border-right: none;
+    margin-top: 1em;
+}
+
+.mobile-home{
+    padding-top:2em;
+}
+
+        .navbar>.container{
+            margin-left:34%;
+        }      
+      
+
+nav.navbar{
+    width: 100%;
+    height: 100%;
+}
+
+li.hidden-lg{
+    padding-top:0;
+    margin-top:0;
+}
+
+ul.nav.navbar-nav{
+    padding-top: 0.1em;
+    margin-top: 0.1em;
+}
+
+.chevron{
+    position:absolute;
+    bottom: 0px;
+}
