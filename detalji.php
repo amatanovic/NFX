@@ -23,11 +23,12 @@ $opgID = $opg->sifra;
 
 <div class="row">
     <div class="col-lg-12">
-        <img src="<?php echo $opg->avatar ?>" style="width:15em;height:15em;margin-top:2em;margin-left:41%;border-radius:20px;" />
+        <img class="img-circle" src="<?php echo $opg->avatar ?>" style="width:15em;height:15em;margin-top:2em;margin-left:41%" />
     </div>
 </div>
 <h1 style="text-align:center"><?php echo $opg->naziv; ?></h1>
- <p>Trenutno prati korisnika: 
+<h4 style="text-align:center;"><?php echo $opg->kratakopis; ?></h4>
+    <p style="text-align:center;">Trenutno prati korisnika: <span class="glyphicon glyphicon-leaf"></span>
 <?php 
   $izraz=$veza->prepare("select count(korisnik) as follow from pracenje where opg=$opgID;");
   $izraz->execute();
@@ -35,8 +36,7 @@ $opgID = $opg->sifra;
   echo $follow->follow;
    ?>
  </p>
-<p><?php echo $opg->kratakopis; ?></p>
-<p>
+<p style="text-align:center;">
   <?php 
   $korisnik = $opg->korisnik;
   $izraz=$veza->prepare("select a.ulica, a.mjesto, b.* from korisnik a inner join opg b on a.sifra=b.korisnik where b.korisnik=$korisnik");
@@ -49,6 +49,13 @@ $opgID = $opg->sifra;
 </div>
 
 <div class="container">
+    <div class="row">
+        
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+<img src="<?php echo $proizvod->slika ?>" style="width:25%" />        
+     </div>   
+    
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
 <?php
 $izraz=$veza->prepare("select * from proizvod where opg=$opgID");
 $izraz->execute();
@@ -86,8 +93,6 @@ foreach ($kategorije as $kategorija) {
  }
 }*/
 ?>
-<br />
-<img src="<?php echo $proizvod->slika ?>" style="width:25%" />
 </p>
 <?php
 if ($opg->paypal != null && isset($_SESSION['autoriziran'])) {
@@ -119,9 +124,9 @@ $paypal_url='https://www.sandbox.paypal.com/cgi-bin/webscr';
 }
 }
 ?>
-
 </div>
-
+</div>
+</div> 
 <?php
 if(isset($_SESSION['autoriziran'])){
 $korisnik = $_SESSION['autoriziran']->sifra; 
