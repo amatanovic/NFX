@@ -1,3 +1,5 @@
+
+
 <?php
 session_start();
 if (!isset($_SESSION['autoriziran'])) {
@@ -8,6 +10,8 @@ include 'konfiguracija.php';
 include "head.php";
 }
 ?>
+
+
 <?php
 if(isset($_POST['promjeni'])){
   $izraz = $veza->prepare("update opg set naziv=:naziv, paypal=:paypal, kratakopis=:kratakopis where korisnik=:sifra");
@@ -62,7 +66,7 @@ if(isset($_POST['unosOPG'])){
         <input type="hidden" name="sifra" value="<?php echo $korisnik; ?>"> <br />
         <input type="text" id="naziv" name="naziv" value="<?php echo $entitet->naziv;?>" placeholder="naziv OPG-a" /><br />
         <input type="text" id="paypal" name="paypal" value="<?php echo $entitet->paypal;?>" placeholder="PayPal e-mail" /><br />
-        <input type="text" id="kratakopis" name="kratakopis" value="<?php echo $entitet->kratakopis;?>" placeholder="kratak opis" /><br />
+            <textarea type="text" id="kratakopis" name="kratakopis" placeholder="kratak opis" rows="5" cols="42" style="font-size:0.8em;"><?php echo $entitet->kratakopis;?></textarea><br />
         <label for="paypal">Avatar</label><br />
         <?php if ($entitet->avatar!=null)  {?>
         <img src="<?php echo $entitet->avatar ?>" style="width:25%">
@@ -71,10 +75,10 @@ if(isset($_POST['unosOPG'])){
         <?php }?>
         <input class="odaberi-avatar" class="" type="file" name="avatar" id="avatar" accept="image/*" />
         <p>
-        <div style="text-align:right">
+        <div style="text-align:right;position:absolute;right:3em;">
         <a style="margin-bottom:0;padding:6px 12px" href="index.php" class="alert button btn btn-default">Natrag</a>
-        <input type="submit" class="button btn btn-default" value="Promjeni" name="promjeni" />
-        <a style="margin-bottom:0;padding:6px 12px" href="proizvodi.php?sifra=<?php echo $entitet->sifra; ?>" class="alert button btn btn-default">Proizvodi</a>
+        <input type="submit" class="button btn btn-primary" value="Promjeni" name="promjeni" />
+        <a style="margin-bottom:0;padding:6px 12px" href="proizvodi.php?sifra=<?php echo $entitet->sifra; ?>" class="alert button btn btn-primary">Proizvodi</a>
         </div>
         </p>
         </div>
@@ -94,7 +98,7 @@ if(isset($_POST['unosOPG'])){
 
         <input type="text" id="paypal" name="paypal" placeholder="PayPal e-mail" /><br />
 
-        <input type="text" id="kratakopis" name="kratakopis" placeholder="kratak opis" /><br />
+            <textarea type="text" id="kratakopis" name="kratakopis" placeholder="kratak opis"></textarea><br />
 
         <input class="odaberi-avatar" type="file" name="avatar" accept="image/*" />
         <p>
@@ -107,6 +111,10 @@ if(isset($_POST['unosOPG'])){
       </fieldset>
     </form>
      <?php } ?>
+
+
+
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
