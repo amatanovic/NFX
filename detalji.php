@@ -48,22 +48,32 @@ $opgID = $opg->sifra;
 
 </div>
 
-<div class="container">
-    <div class="row">
-        
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-<img src="<?php echo $proizvod->slika ?>" style="width:25%" />        
-     </div>   
-    
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+
 <?php
 $izraz=$veza->prepare("select * from proizvod where opg=$opgID");
 $izraz->execute();
 $proizvodi=$izraz->fetchALL(PDO::FETCH_OBJ);
 foreach ($proizvodi as $proizvod) { ?>
-<p>Proizvod: <?php echo $proizvod->naziv; ?> <br /> 
+ 
+
+
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+    <div class="row">
+      
+        <div class="col-lg-3 col-md-3 hidden-sm hidden-xs"></div>
+        
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+<img src="<?php echo $proizvod->slika ?>" style="width:100%" />        
+     </div>   
+    
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+<h4 style="padding-top:1em;">Proizvod: <b><?php echo $proizvod->naziv; ?></b> <br /> <br />
 Cijena: 
-<?php 
+<b><?php 
 if (isset($_SESSION['autoriziran'])) {
 $sifraKorisnika = $_SESSION['autoriziran']->sifra;
 $izraz=$veza->prepare("select * from pracenje where opg=$opgID and korisnik=$sifraKorisnika");
@@ -79,8 +89,8 @@ if ($pracenje != null) {
   echo $cijena;
  }
  ?>
-<br />
- 
+ </b>
+    
 <?php 
 /*
 echo "Kategorija:";
@@ -93,7 +103,9 @@ foreach ($kategorije as $kategorija) {
  }
 }*/
 ?>
-</p>
+</h4>
+
+<br />
 <?php
 if ($opg->paypal != null && isset($_SESSION['autoriziran'])) {
 $paypal_url='https://www.sandbox.paypal.com/cgi-bin/webscr';
@@ -109,7 +121,8 @@ $paypal_url='https://www.sandbox.paypal.com/cgi-bin/webscr';
     <input type="hidden" name="userid" value="<?php echo $sifraKorisnika;?>">
     <input type="hidden" name="no_shipping" value="1">
      <div id="itemDiv">
-    <input type="number" name="quantity" onfocusout="kolicina()" id="itemNumber">
+    <input type="number" name="quantity" onfocusout="kolicina()" id="itemNumber" placeholder="kg">
+         
     </div>
     <input type="hidden" name="currency_code" value="USD">
     <input type="hidden" name="handling" value="0">
@@ -118,15 +131,17 @@ $paypal_url='https://www.sandbox.paypal.com/cgi-bin/webscr';
     <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
     </form> 
     </div>
-
-
+</div>
+</div>
+</div> 
+<br />
+<br />
 <?php
 }
 }
 ?>
-</div>
-</div>
-</div> 
+
+
 <?php
 if(isset($_SESSION['autoriziran'])){
 $korisnik = $_SESSION['autoriziran']->sifra; 
