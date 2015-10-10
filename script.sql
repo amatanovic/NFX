@@ -1,6 +1,6 @@
-drop database if exists opg;
-create database opg character set utf8 collate utf8_general_ci;
-use opg;
+drop database if exists zdravZivot;
+create database zdravZivot character set utf8 collate utf8_general_ci;
+use zdravZivot;
 create table korisnik (
 sifra int not null primary key auto_increment,
 ime varchar(250),
