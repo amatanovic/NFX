@@ -158,3 +158,15 @@ input:hover{
     color: rgba(255,222,173,1);
     background-color: #8f7b5f;
 }
+
+.btn-primary:link{
+    border-color: rgba(255,222,173,1);
+    color: rgba(255,222,173,1);
+    background-color: #8f7b5f;
+}
+
+.btn-primary:visited{
+    border-color: rgba(255,222,173,1);
+    color: rgba(255,222,173,1);
+    background-color: #8f7b5f;
+}
