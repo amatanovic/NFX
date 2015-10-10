@@ -14,7 +14,11 @@ include 'head.php';
       <div class="naslovi" id="onama">
 <h1>O nama</h1>
           <br />
-
+  <p>Eko Riznica je stranica koja na jednom mjestu okuplje sve OPG firme na području Osječko Baranjske županije. </p>
+  <p>Svaki posjetitelj ima mogućnost pregleda OPG firmi, kao i proizvoda koje te firme nude.</p>
+  <p>Nakon registracije, krajnji korisnik ima mogućnost dodavanja vlastitog OPG-a, komentiranje tuđih i mogućnost narudžbe određenog proizvoda.</p>
+  <p>Narudžbu je moguće izvršiti putem PayPal korisničkog računa.</p>
+  <p>Cilj nam je spojiti OPG-ove s korisnicima te potaknuti zdrav način prehrane kod ljudi, odnosno doprinjeti zdravom životu.</p>
           
       </div>
       </div>
