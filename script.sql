@@ -68,4 +68,4 @@ alter table pracenje add foreign key(opg) references opg(sifra);
 alter table pracenje add foreign key(korisnik) references korisnik(sifra);
  
 insert into korisnik (ime, prezime, email, lozinka, ulica, mjesto, kontakt) values ('Antun', 'Matanović', 'antun.matanovic@gmail.com', md5('lozinka'), 'Lj. Posavskog 66', 'Osijek', '031/555444');
-insert into opg (naziv, paypal, kratakopis, avatar, korisnik) values ('OPG o jabukama', 'antun.matanovic-facilitator@gmail.com', 'Ovo je kratak opis o ovom OPG-u', 'slike/jabuke.jpg', 1);
+insert into opg (naziv, paypal, kratakopis, avatar, korisnik) values ('OPG o jabukama', 'antun.matanovic-facilitator@gmail.com', 'Ovo je kratak opis o ovom OPG-u', 'slike/avatar1.jpg', 1);
