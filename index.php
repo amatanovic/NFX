@@ -59,14 +59,14 @@ foreach ($opgi as $opg) {
 <h1 class="opg-naslov registracija-naslov">Registracija</h1>      
       
     <fieldset class="forma-registracija">
-      <label for="ime">Ime</label> <input type="text" id="ime" /> <br />
-      <label for="prezime">Prezime</label> <input type="text" id="prezime" /> <br />
-      <label for="email">Email</label> <input type="email" id="emailReg" /> <br />
-      <label for="ulica">Ulica i broj</label> <input type="text" id="ulica" /> <br />
-      <label for="mjesto">Mjesto</label> <input type="text" id="mjesto" /> <br />
-      <label for="kontakt">Kontakt</label> <input type="tel" id="kontakt" /> <br />
-      <label for="lozinka">Lozinka</label> <input type="password" id="password" /> <br />
-      <label for="lozinka2">Ponovite lozinku</label> <input type="password" id="password2" /> <br />
+      <input type="text" id="ime" placeholder="ime" /> <br />
+      <input type="text" id="prezime"  placeholder="prezime" /> <br />
+      <input type="email" id="emailReg"  placeholder="e-mail" /> <br />
+      <input type="password" id="password" placeholder="lozinka" /> <br />
+      <input type="password" id="password2" placeholder="ponovno lozinka" /> <br />
+      <input type="text" id="ulica"  placeholder="ulica i broj"/> <br />
+      <input type="text" id="mjesto" placeholder="mjesto stanovanja" /> <br />
+      <input type="tel" id="kontakt" placeholder="kontakt broj" /> <br />
       <a id="registriraj" href="#" type="submit" class="btn btn-primary">Registracija</a>
     </fieldset>
   </form>

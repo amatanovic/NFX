@@ -3,6 +3,7 @@
 body{
     margin-bottom: 4em;
     font-family: 'Roboto Condensed', sans-serif;
+    color: #806d53;
 }
 
 nav{
@@ -132,18 +133,22 @@ div.navbar-collapse{
 }
 
 
-.forma-registracija>.btn-primary{
-    margin-top: 1em;
-    position: absolute;
-    right: 24.5em;
-}
 
-
+   
 input{          
     border-radius:5px;
     border: 1.5px solid #8f7b5f;
     width: 12.5em;
 }
+
+.forma-registracija>input {
+    border:none;
+    border-radius:0;
+    border-bottom: 1.5px solid rgb(143, 123, 95);
+    text-align:center;
+    margin-bottom: 1em;
+}
+
 
 
 input:hover{
@@ -161,6 +166,12 @@ input:hover{
 }
 
 .btn-primary:hover{
+    border-color: rgba(255,222,173,1);
+    color: rgba(255,222,173,1);
+    background-color: #8f7b5f;
+}
+
+.btn-primary:active{
     border-color: rgba(255,222,173,1);
     color: rgba(255,222,173,1);
     background-color: #8f7b5f;
@@ -235,8 +246,6 @@ width:4em;
 text-align: left;
 }
 
-<<<<<<< HEAD
-=======
 .forma-uredi{
     font-size: 1.5em;
     width: 25em;
@@ -249,5 +258,25 @@ text-align: left;
     margin-top: 1em;
     position: absolute;
     right: 24.5em;
-}>>>>>>> origin/master
->>>>>>> origin/master
+}
+
+    
+::-webkit-input-placeholder {
+   color: rgba(143,123,95,0.8);
+    text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: rgba(143,123,95,0.8);
+    text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: rgba(143,123,95,0.8);
+    text-align: center;
+}
+
+:-ms-input-placeholder {  
+   color: rgba(143,123,95,0.8);
+    text-align: center;
+}
