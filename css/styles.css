@@ -87,7 +87,7 @@ div.navbar-collapse{
 
 #onama{
     padding-top: 5em;
-    color: #806d53
+    color: #806d53;
 }
 
 #opg{
@@ -143,12 +143,16 @@ input{
     width: 12.5em;
 }
 
-.forma-registracija>input {
+.forma-registracija>input, .forma-uredi>input{
     border:none;
     border-radius:0;
     border-bottom: 1.5px solid rgb(143, 123, 95);
     text-align:center;
     margin-bottom: 1em;
+}
+
+.forma-uredi>input{
+    width: 16em;   
 }
 
 
@@ -193,7 +197,7 @@ input:hover{
 
 
 .kratakopis-opg{
-    height: 22em;
+    height: 16em;
     padding-top: 1em;
     font-size: 1.3em;
 }
@@ -283,6 +287,7 @@ text-align: left;
     text-align: center;
 }
 
+<<<<<<< HEAD
 #onama{
     font-size: 17px;
 
@@ -292,5 +297,22 @@ text-align: left;
 
 h1{
     font-size: 50px;
+=======
+
+.forma-uredi{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.forma-uredi>input{
+    margin-top: 2em;
+}
+
+
+.odaberi-avatar{
+    font-size: 0.8em;
+    margin-left: 23%;
+>>>>>>> origin/master
 }
 

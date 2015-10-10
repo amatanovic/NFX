@@ -2,6 +2,14 @@
 include 'konfiguracija.php';
 session_start(); 
 include 'head.php';
+if(isset($_POST['komentiraj'])){
+$opg = $_POST['sifra'];
+$korisnik = $_POST['korisnik'];
+$komentar = $_POST['komentar'];
+$izraz = $veza->prepare("insert into komentar (vrijeme, komentar, opg, korisnik) values (now(), '$komentar', $opg, $korisnik)");
+$izraz->execute();
+header("location: detalji.php?sifra=" . $opg);
+}
  ?>
 
 <div class="container">
@@ -10,15 +18,38 @@ $izraz=$veza->prepare("select * from opg where sifra=:sifra");
 $izraz->bindValue(":sifra",$_GET['sifra']);
 $izraz->execute();
 $opg=$izraz->fetch(PDO::FETCH_OBJ);
+$opgID = $opg->sifra;
 ?>
 
-<p><?php echo $opg->naziv; ?></p>
+<div class="row">
+    <div class="col-lg-12">
+        <img src="<?php echo $opg->avatar ?>" style="width:15em;height:15em;margin-top:2em;margin-left:41%;border-radius:20px;" />
+    </div>
+</div>
+<h1 style="text-align:center"><?php echo $opg->naziv; ?></h1>
+ <p>Trenutno prati korisnika: 
+<?php 
+  $izraz=$veza->prepare("select count(korisnik) as follow from pracenje where opg=$opgID;");
+  $izraz->execute();
+  $follow=$izraz->fetch(PDO::FETCH_OBJ);
+  echo $follow->follow;
+   ?>
+ </p>
 <p><?php echo $opg->kratakopis; ?></p>
+<p>
+  <?php 
+  $korisnik = $opg->korisnik;
+  $izraz=$veza->prepare("select a.ulica, a.mjesto, b.* from korisnik a inner join opg b on a.sifra=b.korisnik where b.korisnik=$korisnik");
+  $izraz->execute();
+  $adresa=$izraz->fetch(PDO::FETCH_OBJ);
+  echo $adresa->ulica . ", " . $adresa->mjesto;
+   ?>
+</p>
+
 </div>
 
 <div class="container">
 <?php
-$opgID = $opg->sifra;
 $izraz=$veza->prepare("select * from proizvod where opg=$opgID");
 $izraz->execute();
 $proizvodi=$izraz->fetchALL(PDO::FETCH_OBJ);
@@ -45,6 +76,38 @@ foreach ($kategorije as $kategorija) {
 
 </div>
 
+<?php
+if(isset($_SESSION['autoriziran'])){
+$korisnik = $_SESSION['autoriziran']->sifra; 
+?>
+<div class="container">
+<form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <fieldset>
+      <input type="hidden" name="sifra" value="<?php echo $_GET['sifra']?>" id="sifra"> <br />
+      <input type="hidden" name="korisnik" value="<?php echo $korisnik?>" id="korisnik"> <br />
+     <textarea rows="6" cols="50" type="komentar" id="komentar" name="komentar" placeholder="Unesite željeni komentar"></textarea> <br />
+      <input type="submit" value="Komentiraj" name="komentiraj" />
+    </fieldset>
+  </form>
+</div> 
+<div class="container" id="komentari">
+<?php 
+$izraz=$veza->prepare("select a.ime, a.prezime, b.* from korisnik a inner join komentar b on a.sifra=b.korisnik where opg=:sifra group by vrijeme DESC;");
+  $izraz->bindValue(":sifra",$_GET['sifra']);
+  $izraz->execute();
+  $komentari=$izraz->fetchALL(PDO::FETCH_OBJ);
+  if($komentari!=null){
+  foreach($komentari as $komentar) {
+        echo "<p style='margin-top:2%;border-top:1px solid #dee1aa;border-left:1px solid #dee1aa;border-right:1px solid #dee1aa;width:35%'>" . $komentar->vrijeme . " Korisnik " . $komentar->ime ." " . $komentar->prezime . "</p>
+        <p style='border:1px solid #dee1aa;padding: 2px 3px; background-color:#eceecb;width:50%'>" . $komentar->komentar . "</p>";
+  }
+}
+?>
+</div>
+<?php
+}
+?> 
+
 <?php include 'prijava-modal.php'; ?>
   
       
@@ -54,7 +117,32 @@ foreach ($kategorije as $kategorija) {
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script>
+      $('#autorizacija').modal('hide');
 
+    $('#autorizacijaModal').click(function () {
+        $('#autorizacija').modal('show');
+    });
+    $(function(){
+      $("#prijavi").click(function(){
+      $("#prijaviPoruka").html("");
+     $.ajax({
+        type: "POST",
+        url: "prijava.php",
+        data: "email=" + $("#emailPrijava").val() + "&password=" + $("#passwordPrijava").val(),
+        success: function(msg){
+            if(msg=="true"){
+              window.location="index.php";
+            }
+            else{
+              $("#poruka").html("Neispravno uneseno korisničko ime i lozinka.<br /> Molimo unesite ponovno.");
+            }
+        }
+      });
+        
+
+        return false;
+      });
+        });
     </script>
   </body>
 </html>

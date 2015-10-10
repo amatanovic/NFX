@@ -60,19 +60,16 @@ if(isset($_POST['unosOPG'])){
       <fieldset class="forma-uredi">
         <form action="#" id="promjena">
         <input type="hidden" name="sifra" value="<?php echo $korisnik; ?>"> <br />
-        <label for="naziv" id="naziv">Naziv</label><br />
-        <input type="text" id="naziv" name="naziv" value="<?php echo $entitet->naziv;?>" /><br />
-        <label for="paypal">PayPal račun</label><br />
-        <input type="text" id="paypal" name="paypal" value="<?php echo $entitet->paypal;?>" /><br />
-        <label for="paypal">Kratak opis</label><br />
-        <input type="text" id="kratakopis" name="kratakopis" value="<?php echo $entitet->kratakopis;?>" /><br />
+        <input type="text" id="naziv" name="naziv" value="<?php echo $entitet->naziv;?>" placeholder="naziv OPG-a" /><br />
+        <input type="text" id="paypal" name="paypal" value="<?php echo $entitet->paypal;?>" placeholder="PayPal e-mail" /><br />
+        <input type="text" id="kratakopis" name="kratakopis" value="<?php echo $entitet->kratakopis;?>" placeholder="kratak opis" /><br />
         <label for="paypal">Avatar</label><br />
         <?php if ($entitet->avatar!=null)  {?>
         <img src="<?php echo $entitet->avatar ?>" style="width:25%">
         <?php } else { ?>
         <p>Unesite avatar Vašeg OPG-a</p>
         <?php }?>
-        <input type="file" name="avatar" id="avatar" accept="image/*" />
+        <input class="odaberi-avatar" class="" type="file" name="avatar" id="avatar" accept="image/*" />
         <p>
         <div style="text-align:right">
         <a style="margin-bottom:0;padding:6px 12px" href="index.php" class="alert button btn btn-default">Natrag</a>
@@ -83,19 +80,23 @@ if(isset($_POST['unosOPG'])){
         </div>
       </fieldset>
     </form>
+
+
+
+
      <?php } else {?>
      <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
-      <fieldset>
+      <fieldset class="forma-uredi">
         <form action="#">
         <input type="hidden" name="sifra" value="<?php echo $korisnik; ?>"> <br />
-        <label for="naziv">Naziv</label><br />
-        <input type="text" id="naziv" name="naziv" /><br />
-        <label for="paypal">PayPal račun</label><br />
-        <input type="text" id="paypal" name="paypal" /><br />
-        <label for="paypal">Kratak opis</label><br />
-        <input type="text" id="kratakopis" name="kratakopis" /><br />
-        <label for="paypal">Avatar</label><br />
-        <input type="file" name="avatar" accept="image/*" />
+
+        <input type="text" id="naziv" name="naziv" placeholder="naziv OPG-a" /><br />
+
+        <input type="text" id="paypal" name="paypal" placeholder="PayPal e-mail" /><br />
+
+        <input type="text" id="kratakopis" name="kratakopis" placeholder="kratak opis" /><br />
+
+        <input class="odaberi-avatar" type="file" name="avatar" accept="image/*" />
         <p>
         <div style="text-align:right">
         <a style="margin-bottom:0;padding:6px 12px" href="index.php" class="alert button btn btn-default">Natrag</a>
