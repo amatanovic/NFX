@@ -32,12 +32,17 @@ ul.nav>li>a{
 }
 
 ul.nav>li>a:active{
-    background-color: rgba(25,25,20,1);
+    background-color: rgba(25,25,20,0);
     color: #8f7b5f; 
 }
 
+
+ul.nav>li>a:link{
+    background-color: rgba(25,25,20,0);
+}
+
 ul.nav>li>a:visited{
-    background-color: rgba(25,25,20,1);
+    background-color: rgba(25,25,20,0);
 }
 
 ul.nav>li>a:hover{
