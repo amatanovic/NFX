@@ -19,7 +19,7 @@
     </form>
         
         <div class="modal-footer">
-      <a id="prijavi" href="#" style="width: 100%" type="submit">Prijava</a>
+      <a id="prijavi" href="#" style="width: 100%" type="submit" class="btn btn-primary">Prijava</a>
         </div>
   <p id="prijaviPoruka"></p>  
   <?php } ?>    
