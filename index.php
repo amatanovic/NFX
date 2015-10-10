@@ -33,15 +33,15 @@ include 'head.php';
           
       </div>
 
-<<<<<<< HEAD
+
 <div class="naslovi">
       
-=======
+
    <?php
   if(!isset($_SESSION['autoriziran'])){ 
     ?>
   <form action="#">   
->>>>>>> origin/master
+
   <form action="#" id="registracija">
       
 <h1>Registracija</h1>      
