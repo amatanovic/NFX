@@ -36,16 +36,13 @@
             <li><a href="index.php#home">HOME</a></li>
             <li><a href="index.php#onama">O NAMA</a></li>
             <li><a href="index.php#opg">OPG-OVI</a></li>
-
-                        
-      <li><a href="#"><li>UREDI PROFIL</li></a>
-   
-   <li><a href="logout.php"><li>ODJAVA</li></a>
-
-       
+            <?php if(isset($_SESSION['autoriziran'])){ ?>                
+            <li><a href="#">UREDI PROFIL</a></li>
+            <li><a href="odjava.php">ODJAVA</a></li>
+            <?php } else {?>
             <li><a href="index.php#registracija">REGISTRACIJA</a></li>
             <li><a href="#prijava" id="autorizacijaModal">PRIJAVA</a></li>
-            
+            <?php } ?>
             <li class="searchikona"><a href="#search" id="searchNav"><span class="glyphicon glyphicon-search"></span></a></li>  
           </ul>
         </div><!--/.nav-collapse -->

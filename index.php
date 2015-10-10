@@ -3,16 +3,6 @@ include 'konfiguracija.php';
 session_start(); 
 include 'head.php';
  ?>
-  <?php
-  if(isset($_SESSION['autoriziran'])){ 
-    echo $_SESSION['autoriziran']->sifra;
-    ?>
-  <form action="#">
-<?php include 'head.php';  ?>
-
- 
-
-
 <div id="home">  
 <img class="naslovna-slika" src="slike/field-918534_1920.jpg" alt="naslovna stranica jabuka   " />
 </div>
@@ -43,8 +33,15 @@ include 'head.php';
           
       </div>
 
+<<<<<<< HEAD
 <div class="naslovi">
       
+=======
+   <?php
+  if(!isset($_SESSION['autoriziran'])){ 
+    ?>
+  <form action="#">   
+>>>>>>> origin/master
   <form action="#" id="registracija">
       
 <h1>Registracija</h1>      
