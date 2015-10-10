@@ -50,6 +50,12 @@ opg int,
 vrijeme datetime
 )engine=innodb;
 
+create table pracenje(
+sifra int not null primary key auto_increment,
+opg int,
+korisnik int
+)engine=innodb;
+
 alter table opg add foreign key(korisnik) references korisnik(sifra);
 alter table proizvod add foreign key(opg) references opg(sifra);
 alter table proizvod add foreign key(kategorija) references kategorija(sifra);
@@ -57,5 +63,7 @@ alter table transakcije add foreign key(korisnik) references korisnik(sifra);
 alter table transakcije add foreign key(proizvod) references proizvod(sifra);
 alter table komentar add foreign key(opg) references opg(sifra);
 alter table komentar add foreign key(korisnik) references korisnik(sifra);
-
+alter table pracenje add foreign key(opg) references opg(sifra);
+alter table pracenje add foreign key(korisnik) references korisnik(sifra);
+ 
 insert into korisnik (ime, prezime, email, lozinka, ulica, mjesto, kontakt) values ('Antun', 'Matanović', 'antun.matanovic@gmail.com', md5('lozinka'), 'Lj. Posavskog 66', 'Osijek', '031/555444');
