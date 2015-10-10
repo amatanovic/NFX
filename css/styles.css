@@ -75,7 +75,7 @@ div.navbar-collapse{
 
 
 #home,#onama,#opg {
-    height:48em;
+    min-height:48em;
     position:relative;
 }
 
@@ -83,7 +83,7 @@ div.navbar-collapse{
 
 #opg{
     padding-top: 2em;
-    background-image: rgba(255, 222, 173,1);
+    background-color: rgba(255, 222, 173,1);
 }
 
 
@@ -91,6 +91,10 @@ div.navbar-collapse{
     text-align: center;
 }
 
+
+.opg-naslov{
+    padding-bottom: 1em;
+}
 
 .opgavatar{
     width: 100%;
