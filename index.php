@@ -293,6 +293,10 @@ https://pixabay.com/en/peas-legumes-vegetables-diet-food-72339/
         });
         
         
+     $('#hamburger').click(function () {
+        $('.odabrane').toggleClass('off-hide');
+        });    
+        
         </script>
 
   </body>

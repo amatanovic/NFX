@@ -32,18 +32,17 @@
         <div id="navbar" class="navbar-collapse collapse  visible-lg visible-md visible-sm visible-xs">
           <ul id="navigacija" class="nav navbar-nav">
             <li class="hidden-lg hidden-md"><a id="hamburger" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
-            <li class="off-hide" class="mobile-home"><a href="index.php#home">NASLOVNICA</a></li>
-            <li class="off-hide"><a href="index.php#onama">O NAMA</a></li>
-            <li class="off-hide"><a href="index.php#opg">OPG-OVI</a></li>
+            <li class="off-hide odabrane" class="mobile-home"><a href="index.php#home">NASLOVNICA</a></li>
+            <li class="off-hide odabrane"><a href="index.php#onama">O NAMA</a></li>
+            <li class="off-hide odabrane"><a href="index.php#opg">OPG-OVI</a></li>
             <?php if(isset($_SESSION['autoriziran'])){ ?>                
-            <li class="off-hide"><a href="urediprofil.php">UREDI PROFIL</a></li>
-            <li class="off-hide"><a href="odjava.php">ODJAVA</a></li>
+            <li class="off-hide odabrane"><a href="urediprofil.php">UREDI PROFIL</a></li>
+            <li class="off-hide odabrane"><a href="odjava.php">ODJAVA</a></li>
             <?php } else {?>
-            <li class="off-hide"><a href="index.php#registracija-odabir">REGISTRACIJA</a></li>
-            <li class="off-hide"><a href="#" id="autorizacijaModal">PRIJAVA</a></li>
+            <li class="off-hide odabrane"><a href="index.php#registracija-odabir">REGISTRACIJA</a></li>
+            <li class="off-hide odabrane"><a href="#" id="autorizacijaModal">PRIJAVA</a></li>
             <?php } ?>
-            <li style="border-right:none;" class="searchikona"><a href="#opg" id="trazenjeNav"><span class="glyphicon glyphicon-search"></span></a></li> 
-            <li class="hidden-lg hidden-md off-hide" style="position: absolute;bottom: 0"><a id="chevron-up" href="#"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
+            <li style="border-right:none;" class="searchikona off-hide odabrane"><a href="#opg" id="trazenjeNav"><span class="glyphicon glyphicon-search"></span></a></li> 
           </ul>
         </div><!--/.nav-collapse -->
       </div>
