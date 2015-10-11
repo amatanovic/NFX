@@ -115,12 +115,12 @@ if(isset($_POST['unosOPG'])){
     </form>
      <?php } ?>
 
-<form style="margin-left:43%">
+<form style="margin-left:37%">
 <fieldset>
 
-    <input type="text" name="poruka" placeholder="poruka pratiteljima" />
+    <input style="width:40%;" type="text" name="poruka" placeholder="poruka pratiteljima" />
     <br />
-    <a style="font-size:1.2em;margin-top:1em; margin-left: 8%;" href="#" class="btn btn-primary">Pošalji</a>
+    <a style="font-size:1.2em;margin-top:1em; margin-left: 17%;" href="#" class="btn btn-primary">Pošalji</a>
     
     
 </fieldset>
