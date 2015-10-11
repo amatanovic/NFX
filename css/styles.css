@@ -181,29 +181,29 @@ input:hover{
 .btn-primary:hover{
     border: none;
     border-radius: 0px;
-    color: #8f7b5f;
-    background-color: rgba(255,222,173,1);
+    color: rgba(255,222,173,1);
+    background-color: #8f7b5f;
 }
 
 .btn-primary:active{
     border: none;
     border-radius: 0px;
-    color: #8f7b5f;
-    background-color: rgba(255,222,173,1);
+    color: rgba(255,222,173,1);
+    background-color: #8f7b5f;
 }
 
 .btn-primary:link{
     border: none;
     border-radius: 0px;
-    color: #8f7b5f;
-    background-color: rgba(255,222,173,1);
+    color: rgba(255,222,173,1);
+    background-color: #8f7b5f;
 }
 
 .btn-primary:visited{
     border: none;
     border-radius: 0px;
-    color: #8f7b5f;
-    background-color: rgba(255,222,173,1);
+    color: rgba(255,222,173,1);
+    background-color: #8f7b5f;
 }
 
 
@@ -218,15 +218,15 @@ input:hover{
 .btn-secondary:active{
     border: none;
     border-radius: 0px;
-    color: rgba(255,222,173,1);
-    background-color: #8f7b5f;
+    color: #8f7b5f;
+    background-color: rgba(255,222,173,1);
 }
 
 .btn-secondary:link{
     border: none;
     border-radius: 0px;
-    color: rgba(255,222,173,1);
-    background-color: #8f7b5f;
+    color: #8f7b5f;
+    background-color: rgba(255,222,173,1);
 }
 
 .btn-secondary:visited{
@@ -245,6 +245,17 @@ input:hover{
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
+
+
+
+.proizvodi-button .btn-secondary{
+    background-color: #675945;
+    color: rgba(255,222,173,1);
+}
+
+
+
+
 
 .kratakopis-opg{
     height: 16em;

@@ -52,8 +52,8 @@ if(isset($_POST['unosOPG'])){
   header("location: urediprofil.php");
 }
 ?>
-<img class="pattern-lijevi uredi-pattern hidden-xs hidden-sm" src="slike/pattern.png" alt="pattern" />      
-<img class="pattern-desni uredi-pattern hidden-xs hidden-sm" src="slike/pattern.png" alt="pattern" />   
+<img class="pattern-lijevi uredi-pattern hidden-xs hidden-sm" src="slike/pattern2.png" alt="pattern" />      
+<img class="pattern-desni uredi-pattern hidden-xs hidden-sm" src="slike/pattern2.png" alt="pattern" />   
 <div class="container">
  <?php 
     $korisnik = $_SESSION['autoriziran']->sifra;
