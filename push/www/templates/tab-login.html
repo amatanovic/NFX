@@ -1,0 +1,38 @@
+<ion-view view-title="Prijava">
+  <ion-content class="padding">
+  
+<div class="list">
+
+<form ng-submit="doLogin()">
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Email</span>
+    <input type="email" placeholder="E-mail" ng-model="loginData.email">
+  </label>
+
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Lozinka</span>
+    <input type="password" placeholder="Lozinka" ng-model="loginData.lozinka">
+  </label>
+
+  <div class="row">
+  <button class="button button-balanced button-block submit icon ion-ios-unlocked-outline" type="submit" >
+  Prijava
+  </button>
+  </div>
+
+</form>
+</div>
+
+<div class="card zuta" ng-show="error">
+<p class="alert">Korisnički podaci nisu točni!</p> 
+</div>
+
+<div class="card crvena" ng-show="alert">
+<p class="alert">Došlo je do pogreške. Pokušajte ponovno!</p>
+</div>
+
+
+
+
+  </ion-content>
+</ion-view>
