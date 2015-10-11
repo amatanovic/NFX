@@ -201,9 +201,7 @@ include 'search-modal.php';
         });
         
         
-    $('#hamburger').click(function () {
-        $('.off-hide').toggleClass('off-show');
-        });
+   
 
         
         </script>
