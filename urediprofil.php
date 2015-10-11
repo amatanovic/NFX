@@ -68,7 +68,7 @@ if(isset($_POST['unosOPG'])){
         <input type="hidden" name="sifra" value="<?php echo $korisnik; ?>"> <br />
         <input type="text" id="naziv" name="naziv" value="<?php echo $entitet->naziv;?>" placeholder="naziv OPG-a" /><br />
         <input type="text" id="paypal" name="paypal" value="<?php echo $entitet->paypal;?>" placeholder="PayPal e-mail" /><br />
-            <textarea type="text" id="kratakopis" name="kratakopis" placeholder="kratak opis" rows="5" cols="42" style="font-size:0.8em;"><?php echo $entitet->kratakopis;?></textarea><br />
+            <textarea type="text" id="kratakopis" name="kratakopis" placeholder="kratak opis" rows="5" cols="45" style="font-size:0.8em;"><?php echo $entitet->kratakopis;?></textarea><br />
         <label for="paypal">Avatar</label><br />
         <?php if ($entitet->avatar!=null)  {?>
         <img src="<?php echo $entitet->avatar ?>" style="width:25%;margin-bottom:1em;">
