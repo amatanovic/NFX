@@ -232,8 +232,8 @@ input:hover{
 .btn-secondary:visited{
     border: none;
     border-radius: 0px;
-    color: rgba(255,222,173,1);
-    background-color: #8f7b5f;
+    color: #8f7b5f;
+    background-color: rgba(255,222,173,1);
 }
 
 .btn-secondary{
