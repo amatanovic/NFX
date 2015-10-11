@@ -13,6 +13,32 @@ include "head.php";
 
 
 <?php
+if(isset($_POST['push'])){
+  $poruka = $_POST['pushPoruka'];
+  $device_token="APA91bEgvEf5nqbQiPtOcemMl4tREEt1pUdUr_YjyFsWncec7O00QHpsslJBwWBmk8IpBNy5hQEL9wkSebmwiiVB0MbqVDYRP9vvY6hvhv4rvVSMLob3hVi1ea6myCtxopX3UNmoV-KC";
+$url = 'http://push.ionic.io/api/v1/push';
+
+$data = array(
+                  'tokens' => array($device_token), 
+                  'notification' => array('alert' => $poruka),    
+                  );
+      
+$content = json_encode($data);
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_POST, TRUE);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $content);
+curl_setopt($ch, CURLOPT_USERPWD, "e098bf033c4063d39cca8907db43822df88988e04e00af91" . ":" );  
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+'Content-Type: application/json',
+'X-Ionic-Application-Id: 9c3c346d' 
+));
+$result = curl_exec($ch);
+curl_close($ch);
+header("location: urediprofil.php");
+  }
+  
 if(isset($_POST['promjeni'])){
   $izraz = $veza->prepare("update opg set naziv=:naziv, paypal=:paypal, kratakopis=:kratakopis where korisnik=:sifra");
   $izraz->bindValue(":sifra",$_POST['sifra']);
@@ -115,12 +141,13 @@ if(isset($_POST['unosOPG'])){
     </form>
      <?php } ?>
 
-<form style="margin-left:37%">
+<form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" style="margin-left:37%">
 <fieldset>
 
-    <input style="width:40%;" type="text" name="poruka" placeholder="poruka pratiteljima" />
+    <input style="width:40%;" type="text" name="pushPoruka" placeholder="poruka pratiteljima" />
     <br />
-    <a style="font-size:1.2em;margin-top:1em; margin-left: 17%;" href="#" class="btn btn-primary">Pošalji</a>
+    <input type="submit" class="button btn btn-primary" value="Pošaljite obavijest" name="push" style="margin-top:1em;" />
+
     
     
 </fieldset>
