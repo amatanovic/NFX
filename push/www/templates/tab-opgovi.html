@@ -4,26 +4,14 @@
 
 <ion-list >
 
-<ion-item class="item item-text-wrap item-avatar-left prva">
-  <img src="img/mim.jpg">
+<ion-item class="item item-text-wrap item-avatar-left prva" ng-repeat="item in userData">
+  <img src="data:image/jpg;base64,{{item.avatar}}">
 
   <div class="row opg">
-  <h2>Naziv OPG-a</h2>
-  <button class="button icon ion-leaf button-balanced button-small ikonica">Prati</button>
+  <h2>{{item.naziv}}</h2>
+  <button class="button icon ion-leaf button-balanced button-small ikonica" ng-click="favorited(item)">Prati</button>
   </div>
 </ion-item>  
-
-
-<ion-item class="item item-text-wrap item-avatar-left prva">
-  <img src="img/mim.jpg">
-
-  <div class="row opg">
-  <h2>Naziv OPG-a</h2>
-  <button class="button icon ion-leaf button-balanced button-small ikonica">Prati</button>
-  </div>
-</ion-item>  
-
-
 </ion-list>
 
 
