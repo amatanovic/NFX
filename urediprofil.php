@@ -115,6 +115,9 @@ if(isset($_POST['unosOPG'])){
     </form>
      <?php } ?>
 
+<?php include 'footer.php'; include 'prijava-modal.php'; 
+include 'search-modal.php';
+?>
 
 
 

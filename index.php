@@ -87,7 +87,7 @@ foreach ($opgi as $opg) {
 
       
 
-<?php include 'prijava-modal.php'; 
+<?php include 'footer.php'; include 'prijava-modal.php'; 
 include 'search-modal.php';
 ?>
 

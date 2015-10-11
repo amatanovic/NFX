@@ -178,7 +178,10 @@ $izraz=$veza->prepare("select a.ime, a.prezime, b.* from korisnik a inner join k
 }
 ?> 
 
-<?php include 'prijava-modal.php'; ?>
+<?php include 'footer.php'; include 'prijava-modal.php'; 
+include 'search-modal.php';
+?>
+
   
       
 

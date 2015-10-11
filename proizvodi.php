@@ -26,10 +26,16 @@ include "head.php";
     }
 
     ?>
+    
+
     <p class="proizvodi-button">
     <a style="margin-bottom:0;padding:6px 12px" href="noviProizvod.php?sifra=<?php echo $_GET['sifra']; ?>" class="alert button btn novi-button btn-secondary">Novi proizvod</a>
      <a style="margin-bottom:0;padding:6px 12px" href="urediprofil.php" class="alert button btn natrag-button btn-secondary">Natrag</a>
     </p>
+    <br />
+    <br />
+    <br />
+        <?php include 'footer.php';?>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
