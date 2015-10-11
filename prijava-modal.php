@@ -12,8 +12,8 @@
   <form action="#">
     <fieldset>
         <div class="modal-body">
-      <label for="email">Email</label> <input type="email" id="emailPrijava" /> <br />
-      <label for="lozinka">Lozinka</label> <input type="password" id="passwordPrijava" /> <br />
+      <label style="color:brown;" for="email">Email</label> <input type="email" id="emailPrijava" /> <br />
+      <label style="color:brown;" for="lozinka">Lozinka</label> <input type="password" id="passwordPrijava" /> <br />
         </div>
     </fieldset>
     </form>

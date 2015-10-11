@@ -42,7 +42,7 @@
             <li class="off-hide"><a href="index.php#registracija-odabir">REGISTRACIJA</a></li>
             <li class="off-hide"><a href="#" id="autorizacijaModal">PRIJAVA</a></li>
             <?php } ?>
-            <li class="off-hide" class="searchikona"><a href="#opg" id="trazenjeNav"><span id="hamburger" class="glyphicon glyphicon-search"></span></a></li> 
+            <li style="border-right:none;" class="searchikona"><a href="#opg" id="trazenjeNav"><span class="glyphicon glyphicon-search"></span></a></li> 
             <li class="hidden-lg hidden-md off-hide" style="position: absolute;bottom: 0"><a id="chevron-up" href="#"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
           </ul>
         </div><!--/.nav-collapse -->
