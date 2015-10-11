@@ -30,7 +30,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse  visible-lg visible-md visible-sm visible-xs">
           <ul class="nav navbar-nav">
-            <li class="hidden-lg hidden-md"><a class="hamburger" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
+            <li class="hidden-lg hidden-md"><a id="hamburger" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
             <li class="mobile-home"><a href="index.php#home">HOME</a></li>
             <li><a href="index.php#onama">O NAMA</a></li>
             <li><a href="index.php#opg">OPG-OVI</a></li>
@@ -41,10 +41,12 @@
             <li><a href="index.php#registracija-odabir">REGISTRACIJA</a></li>
             <li><a href="#" id="autorizacijaModal">PRIJAVA</a></li>
             <?php } ?>
-            <li class="searchikona"><a href="#opg" id="trazenjeNav"><span class="glyphicon glyphicon-search"></span></a></li> 
-            <li class="hidden-lg hidden-md" style="position: absolute;bottom: 0"><a href="#"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
+            <li class="searchikona"><a href="#opg" id="trazenjeNav"><span id="hamburger" class="glyphicon glyphicon-search"></span></a></li> 
+            <li class="hidden-lg hidden-md" style="position: absolute;bottom: 0"><a id="chevron-up" href="#"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
     
+      
+      

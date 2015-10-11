@@ -191,6 +191,18 @@ include 'search-modal.php';
             }
         });
     }); 
-    </script>
+        
+        
+        
+        
+    $('#hamburger').click(function () {
+        $('nav').addClass('nav1');
+           } else {
+            $('nav').removeClass('nav1');
+        }
+    });
+        
+        </script>
+
   </body>
 </html>
