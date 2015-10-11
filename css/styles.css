@@ -268,32 +268,9 @@ input:hover{
 }
 
 
-/* Navigacija tamo gdje puca */
-    @media (max-width : 1119px) {
-
-        
-nav ul li {
-    width: 8em;
-}
 
 
-div.navbar-collapse {
-    width: 48em;
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-        
-        
-        .navbar>.container{
-            margin-left:0;
-        }      
-      
-        
-        
-
-.hamburger{display: none;}
-
-    }
+  
 
 .modal-title{
     text-align: center;
@@ -308,6 +285,8 @@ div.navbar-collapse {
 
     width: 320px;
 }
+
+
 .modal-body label{
 width:4em;
 text-align: left;
@@ -415,7 +394,7 @@ input#paypal, input#naziv{
 
 
 .pattern-lijevi{
-    position: fixed;
+    position: absolute;
     left: 0;
     height: 635px;
     margin-top: -20px;
@@ -424,7 +403,7 @@ input#paypal, input#naziv{
 
 
 .pattern-desni{
-    position: fixed;
+    position: absolute;
     right: 0;
     height: 635px;
     margin-top: -20px;
@@ -473,4 +452,9 @@ hr.fancy-line, hr.fancy-line:before {
 
 body, hr.fancy-line:after {
     background: #f4f4f4;
+}
+
+
+.forma-registracija>input{
+    background-color: transparent;
 }
