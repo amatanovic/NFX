@@ -1,3 +1,5 @@
+<h2 style="text-align:center;font-size:3em;">Uredi proizvod</h2>
+
 <?php
 session_start();
 if (!isset($_SESSION['autoriziran'])) {
