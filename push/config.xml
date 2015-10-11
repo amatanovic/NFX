@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="org.biolege.notfoundx" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Bio Lege</name>
-  <description>&#xD;
-        Not Found X&#xD;
+  <description>&#xD;&#xD;
+        Not Found X&#xD;&#xD;
     </description>
-  <author>&#xD;
-     Not Found X&#xD;
+  <author>&#xD;&#xD;
+     Not Found X&#xD;&#xD;
     </author>
   <content src="index.html"/>
   <access origin="*"/>
