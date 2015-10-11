@@ -166,8 +166,8 @@ $korisnik = $_SESSION['autoriziran']->sifra;
     <fieldset>
       <input type="hidden" name="sifra" value="<?php echo $_GET['sifra']?>" id="sifra"> <br />
       <input type="hidden" name="korisnik" value="<?php echo $korisnik?>" id="korisnik"> <br />
-     <textarea rows="6" cols="50" type="komentar" id="komentar" name="komentar" placeholder="Unesite željeni komentar"></textarea> <br />
-      <input type="submit" value="Komentiraj" name="komentiraj" />
+     <textarea style="margin-left: 42%;" rows="6" cols="50" type="komentar" id="komentar" name="komentar" placeholder="Unesite željeni komentar"></textarea> <br />
+      <input class="btn btn-primary" style="font-size: 1em;text-align:center;margin-left: 43.5%;" type="submit" value="Komentiraj" name="komentiraj" />
     </fieldset>
   </form>
 </div> 

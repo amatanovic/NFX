@@ -477,4 +477,7 @@ body, hr.fancy-line:after {
     height: auto;
 }
 
-textarea{background-color: transparent}
+textarea{background-color: transparent;
+        margin-left: auto;
+        margin-right: auto;
+}
