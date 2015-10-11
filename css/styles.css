@@ -2,7 +2,9 @@
 
 body{
     margin-bottom: 4.5em;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'BenchNine', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 100;
     color: #806D53;
 }
 
