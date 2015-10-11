@@ -31,7 +31,7 @@
         <div id="navbar" class="navbar-collapse collapse  visible-lg visible-md visible-sm visible-xs">
           <ul class="nav navbar-nav">
             <li class="hidden-lg hidden-md"><a id="hamburger" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
-            <li class="mobile-home"><a href="index.php#home">HOME</a></li>
+            <li class="mobile-home"><a href="index.php#home">NASLOVNICA</a></li>
             <li><a href="index.php#onama">O NAMA</a></li>
             <li><a href="index.php#opg">OPG-OVI</a></li>
             <?php if(isset($_SESSION['autoriziran'])){ ?>                

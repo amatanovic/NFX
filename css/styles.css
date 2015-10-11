@@ -388,7 +388,7 @@ h1{
 
 
 
-input#paypal, input#naziv{
+input#paypal, input#naziv, input#poruka{
     border: 1px solid #795548;
 }
 
@@ -465,4 +465,13 @@ body, hr.fancy-line:after {
     border: 1px solid #795548;
 }
 
+.naslovni-logo{
+    position: absolute;
+    margin-left: 38%;
+    z-index: 2;
+    top: 14em;
+    width:21%;
+    height: auto;
+}
 
+textarea{background-color: transparent}

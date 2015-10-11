@@ -4,7 +4,8 @@ session_start();
 include 'head.php';
  ?>
 <div id="home">  
-<img class="naslovna-slika" src="slike/field-918534_1920.jpg" alt="naslovna stranica jabuka" />
+<img style="opacity:0.7;" class="naslovna-slika" src="slike/field-918534_1920.jpg" alt="naslovna stranica jabuka" />
+<img class="naslovni-logo" src="slike/logo1.png" alt="naslovna stranica jabuka" />
 </div>
 
 
@@ -15,7 +16,7 @@ include 'head.php';
 <h1>O nama</h1>
           <br />
   
-<p class="onama">Eko Riznica je platforma koja na jednom mjestu okuplja sve OPG-ove na području Osječko-baranjske županije. </p>
+<p class="onama">Bio Lege je platforma koja na jednom mjestu okuplja sve OPG-ove na području Osječko-baranjske županije. </p>
   <p class="onama">Svaki neregistrirani posjetitelj ima mogućnost pregleda OPG-ova, kao i proizvoda koje ti OPG-ovi nude.</p>
   <p class="onama">Nakon registracije, krajnji korisnik ima mogućnost dodavanja vlastitog OPG-a.</p> 
     <p class="onama">Također, omogućeno je komentiranje svih OPG-ova i njihovih proizvoda. </p>
@@ -197,10 +198,9 @@ include 'search-modal.php';
         
     $('#hamburger').click(function () {
         $('nav').addClass('nav1');
-           } else {
-            $('nav').removeClass('nav1');
-        }
-    });
+
+        });
+   
         
         </script>
 
