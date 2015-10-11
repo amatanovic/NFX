@@ -200,7 +200,7 @@ include 'search-modal.php';
         $('nav').addClass('nav1');
 
         });
-   
+
         
         </script>
 

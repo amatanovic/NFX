@@ -12,6 +12,8 @@ header("location: detalji.php?sifra=" . $opg);
 }
  ?>
 
+<div class="detalji-stranica">
+
 <div class="container">
 <?php
 $izraz=$veza->prepare("select * from opg where sifra=:sifra");
@@ -21,13 +23,16 @@ $opg=$izraz->fetch(PDO::FETCH_OBJ);
 $opgID = $opg->sifra;
 ?>
 
+    
+<div class="container">
 <div class="row">
     <div class="col-lg-12">
         <img class="img-circle" src="<?php echo $opg->avatar ?>" style="width:15em;height:15em;margin-top:2em;margin-left:41%" />
     </div>
 </div>
+</div>
 <h1 style="text-align:center"><?php echo $opg->naziv; ?></h1>
-<h4 style="text-align:center;"><?php echo $opg->kratakopis; ?></h4>
+<h4 style="text-align:center; width:43%;margin-left: auto;margin-right: auto;"><?php echo $opg->kratakopis; ?></h4>
     <p style="text-align:center;">Trenutno prati korisnika: <span class="glyphicon glyphicon-leaf"></span>
 <?php 
   $izraz=$veza->prepare("select count(korisnik) as follow from pracenje where opg=$opgID;");
@@ -68,9 +73,9 @@ foreach ($proizvodi as $proizvod) { ?>
         
     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
 <img src="<?php echo $proizvod->slika ?>" style="width:100%" />        
-     </div>   
-    
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+        </div>
+        
+        <div class="col-lg-4 col-md-4 col-sm-6 col-cs-6">
 <h4 style="padding-top:1em;">Proizvod: <b><?php echo $proizvod->naziv; ?></b> <br /> <br />
 Cijena: 
 <b><?php 
@@ -81,7 +86,7 @@ $izraz->execute();
 $pracenje=$izraz->fetch(PDO::FETCH_OBJ);
 if ($pracenje != null) {
   $cijena = round($proizvod->cijena - ($proizvod->cijena * 0.05), 2);
-  echo $cijena . " (VaĹˇa cijena umanjena je za 5% jer pratite ovaj OPG.)";
+  echo $cijena . " (Vaša cijena umanjena je za 5% jer pratite ovaj OPG.)";
  }
  else {
   $cijena = $proizvod->cijena;
@@ -135,13 +140,19 @@ $paypal_url='https://www.sandbox.paypal.com/cgi-bin/webscr';
     <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
     </form> 
     </div>
+        
+        <?php
+
+}
+?>
+        
 </div>
 </div>
 </div> 
 <br />
 <br />
 <?php
-}
+
 }
 ?>
 
@@ -182,7 +193,7 @@ $izraz=$veza->prepare("select a.ime, a.prezime, b.* from korisnik a inner join k
 include 'search-modal.php';
 ?>
 
-  
+</div>  
       
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -35,7 +35,7 @@ nav ul li{
 }
 
 ul.nav>li>a{
-    color: navajowhite;    
+    color: rgba(255, 222, 173,1);    
 }
 
 ul.nav>li>a:active{
