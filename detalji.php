@@ -1,3 +1,5 @@
+<div style="background-color:#806D53;color:white;">
+
 <?php 
 include 'konfiguracija.php';
 session_start(); 
@@ -194,7 +196,7 @@ include 'search-modal.php';
 ?>
 
 </div>  
-      
+</div>    
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

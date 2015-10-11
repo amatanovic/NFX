@@ -101,13 +101,13 @@ if(isset($_POST['unosOPG'])){
 
         <input type="text" id="paypal" name="paypal" placeholder="PayPal e-mail" /><br />
 
-            <textarea type="text" id="kratakopis" name="kratakopis" placeholder="kratak opis"></textarea><br />
+            <textarea type="text" id="kratakopis" name="kratakopis" placeholder="kratak opis" style="font-size:0.8em;width: 20em;margin-bottom:1em;"></textarea><br />
 
         <input class="odaberi-avatar" type="file" name="avatar" accept="image/*" />
         <p>
-        <div style="text-align:right">
-        <a style="margin-bottom:0;padding:6px 12px" href="index.php" class="alert button btn btn-default">Natrag</a>
-        <input type="submit" class="button btn btn-default" value="Registrirajte svoj OPG" name="unosOPG" />
+        <div style="text-align:center">
+        <a style="margin-bottom:0;padding:6px 12px" href="index.php" class="alert button btn btn-secondary">Natrag</a><br />
+        <input type="submit" class="button btn btn-primary" value="Registrirajte svoj OPG" name="unosOPG" style="margin-top:1em;" />
         </div>
         </p>
         </div>
