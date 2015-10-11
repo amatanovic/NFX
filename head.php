@@ -26,14 +26,9 @@
     <nav class="navbar navbar-fixed-bottom">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <div id="navbar" class="navbar-collapse collapse  visible-lg visible-md visible-sm visible-xs">
           <ul class="nav navbar-nav">
             <li class="hidden-lg hidden-md"><a class="hamburger" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a></li>
             <li class="mobile-home"><a href="index.php#home">HOME</a></li>

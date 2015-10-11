@@ -415,7 +415,7 @@ input#paypal, input#naziv{
 
 
 .pattern-lijevi{
-    position: absolute;
+    position: fixed;
     left: 0;
     height: 635px;
     margin-top: -20px;
@@ -424,7 +424,7 @@ input#paypal, input#naziv{
 
 
 .pattern-desni{
-    position: absolute;
+    position: fixed;
     right: 0;
     height: 635px;
     margin-top: -20px;

@@ -79,9 +79,8 @@ if(isset($_POST['unosOPG'])){
     margin-left: 16%;" />
         <p>
         <a style="width:5em;margin-bottom:0;padding:6px 12px" href="index.php" class="alert button btn btn-secondary">Natrag</a>
-        <input style="width:5em;" type="submit" class="button btn btn-primary" value="Promjeni" name="promjeni" />
-        <input style="width:5em;" type="submit" class="button btn btn-primary" value="Obriši" name="obrisi" />
-        <a style="width:5em;margin-bottom:0;padding:6px 12px" href="proizvodi.php?sifra=<?php echo $entitet->sifra; ?>" class="alert button btn btn-secondary">Proizvodi</a>
+        <input style="width:5em;" type="submit" class="button btn btn-primary" value="Promjeni" name="promjeni" /><br />
+        <a style="width:7em;margin-bottom:0;padding:6px 12px;font-size:0.8em;margin-top:1em;" href="proizvodi.php?sifra=<?php echo $entitet->sifra; ?>" class="alert button btn btn-secondary">Proizvodi</a>
 
         </p>
         </div>
