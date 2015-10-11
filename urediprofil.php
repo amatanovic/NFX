@@ -1,4 +1,4 @@
-
+<h2 style="text-align:center;font-size:3em;">Uredi profil</h2>
 
 <?php
 session_start();
@@ -52,6 +52,8 @@ if(isset($_POST['unosOPG'])){
   header("location: urediprofil.php");
 }
 ?>
+<img class="pattern-lijevi uredi-pattern hidden-xs hidden-sm" src="slike/pattern.png" alt="pattern" />      
+<img class="pattern-desni uredi-pattern hidden-xs hidden-sm" src="slike/pattern.png" alt="pattern" />   
 <div class="container">
  <?php 
     $korisnik = $_SESSION['autoriziran']->sifra;
@@ -69,18 +71,18 @@ if(isset($_POST['unosOPG'])){
             <textarea type="text" id="kratakopis" name="kratakopis" placeholder="kratak opis" rows="5" cols="42" style="font-size:0.8em;"><?php echo $entitet->kratakopis;?></textarea><br />
         <label for="paypal">Avatar</label><br />
         <?php if ($entitet->avatar!=null)  {?>
-        <img src="<?php echo $entitet->avatar ?>" style="width:25%">
+        <img src="<?php echo $entitet->avatar ?>" style="width:25%;margin-bottom:1em;">
         <?php } else { ?>
         <p>Unesite avatar Vašeg OPG-a</p>
         <?php }?>
-        <input class="odaberi-avatar" class="" type="file" name="avatar" id="avatar" accept="image/*" />
+        <input class="odaberi-avatar" class="" type="file" name="avatar" id="avatar" accept="image/*"  style="width: 72%;
+    margin-left: 16%;" />
         <p>
-        <div style="text-align:right;position:absolute;right:3em;">
-        <a style="margin-bottom:0;padding:6px 12px" href="index.php" class="alert button btn btn-default">Natrag</a>
-        <input type="submit" class="button btn btn-primary" value="Promjeni" name="promjeni" />
-        <input type="submit" class="button btn btn-primary" value="Obriši" name="obrisi" />
-        <a style="margin-bottom:0;padding:6px 12px" href="proizvodi.php?sifra=<?php echo $entitet->sifra; ?>" class="alert button btn btn-primary">Proizvodi</a>
-        </div>
+        <a style="width:5em;margin-bottom:0;padding:6px 12px" href="index.php" class="alert button btn btn-secondary">Natrag</a>
+        <input style="width:5em;" type="submit" class="button btn btn-primary" value="Promjeni" name="promjeni" />
+        <input style="width:5em;" type="submit" class="button btn btn-primary" value="Obriši" name="obrisi" />
+        <a style="width:5em;margin-bottom:0;padding:6px 12px" href="proizvodi.php?sifra=<?php echo $entitet->sifra; ?>" class="alert button btn btn-secondary">Proizvodi</a>
+
         </p>
         </div>
       </fieldset>

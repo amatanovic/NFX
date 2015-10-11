@@ -1,7 +1,7 @@
 /* CSS ZA NAVIGACIJU */
 
 body{
-    margin-bottom: 4em;
+    margin-bottom: 8em;
     font-family: 'Roboto Condensed', sans-serif;
     color: #806D53;
 }
@@ -169,38 +169,82 @@ input:hover{
 
 
 .btn-primary{
-    border-color: #8f7b5f;
-    color: #8f7b5f;
-    background-color: rgba(255,222,173,1);
+    border: none;
+    border-radius: 0px;
+    color: rgba(255,222,173,1);
+    background-color: #8f7b5f;
     font-size: 0.8em;
-    padding-left: 1.2em;
-    padding-right: 1.2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
 
 .btn-primary:hover{
-    border-color: rgba(255,222,173,1);
-    color: rgba(255,222,173,1);
-    background-color: #8f7b5f;
+    border: none;
+    border-radius: 0px;
+    color: #8f7b5f;
+    background-color: rgba(255,222,173,1);
 }
 
 .btn-primary:active{
-    border-color: rgba(255,222,173,1);
-    color: rgba(255,222,173,1);
-    background-color: #8f7b5f;
+    border: none;
+    border-radius: 0px;
+    color: #8f7b5f;
+    background-color: rgba(255,222,173,1);
 }
 
 .btn-primary:link{
-    border-color: rgba(255,222,173,1);
-    color: rgba(255,222,173,1);
-    background-color: #8f7b5f;
+    border: none;
+    border-radius: 0px;
+    color: #8f7b5f;
+    background-color: rgba(255,222,173,1);
 }
 
 .btn-primary:visited{
-    border-color: rgba(255,222,173,1);
+    border: none;
+    border-radius: 0px;
+    color: #8f7b5f;
+    background-color: rgba(255,222,173,1);
+}
+
+
+
+.btn-secondary:hover{
+    border: none;
+    border-radius: 0px;
     color: rgba(255,222,173,1);
     background-color: #8f7b5f;
 }
 
+.btn-secondary:active{
+    border: none;
+    border-radius: 0px;
+    color: rgba(255,222,173,1);
+    background-color: #8f7b5f;
+}
+
+.btn-secondary:link{
+    border: none;
+    border-radius: 0px;
+    color: rgba(255,222,173,1);
+    background-color: #8f7b5f;
+}
+
+.btn-secondary:visited{
+    border: none;
+    border-radius: 0px;
+    color: rgba(255,222,173,1);
+    background-color: #8f7b5f;
+}
+
+.btn-secondary{
+    border: none;
+    border-radius: 0px;
+    color: #8f7b5f;
+    background-color: rgba(255,222,173,1);
+    font-size: 0.8em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
 
 .kratakopis-opg{
     height: 16em;
@@ -311,9 +355,7 @@ h1{
     text-align: center;
 }
 
-.forma-uredi>input{
-    margin-top: 2em;
-}
+
 
 
 .odaberi-avatar{
@@ -351,4 +393,36 @@ h1{
     position: absolute;
     right:36%;
     width: 139px
+}
+
+
+
+input#paypal, input#naziv{
+    border: 1px solid #795548;
+}
+
+
+
+.pattern-lijevi{
+    position: absolute;
+    left: 0;
+    height: 635px;
+    margin-top: -20px;
+    width:30%;
+}
+
+
+.pattern-desni{
+    position: absolute;
+    right: 0;
+    height: 635px;
+    margin-top: -20px;
+    width:30%;
+}
+
+
+.uredi-pattern{
+    margin-top:-76px;
+    width: 30%;
+    height:54em;
 }

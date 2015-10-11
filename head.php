@@ -46,7 +46,7 @@
             <li><a href="index.php#registracija-odabir">REGISTRACIJA</a></li>
             <li><a href="#" id="autorizacijaModal">PRIJAVA</a></li>
             <?php } ?>
-            <li class="searchikona"><a href="#trazenje" id="trazenjeNav"><span class="glyphicon glyphicon-search"></span></a></li> 
+            <li class="searchikona"><a href="#opg" id="trazenjeNav"><span class="glyphicon glyphicon-search"></span></a></li> 
             <li class="hidden-lg hidden-md" style="position: absolute;bottom: 0"><a href="#"><span class="glyphicon glyphicon-chevron-up"></span></a></li>
           </ul>
         </div><!--/.nav-collapse -->

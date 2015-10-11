@@ -60,8 +60,11 @@ foreach ($opgi as $opg) {
     ?>  
   <div class="naslovi" id="registracija-odabir">
   <form action="#">
+  
+<img class="pattern-lijevi hidden-xs" src="slike/pattern.png" alt="pattern" />      
+<img class="pattern-desni hidden-xs" src="slike/pattern.png" alt="pattern" />   
       
-<h1 class="opg-naslov registracija-naslov">Registracija</h1>      
+<h1 class="opg-naslov registracija-naslov" style="padding-bottom: 0.4em;padding-top:0.4em;">Registracija</h1>      
       
     <fieldset class="forma-registracija">
       <input type="text" id="ime" placeholder="ime" /> <br />
@@ -80,7 +83,7 @@ foreach ($opgi as $opg) {
 
 <?php } ?> 
   
- 
+   
 
       
 
