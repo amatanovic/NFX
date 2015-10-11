@@ -197,8 +197,12 @@ include 'search-modal.php';
         
         
     $('#hamburger').click(function () {
-        $('nav').addClass('nav1');
-
+        $('nav').toggleClass('nav1');
+        });
+        
+        
+    $('#hamburger').click(function () {
+        $('.off-hide').toggleClass('off-show');
         });
 
         

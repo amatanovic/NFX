@@ -27,7 +27,7 @@ $opgID = $opg->sifra;
 <div class="container">
 <div class="row">
     <div class="col-lg-12">
-        <img class="img-circle" src="<?php echo $opg->avatar ?>" style="width:15em;height:15em;margin-top:2em;margin-left:41%" />
+        <img class="img-circle" src="<?php echo $opg->avatar ?>" style="width:15em;height:15em;margin-top:2em;margin-left:39%" />
     </div>
 </div>
 </div>
