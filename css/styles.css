@@ -159,6 +159,7 @@ input{
 
 .forma-uredi>input{
     width: 16em;   
+    background-color: transparent;
 }
 
 
@@ -457,4 +458,9 @@ body, hr.fancy-line:after {
 
 .forma-registracija>input{
     background-color: transparent;
+}
+
+
+.uredi-proizvod input{
+    border: 1px solid #795548;
 }

@@ -75,7 +75,7 @@ if(isset($_POST['unosOPG'])){
         <?php } else { ?>
         <p>Unesite avatar Vašeg OPG-a</p>
         <?php }?>
-        <input class="odaberi-avatar" class="" type="file" name="avatar" id="avatar" accept="image/*"  style="width: 72%;
+        <input class="odaberi-avatar" type="file" name="avatar" id="avatar" accept="image/*"  style="width: 72%;
     margin-left: 16%;" />
         <p>
         <a style="width:5em;margin-bottom:0;padding:6px 12px" href="index.php" class="alert button btn btn-secondary">Natrag</a>

@@ -37,6 +37,8 @@ if(isset($_POST['obrisi'])){
   header("location: urediprofil.php");
 }
 ?>
+<img class="pattern-lijevi uredi-pattern hidden-xs hidden-sm" src="slike/pattern.png" alt="pattern" />      
+<img class="pattern-desni uredi-pattern hidden-xs hidden-sm" src="slike/pattern3.png" alt="pattern" />   
 <div class="container">
  <?php 
     $sifra = $_GET['sifra'];
@@ -45,15 +47,12 @@ if(isset($_POST['obrisi'])){
     $entitet=$izraz->fetch(PDO::FETCH_OBJ);
 ?>
      <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
-      <fieldset>
+      <fieldset class="forma-uredi uredi-proizvod">
         <form action="#" id="promjenaProizvoda">
         <input type="hidden" name="sifra" value="<?php echo $sifra; ?>"> <br />
-        <label for="naziv">Naziv</label><br />
         <input type="text" name="naziv" value="<?php echo $entitet->naziv;?>" /><br />
-        <label for="cijena">Cijena</label><br />
         <input type="text" id="cijena" name="cijena" value="<?php echo $entitet->cijena;?>" /><br />
-        <label for="kategorija">Kategorija</label><br />
-         <select id='kategorija' name='kategorija'><br />
+         <select style="width: 16em; background-color: transparent;" id='kategorija' name='kategorija'><br />
        <?php
           $izraz = $veza->prepare("select * from kategorija");
           $izraz->execute();
@@ -67,22 +66,22 @@ if(isset($_POST['obrisi'])){
         }
         echo "</select><br />";
         ?>
-        <label for="slika">Slika</label><br />
+        <label style="margin-top:2em;" for="slika">Slika</label><br />
         <?php 
           if ($entitet->slika==null) {
-            echo "Nemate trenutno izabranu sliku proizvoda.";
+            echo "<p style='font-size:0.8em;'>Nemate trenutno izabranu sliku proizvoda.</p>";
           }
           else {
             echo "<img src='" . $entitet->slika . "' style='width:25%'>";
           }
          ?>
-        <input type="file" name="slika" id="slika" accept="image/*" />
+        <input class="odaberi-avatar " style="margin-top:1em;width:72%;margin-left: 16%;border: none;" type="file" name="slika" id="slika" accept="image/*" />
         <p>
-        <div style="text-align:right">
-        <a style="margin-bottom:0;padding:6px 12px" href="urediprofil.php" class="alert button btn btn-default">Natrag</a>
-        <input type="submit" class="button btn btn-default" value="Promjeni" name="promjeni" />
-        <input type="submit" class="button btn btn-default" value="Obriši" name="obrisi" />
+        <div style="text-align:center">
+        <input type="submit" class="button btn btn-primary" value="Promjeni" name="promjeni" />
+        <input type="submit" class="button btn btn-secondary" value="Obriši" name="obrisi" />
         </div>
+        <a style="margin-bottom:0;padding:6px 12px;margin-top:1em;" href="urediprofil.php" class="alert button btn btn-secondary">Natrag</a>
         </p>
         </div>
       </fieldset>
